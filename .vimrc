@@ -1,0 +1,116 @@
+syntax on
+let g:rehash256=1
+colorscheme molokai
+filetype plugin indent on
+" set guifont=Consolas:h11
+
+" vim-plug
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'lervag/vimtex'
+Plug 'guns/vim-clojure-static'
+Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
+
+" vim-airline
+" github.com/powerline/fonts for prepatch fonts
+set laststatus=2
+set ttimeoutlen=50
+let g:airline_powerline_fonts = 1
+
+" nerdtree toggle
+map <C-n> :NERDTreeToggle<CR>
+
+" vimtex options
+let g:vimtex_latexmk_enabled = 0
+
+" maps
+
+" :w!!
+" write to a file when you accidentally opened it without root privileges
+cmap w!! w !sudo tee % > /dev/null
+
+" Highlight last insterted text
+nnoremap gV `[v`]
+
+" Moving vertically doesn't skip over wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" Remap f1 to escape
+map <F1> <Esc>
+imap <F1> <Esc>
+
+" Moving between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" leader ev to open vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" leader sv to source vimrc
+nnoremap <leader>sv :so $MYVIMRC<cr>
+
+" leader vc to execute vcvars all
+" nnoremap <leader>vc :!call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64<CR>
+
+" noh
+nnoremap <Leader>n :noh<cr>
+
+" Allows cursor change in tmux mode
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7<Esc>\\"
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_SI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" So tabs are 2 spaces in yaml files
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" General
+set number
+set cursorline
+set linebreak
+set showbreak=+++
+set textwidth=100
+set showmatch
+
+" Searching
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+
+" Tabs and indentation
+set expandtab
+set shiftwidth=4
+set smartindent
+set autoindent
+set smarttab
+set softtabstop=4
+set cindent
+set cino=(0
+
+" Advanced
+set ruler
+set t_Co=256
+set undolevels=1000
+set backspace=indent,eol,start
+set encoding=utf-8
+set wildmenu
+set lazyredraw
+set showcmd
+
+" Splits
+set splitbelow
+set splitright
