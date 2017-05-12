@@ -31,6 +31,8 @@ map <C-n> :NERDTreeToggle<CR>
 let g:vimtex_latexmk_enabled = 0
 
 " maps
+" Insert a new line below the current line without entering insert mode
+nmap <CR> o<Esc>
 
 " :w!!
 " write to a file when you accidentally opened it without root privileges
