@@ -16,6 +16,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex'
 Plug 'guns/vim-clojure-static'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
+Plug 'sophacles/vim-processing'
 call plug#end()
 
 " vim-airline

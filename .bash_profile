@@ -3,6 +3,7 @@ alias tmux="tmux -2"
 alias serverlogin="ssh adamsko@128.199.156.30"
 alias la='ls -a --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias mercury='~/Mercury_3.9/bin/mercury'
 export downloads="/storage/Downloads"
 export usb="/run/media/adamsko/AJSKO1"
 export adam="/storage/Adam"
@@ -22,3 +23,8 @@ export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__gi
 stty -ixon
 
 export TERM=screen-256color
+
+export PATH=$PATH:~/.local/bin:/usr/local/go/bin
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export PKG_CONFIG_PATH
