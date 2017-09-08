@@ -24,7 +24,7 @@ stty -ixon
 
 export TERM=screen-256color
 
-export PATH=$PATH:~/.local/bin:/usr/local/go/bin
+export PATH=$PATH:~/.local/bin:/usr/local/go/bin:~/idea-IC-172.3968.16/bin
 
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH

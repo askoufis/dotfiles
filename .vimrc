@@ -2,6 +2,10 @@ syntax on
 let g:rehash256=1
 colorscheme molokai
 filetype plugin indent on
+
+set spell spelllang=en_au
+" Default spell checking to off
+set nospell
 " set guifont=Consolas:h11
 
 " vim-plug
@@ -34,14 +38,17 @@ map <C-n> :NERDTreeToggle<CR>
 let g:vimtex_latexmk_enabled = 0
 
 " maps
-" Insert a new line below the current line without entering insert mode
+" Remap leader to the spacebar
+let mapleader = "\<Space>"
+
+" Insert a new. line below the current line without entering insert mode
 nmap <CR> o<Esc>
 
 " :w!!
 " write to a file when you accidentally opened it without root privileges
 cmap w!! w !sudo tee % > /dev/null
 
-" Highlight last insterted text
+" Highlight last inserted text
 nnoremap gV `[v`]
 
 " Moving vertically doesn't skip over wrapped lines
@@ -63,6 +70,12 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 " leader sv to source vimrc
 nnoremap <leader>sv :so $MYVIMRC<cr>
+
+" leader sp to toggle spell check
+nmap <silent> <leader>sp :set spell!<CR>
+
+" leader f to quick fix a spelling mistake
+nnoremap <leader>f 1z=
 
 " leader vc to execute vcvars all
 " nnoremap <leader>vc :!call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64<CR>
