@@ -13,17 +13,33 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
+" Plug 'vim-airline/vim-airline'
 Plug 'lervag/vimtex'
-Plug 'guns/vim-clojure-static'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'sophacles/vim-processing'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'cloudhead/neovim-fuzzy'
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+" For Denite features
+Plug 'Shougo/denite.nvim'
+Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources={} 
+let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips'] 
+let g:deoplete#omni#input_patterns={} 
+let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
 
 " vim-airline
 " github.com/powerline/fonts for prepatch fonts
@@ -31,8 +47,8 @@ set laststatus=2
 set ttimeoutlen=50
 let g:airline_powerline_fonts = 1
 
-" nerdtree toggle
-map <C-n> :NERDTreeToggle<CR>
+" fuzzy find
+nnoremap <C-p> :FuzzyOpen<CR>
 
 " vimtex options
 let g:vimtex_latexmk_enabled = 0
@@ -71,6 +87,12 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " leader sv to source vimrc
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
+" Move to next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to previous buffer
+nmap <leader>h :bnext<CR>
+
 " leader sp to toggle spell check
 nmap <silent> <leader>sp :set spell!<CR>
 
@@ -99,7 +121,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 set number
 set cursorline
 set linebreak
-set showbreak=+++
+" set showbreak=+++
 set textwidth=100
 set showmatch
 
