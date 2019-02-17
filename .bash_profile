@@ -22,7 +22,7 @@ export MYVIMRC="~/.vimrc"
 export AWS_REGION="ap-southeast-2"
 export GIT_EDITOR=nvim
 export EDITOR=nvim
-export HOMEBREW_GITHUB_API_TOKEN="224ca8aa3e65f8583da3a23fcf01d3421c1a07bd"
+export HOMEBREW_GITHUB_API_TOKEN=""
 export KAFKA_OPTS="-Djava.security.auth.login.config=/Users/adamskoufis/kafka/kafka_2.11-2.0.0/config/kafka_server_jaas.conf"
 export KAFKA_HOME="/Users/adamskoufis/kafka/kafka_2.11-2.0.0"
 export ZK_HOSTS="localhost:2181"
