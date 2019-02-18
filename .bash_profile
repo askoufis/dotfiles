@@ -31,7 +31,6 @@ export ANSIBLE_VAULT_PASSWORD_FILE="/Users/adamskoufis/.ansible/.vault-pass"
 # export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
 # For hub
-# export GITHUB_TOKEN="f87711cba4ea8556ea6de0b9f25c35a1aa99bfc8"
 # export YOUR_USER="askoufis"
 export PATH=$GOPATH/bin:/Users/adamskoufis/.local/bin:/usr/local/mysql/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH
 
