@@ -21,7 +21,7 @@ map('n', '<A-k>', '<cmd>cprev<cr>', options)
 -- insert a new line below the current line without entering insert mode
 map('n', '<cr>', 'o<Esc>', {})
 -- remap f1 to escape so it doesn't open help map <F1> <Esc>
-map('i', <F1> <Esc>, options)
+map('i', '<F1>', '<Esc>', options)
 
 -- Vimrc --
 -- open vimrc in a vertical split
