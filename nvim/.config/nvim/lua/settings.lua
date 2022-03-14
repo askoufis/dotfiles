@@ -39,10 +39,11 @@ bo.expandtab = true
 bo.shiftwidth = 4
 bo.smartindent = true
 bo.autoindent = true
+bo.smartindent = true
 o.smarttab = true
 bo.softtabstop = 4
-bo.cindent = true
-bo.cinoptions = '(0'
+-- bo.cindent = true
+-- bo.cinoptions = '(0'
 
 -- Security
 o.modelines = 0

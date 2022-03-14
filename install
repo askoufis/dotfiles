@@ -1,0 +1,15 @@
+#!/usr/bin/env fish
+
+echo "Installing dotfiles"\n
+
+# Ensure stow commands are always executed from within the repo
+pushd ~/code/askoufis/dotfiles
+
+for folder in (string split " " $STOW_FOLDERS)
+    echo "Installing $folder"
+    stow -R -t ~/ $folder
+end
+
+popd
+
+echo \n"Done!"

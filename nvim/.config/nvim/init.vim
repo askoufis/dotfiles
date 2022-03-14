@@ -1,3 +1,5 @@
+filetype plugin indent on
+
 " Automatically install vim-plug if not already installed
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -10,18 +12,14 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'dstein64/vim-startuptime'
 
-" Original lualine repo
-" Plug 'hoob3rt/lualine.nvim'
-" Maintained fork of lualine while the maintainer is away
-" from https://github.com/hoob3rt/lualine.nvim/pull/311
-Plug 'shadmansaleh/lualine.nvim' 
-
+Plug 'nvim-lualine/lualine.nvim' 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'neovim/nvim-lspconfig'
 Plug 'tmsvg/pear-tree'
+Plug 'DingDean/wgsl.vim'
 
 " Colours
 Plug 'bluz71/vim-moonfly-colors'
@@ -93,6 +91,8 @@ nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
 " lsp config
 nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap gd <cmd>lua vim.lsp.buf.definition()<cr>
+" too used to the hotkey from vscode
+nnoremap <F2> <cmd>lua vim.lsp.buf.rename()<cr>
 
 " Explorer config
 let g:netrw_liststyle = 3

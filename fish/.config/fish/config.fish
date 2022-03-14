@@ -76,15 +76,15 @@ if status --is-interactive
     ssh_agent_init
 
     # --- Environment ---
-    set -x -g EDITOR nvim
-    set -x -g GIT_EDITOR nvim
-
+    for FILE in $HOME/.config/fish/environment/*
+        source $FILE
+    end
 
     # --- Abbreviations
-    source $HOME/.config/fish/abbr.fish
+    for FILE in $HOME/.config/fish/abbreviations/*
+        source $FILE
+    end
 
     # --- Prompt ---
     _pure_set_default pure_show_subsecond_command_duration true
 end
-
-

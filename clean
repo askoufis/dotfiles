@@ -1,0 +1,16 @@
+#!/usr/bin/env fish
+
+echo "Uninstalling dotfiles"\n
+
+# Ensure stow commands are always executed from within the repo
+pushd ~/code/askoufis/dotfiles
+
+# Workaround for weird list behaviour inside scripts
+for folder in (string split " " $STOW_FOLDERS)
+    echo "Removing $folder"
+    stow -D -t ~/ $folder
+end
+
+popd
+
+echo \n"Done!"
