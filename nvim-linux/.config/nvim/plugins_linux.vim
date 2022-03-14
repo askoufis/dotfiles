@@ -45,7 +45,7 @@ lua require('telescope').load_extension('fzf')
 let g:moonflyItalics = 0
 
 " lualine config
-lua require('lualine').setup({options = {icons_enabled = falsetheme = 'moonfly'}})
+lua require('lualine').setup({options = {icons_enabled = false, theme = 'moonfly'}})
 
 " Telescope config
 nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<cr>
