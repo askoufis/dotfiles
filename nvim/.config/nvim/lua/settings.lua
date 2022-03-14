@@ -4,6 +4,8 @@ local o = vim.o
 local wo = vim.wo
 -- buffer-local options
 local bo = vim.bo
+-- global variables
+local g = vim.g
 
 -- Searching
 -- show matching strings while performing a search
@@ -37,7 +39,6 @@ o.ruler = true
 -- Text
 bo.expandtab = true
 bo.shiftwidth = 4
-bo.smartindent = true
 bo.autoindent = true
 bo.smartindent = true
 o.smarttab = true
@@ -45,9 +46,12 @@ bo.softtabstop = 4
 -- bo.cindent = true
 -- bo.cinoptions = '(0'
 
--- Security
+-- Security (apparently)
 o.modelines = 0
 
 -- Splits
 o.splitright = true
 o.splitbelow = true
+
+-- Netrw
+g.netrw_liststyle = 3

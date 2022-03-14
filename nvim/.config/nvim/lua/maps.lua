@@ -1,11 +1,12 @@
+-- bind to map for convenience
 local map = vim.api.nvim_set_keymap
 
+options = { noremap = true }
+
 -- unset the space key
-map('n', '<Space>', '', {})
+map('n', '<Space>', '', options)
 -- map leader to space
 vim.g.mapleader = ' '
-
-options = { noremap = true }
 
 -- Movement --
 -- moving up and down doesn't skip wrapped lines
@@ -32,5 +33,5 @@ map('n', '<leader>sv', '<cmd>source $MYVIMRC<cr>', options)
 map('n', '<leader>sp', '<cmd>so $MYVIMRC<cr><cmd>PlugInstall<cr>', options)
 
 -- Other -- 
--- open file explorer
+-- Open explorer, aka netrw
 map('n', '<leader>x', '<cmd>Ex<cr>', options)

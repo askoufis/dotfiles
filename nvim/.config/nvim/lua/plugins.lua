@@ -1,3 +1,5 @@
+-- This file is still a WIP and isn't consumed by my vim config yet
+
 -- Bootstrap paq-nvim
 -- Code from https://github.com/savq/paq-nvim#bootstrapping
 local fn = vim.fn

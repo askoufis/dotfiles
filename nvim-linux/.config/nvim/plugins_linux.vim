@@ -1,11 +1,4 @@
-filetype plugin indent on
-
-" Automatically install vim-plug if not already installed
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+source $HOME/.config/nvim/plugin_bootstrap.vim
 
 " vim-plug config
 call plug#begin(stdpath('data') . '/plugged')
@@ -34,10 +27,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 call plug#end()
 
-" Move to init.lua at some point
-lua require('settings')
-lua require('maps')
-
 " --- Start plugin config
 " initialise rust analyzer lsp
 lua require('lspconfig').rust_analyzer.setup({})
@@ -56,27 +45,7 @@ lua require('telescope').load_extension('fzf')
 let g:moonflyItalics = 0
 
 " lualine config
-lua require('lualine').setup({options = {theme = 'moonfly'}})
-
-" --- End plugin config
-
-" enable syntax highlighting
-syntax on
-
-" make colours appear correctly with tmux + alacritty
-" https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6#vim-neovim
-set termguicolors
-colorscheme moonfly
-
-" Encoding
-" Not sure if this can be moved to lua config yet
-set encoding=utf-8
-
-" Don't try to be vi compatible
-" Apparently not needed for nvim
-set nocompatible
-
-" Bindings
+lua require('lualine').setup({options = {icons_enabled = falsetheme = 'moonfly'}})
 
 " Telescope config
 nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<cr>
@@ -87,13 +56,3 @@ nnoremap <leader>gb <cmd>lua require('telescope.builtin').git_branches()<cr>
 nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_status()<cr>
 " nnoremap <leader>vh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
-
-" lsp config
-nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>
-nnoremap gd <cmd>lua vim.lsp.buf.definition()<cr>
-" too used to the hotkey from vscode
-nnoremap <F2> <cmd>lua vim.lsp.buf.rename()<cr>
-
-" Explorer config
-let g:netrw_liststyle = 3
-
