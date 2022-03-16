@@ -2,7 +2,7 @@
 abbr -a -g ga git add
 abbr -a -g gcn git commit -n
 abbr -a -g gpf git push --force-with-lease
-abbr -a -g gam git commit --amend
+abbr -a -g gam git commit -n --amend
 abbr -a -g gf git fetch --all --prune
 abbr -a -g gcm git checkout master
 abbr -a -g gfpom 'git fetch --prune && git pull origin master'
