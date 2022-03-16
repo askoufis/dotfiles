@@ -53,7 +53,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 
 Top-level folder names don't really matter, but in most cases they are the same as whatever the config folder name is. Each top-level folder contains a `.config` folder, since that's my `$XDG_CONFIG_HOME` folder name, and hence where all my config is actually stored. Inside each `.config` folder is a folder named with the specific config folder name required by a specific app; this folder is where the actual config file(s) are. For example, the `alacritty` top-level folder contains the following structure: `alacritty/.config/alacritty/alacritty.yml`.
 
-The exception to this is for OS-specific config. In those cases, a prefix of `-{OS}` is appended to the folder. For example `alacritty-linux` contains the linux-specific configuration for `alacritty`, whereas `alacritty-mac` contains the macOS-specific configuration for `alacritty`.
+The exception to this is for OS-specific config. In those cases, a suffix of `-{OS}` is appended to the folder. For example `alacritty-linux` contains the linux-specific configuration for `alacritty`, whereas `alacritty-mac` contains the macOS-specific configuration for `alacritty`.
 
 ## Known issues/bugs
 
