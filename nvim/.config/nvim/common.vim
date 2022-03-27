@@ -37,8 +37,4 @@ set cino=(0
 " Advanced
 set t_Co=256
 set undolevels=1000
-set backspace=indent,eol,start
-set encoding=utf-8
-set wildmenu
 set lazyredraw
-set showcmd
