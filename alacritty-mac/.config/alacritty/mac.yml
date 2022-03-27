@@ -28,7 +28,7 @@ window:
     y: 2
 
   dynamic_padding: false
-  decorations: transparent
+  decorations: full
 
 bell:
   animation: EaseOutExpo
