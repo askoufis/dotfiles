@@ -1,20 +1,21 @@
 source $HOME/.config/nvim/plugin_bootstrap.vim
 
-" vim-plug
+" vim-plug config
 call plug#begin(stdpath('data') . '/plugged')
 
-" UI plugins
+" UI
 Plug 'hoob3rt/lualine.nvim'
 Plug 'bluz71/vim-moonfly-colors'
 
-" Functionality plugins
+" Functionality
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmsvg/pear-tree'
 
-" Syntax highlighting plugins
+" Syntax highlighting
 Plug 'sheerun/vim-polyglot'
+Plug 'neovim/nvim-lspconfig'
 
 " Other
 " Plug 'dstein64/vim-startuptime'
