@@ -1,0 +1,7 @@
+require 'user.options'
+require 'user.keymaps'
+require 'user.plugins'
+require 'user.lualine'
+require 'user.treesitter'
+require 'user.glow'
+require 'user.colorscheme'

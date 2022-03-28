@@ -21,7 +21,6 @@ vim.opt.mouse = "a"
 -- make colours appear correctly with tmux + alacritty
 -- https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6#vim-neovim
 vim.opt.termguicolors = true
-vim.cmd'colorscheme moonfly'
 
 -- Interface
 -- show signs in the same spot as line numbers
@@ -56,6 +55,7 @@ vim.opt.splitbelow = true
 -- Netrw
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
+vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
 -- Misc.
 vim.opt.undolevels = 1000
