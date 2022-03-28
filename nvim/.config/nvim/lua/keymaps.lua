@@ -27,10 +27,10 @@ map('n', '<leader>n', '<cmd>noh<cr>', options)
 map('n', '<leader>l', '<cmd>bnext<cr>', options)
 map('n', '<leader>k', '<cmd>bprev<cr>', options)
 
--- Quickfix --
-map('n', '<A-q>', '<cmd>cw<cr>', options)
-map('n', '<A-j>', '<cmd>cnext<cr>', options)
-map('n', '<A-k>', '<cmd>cprev<cr>', options)
+-- Quickfix
+-- map('n', '<A-q>', '<cmd>cw<cr>', options)
+-- map('n', '<A-j>', '<cmd>cnext<cr>', options)
+-- map('n', '<A-k>', '<cmd>cprev<cr>', options)
 
 -- LSP
 map('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<cr>', options)
@@ -45,6 +45,12 @@ map('n', '<cr>', 'o<Esc>', {})
 map('i', '<F1>', '<Esc>', options)
 -- globally replace the word under the cursor
 map('n', '<leader>*', ':%s/<c-r><c-w>//g<left><left>', options)
+-- move the current line up and down
+map('n', '<A-k>', '<cmd>m-2<cr>==', options);
+map('n', '<A-j>', '<cmd>m+<cr>==', options);
+-- I don't think these two work correctly
+-- map('x', '<A-k>', '<cmd>m-2<cr>gv=gv', options);
+-- map('x', '<A-j>', "<cmd>m'>+<cr>==", options);
 
 -- Vimrc --
 -- open vimrc in a vertical split
@@ -57,3 +63,6 @@ map('n', '<leader>sp', '<cmd>so $MYVIMRC<cr><cmd>PlugInstall<cr>', options)
 -- Other -- 
 -- Open explorer, aka netrw
 map('n', '<leader>x', '<cmd>Ex<cr>', options)
+
+-- write to a file when you accidentally opened it without root privileges
+map('c', 'w!!', 'w !sudo tee % > /dev/null', options) 
