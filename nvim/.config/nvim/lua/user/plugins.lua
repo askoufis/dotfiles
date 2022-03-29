@@ -60,6 +60,7 @@ return packer.startup(function()
 
   use {
     'ellisonleao/glow.nvim',
+    -- Install the glow binary when the plugin is installed
     run = ':GlowInstall',
     cmd = 'Glow'
   }
