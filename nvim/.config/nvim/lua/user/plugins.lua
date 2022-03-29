@@ -60,6 +60,7 @@ return packer.startup(function()
 
   use {
     'ellisonleao/glow.nvim',
+    run = ':GlowInstall',
     cmd = 'Glow'
   }
 
