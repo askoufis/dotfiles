@@ -6,6 +6,7 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles](https://github.com/Th
 
 - [Fish shell](https://fishshell.com/)
 - [GNU stow](https://www.gnu.org/software/stow/)
+- [RobotoMono Nerd Font](https://www.nerdfonts.com/font-downloads) (Regular, Bold, Italic and Bold Italic)
 
 ## Installation
 
