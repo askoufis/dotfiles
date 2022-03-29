@@ -33,9 +33,9 @@ If you're installing dotfiles to a machine for the first time, there's a few thi
 
 2. Run `fisher update`
 
-3. Open `nvim`. It should automatically install vim-plug.
+3. Open `nvim`. It should install [packer](https://github.com/wbthomason/packer.nvim) automatically.
 
-4. Inside neovim, run `:PlugInstall` to install all vim plugins
+4. Close `nvim`, then re-open it and run `:PackerSync` to install all plugins
 
 5. Clone `tpm`, but not to the usual place:
 
