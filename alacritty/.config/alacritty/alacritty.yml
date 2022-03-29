@@ -12,3 +12,5 @@ scrolling:
   history: 10000
   multiplier: 3
   faux_multiplier: 3
+
+live_config_reload: true
