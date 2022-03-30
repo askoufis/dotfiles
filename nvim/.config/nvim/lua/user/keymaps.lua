@@ -42,7 +42,7 @@ map("n", "<C-Right>", ":vertical resize +2<CR>", options)
 
 
 -- Highlights
-map('n', '<leader>n', ':noh<cr>', options)
+map('n', '<leader>n', ':noh<CR>', options)
 
 -- Navigating uffers
 map('n', '<S-l>', ':bnext<CR>', options)
@@ -54,19 +54,13 @@ map("v", "<", "<gv", options)
 map("v", ">", ">gv", options)
 
 -- Quickfix
--- map('n', '<A-q>', '<cmd>cw<cr>', options)
--- map('n', '<A-j>', '<cmd>cnext<cr>', options)
--- map('n', '<A-k>', '<cmd>cprev<cr>', options)
-
--- LSP
-map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>', options)
-map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', options)
--- Too used to vscode
-map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', options)
+map('n', '<A-q>', ':cw<CR>', options)
+map('n', '<leader>j', ':cnext<CR>', options)
+map('n', '<leader>k', ':cprev<CR>', options)
 
 -- Editing --
 -- insert a new line below the current line without entering insert mode
-map('n', '<cr>', 'o<Esc>', {})
+map('n', '<CR>', 'o<Esc>', {})
 -- remap f1 to escape so it doesn't open help
 map('i', '<F1>', '<Esc>', options)
 -- globally replace the word under the cursor

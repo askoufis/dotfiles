@@ -1,4 +1,4 @@
-prequire = require('prequire')
+local prequire = require('prequire')
 
 local configs = prequire("nvim-treesitter.configs")
 

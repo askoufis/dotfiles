@@ -1,3 +1,4 @@
+local prequire = require('prequire')
 local fn = vim.fn
 
 -- Automatically install packer
@@ -24,10 +25,7 @@ vim.cmd [[
 ]]
 
 -- Use a protected call so we don't error out the first time we require packer
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
+local packer = prequire('packer')
 
 -- Have packer use a popup window
 packer.init {
@@ -38,17 +36,14 @@ packer.init {
   },
 }
 
--- Use a protected call so we don't error out on the first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  vim.notify("Failed to require 'packer'")
-  return
-end
-
-return packer.startup(function()
+return packer.startup(function(use)
   -- Have packer manage itself
   use 'wbthomason/packer.nvim'
+
+  -- colorschemes
   use 'bluz71/vim-moonfly-colors'
+
+  -- status line
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -58,6 +53,7 @@ return packer.startup(function()
     run = ':TSUpdate',
   }
 
+  -- markdown renderer
   use {
     'ellisonleao/glow.nvim',
     -- Install the glow binary when the plugin is installed
@@ -65,17 +61,28 @@ return packer.startup(function()
     cmd = 'Glow'
   }
 
+  -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp" -- LSP completions
+  use "hrsh7th/cmp-nvim-lua" -- nvim lua config completions
 
   -- snippets
   use "L3MON4D3/LuaSnip" -- snippet engine
 
-  use 'tpope/vim-surround'
+  -- LSP
+  use "neovim/nvim-lspconfig" -- Main LSP plugin
+  use "williamboman/nvim-lsp-installer" -- Easy to use language server installer
+
+  -- JSON Schema
+  use 'b0o/schemastore.nvim'
+
+  -- leftover from vim
   use 'tpope/vim-commentary'
+  use 'tpope/vim-surround'
   use 'christoomey/vim-tmux-navigator'
   use 'tmsvg/pear-tree'
 

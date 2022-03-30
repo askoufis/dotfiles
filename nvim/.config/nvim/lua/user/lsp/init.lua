@@ -1,3 +1,4 @@
+local prequire = require('prequire')
 prequire('lspconfig')
 
 require('user.lsp.lsp-installer')

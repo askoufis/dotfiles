@@ -48,7 +48,7 @@ local enable_cmp = function()
     -- disable completion if inside a git commit or rebase
     local buffer_name = vim.fn.expand('%:t')
     local is_git_commit = buffer_name == 'COMMIT_EDITMSG' or buffer_name == 'git-rebase-todo'
-    return not is_commit and not is_git_commit
+    return not is_comment and not is_git_commit
   end
 end
 
@@ -117,6 +117,7 @@ cmp.setup {
       --
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
+        nvim_lua = "[NvimLua]",
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
@@ -127,6 +128,7 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
