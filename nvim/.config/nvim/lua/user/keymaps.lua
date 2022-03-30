@@ -22,12 +22,18 @@ vim.g.maplocalleader = ' '
 map('n', 'j', 'gj', options)
 map('n', 'k', 'gk', options)
 
--- Window
--- Better movement between splits
-map('n', '<C-j>', '<C-w><C-j>', options)
-map('n', '<C-k>', '<C-w><C-k>', options)
-map('n', '<C-l>', '<C-w><C-l>', options)
-map('n', '<C-h>', '<C-w><C-h>', options)
+-- Overwrite <C-l> within netrw to it doesn't refresh the terminal
+-- https://github.com/christoomey/vim-tmux-navigator/issues/189#issuecomment-620485838
+vim.cmd [[
+  augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+  augroup END
+
+  function! NetrwMapping()
+    nnoremap <silent> <buffer> <C-l> :TmuxNavigateRight<CR>
+  endfunction
+]]
 -- Resize with arrows
 map("n", "<C-Up>", ":resize -2<CR>", options)
 map("n", "<C-Down>", ":resize +2<CR>", options)
