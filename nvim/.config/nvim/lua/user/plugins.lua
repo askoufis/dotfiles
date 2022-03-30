@@ -40,6 +40,11 @@ return packer.startup(function(use)
   -- Have packer manage itself
   use 'wbthomason/packer.nvim'
 
+  -- An implementation of the popup API from vim in neovim
+  use 'nvim-lua/popup.nvim'
+  -- Useful lua functions used by a lot of plugins
+  use 'nvim-lua/plenary.nvim'
+
   -- colorschemes
   use 'bluz71/vim-moonfly-colors'
 
@@ -80,11 +85,27 @@ return packer.startup(function(use)
   -- JSON Schema
   use 'b0o/schemastore.nvim'
 
+  -- Telescope
+  use 'nvim-telescope/telescope.nvim'
+
+  -- TMUX navigaion
+  use {
+    'aserowy/tmux.nvim',
+    config = function()
+      require('tmux').setup({
+        navigation = {
+          -- cycles to opposite pane while navigating into the border
+          cycle_navigation = true,
+          -- enables default keybindings (C-hjkl) for normal mode
+          enable_default_keybindings = true,
+        }
+      })
+    end
+  }
+
   -- leftover from vim
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
-  use 'christoomey/vim-tmux-navigator'
-  use 'tmsvg/pear-tree'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

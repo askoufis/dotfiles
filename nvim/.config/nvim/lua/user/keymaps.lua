@@ -40,7 +40,6 @@ map("n", "<C-Down>", ":resize +2<CR>", options)
 map("n", "<C-Left>", ":vertical resize -2<CR>", options)
 map("n", "<C-Right>", ":vertical resize +2<CR>", options)
 
-
 -- Highlights
 map('n', '<leader>n', ':noh<CR>', options)
 
@@ -80,12 +79,16 @@ map('x', '<A-k>', ":m '<-2<CR>gv-gv", options)
 -- Don't yank to buffer when pasting
 map('v', 'p', '"_dP', options)
 
--- Other -- 
+-- Other --
 -- Open explorer, aka netrw
 map('n', '<leader>x', ':Lex 30<CR>', options)
 
 -- write to a file when you accidentally opened it without root privileges
-map('c', 'w!!', 'w !sudo tee % > /dev/null', options) 
+map('c', 'w!!', 'w !sudo tee % > /dev/null', options)
 
 -- Glow
 map('n', '<leader>mp', ':Glow<CR>', options)
+
+-- Telescope
+map("n", "<leader>f", ":lua require'user.telescope'.project_files()<CR>", options)
+map("n", "<leader>g", ":Telescope live_grep<CR>", options)

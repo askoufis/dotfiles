@@ -11,7 +11,6 @@ lsp_installer.on_server_ready(function(server)
 
   if server.name == 'jsonls' then
     local jsonls_options = require('user.lsp.settings.jsonls')
-    vim.notify("something")
     options = vim.tbl_deep_extend('force', jsonls_options, options)
   end
 
