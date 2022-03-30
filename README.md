@@ -1,15 +1,23 @@
 # dotfiles
 
-My personal dotfiles. Inspired by [ThePrimagen's dotfiles](https://github.com/ThePrimeagen/.dotfiles).
+My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
+
+[dotfiles]: https://github.com/ThePrimeagen/.dotfiles
 
 ## Requirements
 
-- [Fish shell](https://fishshell.com/)
-- [GNU stow](https://www.gnu.org/software/stow/)
-- [NotoSansMono Nerd Font](https://www.nerdfonts.com/font-downloads) on linux (Regular, Bold, Italic and Bold Italic)
-- [RobotoMono Nerd Font](https://www.nerdfonts.com/font-downloads) on mac (Regular, Bold, Italic and Bold Italic)
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [fd](https://github.com/sharkdp/fd)
+- [Fish shell]
+- [GNU stow]
+- [NotoSansMono Nerd Font][nerd fonts] on linux (Regular, Bold, Italic and Bold Italic)
+- [RobotoMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
+- [ripgrep]
+- [fd]
+
+[fish shell]: https://fishshell.com/
+[gnu stow]: https://www.gnu.org/software/stow/
+[nerd fonts]: https://www.nerdfonts.com/font-downloads
+[ripgrep]: https://github.com/BurntSushi/ripgrep
+[fd]: https://github.com/sharkdp/fd
 
 ## Installation
 
@@ -33,11 +41,11 @@ set -x -g STOW_FOLDERS alacritty nvim fish fish-linux tmux
 
 If you're installing dotfiles to a machine for the first time, there's a few things you need to do in order to bootstrap the plugins for various programs.
 
-1. Install [fisher](https://github.com/jorgebucaran/fisher)
+1. Install [fisher]
 
 2. Run `fisher update`
 
-3. Open `nvim`. It should install [packer](https://github.com/wbthomason/packer.nvim) automatically.
+3. Open `nvim`. It should install [packer] automatically.
 
 4. Close `nvim`, then re-open it and run `:PackerSync` to install all plugins
 
@@ -46,6 +54,9 @@ If you're installing dotfiles to a machine for the first time, there's a few thi
 ```fish
 git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 ```
+
+[fisher]: https://github.com/jorgebucaran/fisher
+[packer]: https://github.com/wbthomason/packer.nvim
 
 6. Restart tmux, then press `prefix` + `I` to install all tmux plugins
 
@@ -61,4 +72,6 @@ The exception to this is for OS-specific config. In those cases, a suffix of `-{
 
 ## Known issues/bugs
 
-- On MacOS, a warning starting with `BUG in find_stowed_path? Absolute/relative mismatch between Stow dir` is showed when stowing/unstowing folders. According to [this issue](https://github.com/aspiers/stow/issues/65), the error is mostly harmless, and should be addressed in future versions stow.
+- On MacOS, a warning starting with `BUG in find_stowed_path? Absolute/relative mismatch between Stow dir` is showed when stowing/unstowing folders. According to [this issue][issue], the error is mostly harmless, and should be addressed in future versions stow.
+
+[issue]: https://github.com/aspiers/stow/issues/65
