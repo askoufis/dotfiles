@@ -29,6 +29,7 @@ abbr -a -g eabbr $EDITOR $HOME/.config/fish/abbreviations/abbr.fish
 # --- Remaps ---
 abbr -a -g se sudoedit
 abbr -a -g vim nvim
+abbr -a -g v nvim
 abbr -a -g ls exa
 abbr -a -g la exa -la
 abbr -a -g cat bat
