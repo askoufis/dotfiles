@@ -1,7 +1,5 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
-	return
-end
+local prequire = require('prequire')
+local lualine = prequire('lualine')
 
 -- Simple config
 -- require('lualine').setup({options = {icons_enabled = false, theme = 'moonfly'}})
