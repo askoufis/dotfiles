@@ -12,12 +12,14 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
 - [RobotoMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
 - [ripgrep]
 - [fd]
+- [glow]
 
 [fish shell]: https://fishshell.com/
 [gnu stow]: https://www.gnu.org/software/stow/
 [nerd fonts]: https://www.nerdfonts.com/font-downloads
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [fd]: https://github.com/sharkdp/fd
+[glow]: https://github.com/charmbracelet/glow
 
 ## Installation
 
