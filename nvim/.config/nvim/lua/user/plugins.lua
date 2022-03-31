@@ -43,7 +43,6 @@ return packer.startup(function(use)
   -- An implementation of the popup API from vim in neovim
   use 'nvim-lua/popup.nvim'
   -- Useful lua functions used by a lot of plugins
-  use 'nvim-lua/plenary.nvim'
 
   -- colorschemes
   use 'bluz71/vim-moonfly-colors'
@@ -84,7 +83,10 @@ return packer.startup(function(use)
   use 'b0o/schemastore.nvim'
 
   -- Telescope
-  use 'nvim-telescope/telescope.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
 
   -- TMUX navigaion
   use {
