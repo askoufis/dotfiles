@@ -10,10 +10,6 @@ configs.setup {
     enable = true, -- false will disable the whole extension
     additional_vim_regex_highlighting = false,
   },
-  rainbow = {
-    enable = true,
-    max_file_lines = nil, -- Do not enable for files with more than n lines
-  }
   -- indent is experimental
   -- indent = { enable = true, disable = { "yaml" } },
 }
