@@ -47,15 +47,19 @@ return packer.startup(function(use)
   -- colorschemes
   use 'bluz71/vim-moonfly-colors'
 
+  use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter
+
   -- status line
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
+  -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
+  use 'JoosepAlviste/nvim-ts-context-commentstring' -- Context-aware comments via treesitter
 
   -- markdown renderer
   use {
@@ -88,6 +92,9 @@ return packer.startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   }
 
+  -- Comments
+  use 'numToStr/Comment.nvim' -- Comment stuff
+
   -- TMUX navigaion
   use {
     'aserowy/tmux.nvim',
@@ -103,8 +110,6 @@ return packer.startup(function(use)
     end
   }
 
-  -- leftover from vim
-  use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
 
   -- Automatically set up your configuration after cloning packer.nvim

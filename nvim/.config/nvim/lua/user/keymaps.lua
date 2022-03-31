@@ -90,5 +90,5 @@ map('c', 'w!!', 'w !sudo tee % > /dev/null', options)
 map('n', '<leader>mp', ':Glow<CR>', options)
 
 -- Telescope
-map("n", "<leader>f", ":lua require'user.telescope'.project_files()<CR>", options)
+map("n", "<C-p>", ":lua require'user.telescope'.project_files()<CR>", options)
 map("n", "<leader>g", ":Telescope live_grep<CR>", options)
