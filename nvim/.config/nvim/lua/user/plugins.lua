@@ -113,8 +113,13 @@ return packer.startup(function(use)
   -- Git
   use 'lewis6991/gitsigns.nvim'
 
-  -- Leftover from vim
-  use 'tpope/vim-surround'
+  -- Surround
+  use {
+    "ur4ltz/surround.nvim",
+    config = function()
+      require"surround".setup {mappings_style = "surround"}
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
