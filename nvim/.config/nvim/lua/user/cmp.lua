@@ -46,9 +46,10 @@ local enable_cmp = function()
     -- disable completion inside a comment
     local is_comment = context.in_treesitter_capture("comment") or context.in_syntax_group("Comment")
     -- disable completion if inside a git commit or rebase
-    local buffer_name = vim.fn.expand('%:t')
-    local is_git_commit = buffer_name == 'COMMIT_EDITMSG' or buffer_name == 'git-rebase-todo'
-    return not is_comment and not is_git_commit
+    -- local buffer_name = vim.fn.expand('%:t')
+    -- local is_git_commit = buffer_name == 'COMMIT_EDITMSG' or buffer_name == 'git-rebase-todo'
+    -- return not is_comment and not is_git_commit
+    return not is_comment
   end
 end
 
