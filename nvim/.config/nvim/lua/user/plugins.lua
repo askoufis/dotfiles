@@ -110,6 +110,10 @@ return packer.startup(function(use)
     end
   }
 
+  -- Git
+  use 'lewis6991/gitsigns.nvim'
+
+  -- Leftover from vim
   use 'tpope/vim-surround'
 
   -- Automatically set up your configuration after cloning packer.nvim

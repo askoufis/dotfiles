@@ -74,3 +74,5 @@ key_bindings:
   - { key: K,        mods: Alt,     chars: "\x1bk"                       }
   - { key: H,        mods: Alt,     chars: "\x1bh"                       }
   - { key: L,        mods: Alt,     chars: "\x1bl"                       }
+  # For nvim autopairs fast wrap keybind
+  - { key: E,        mods: Alt,     chars: "\x1be"                       }
