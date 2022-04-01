@@ -55,6 +55,12 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
+  -- File tree
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
+
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -65,6 +71,12 @@ return packer.startup(function(use)
   use {
     'ellisonleao/glow.nvim',
     cmd = 'Glow'
+  }
+
+  -- Bufferline
+  use {
+    'akinsho/bufferline.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   -- cmp plugins
@@ -82,6 +94,7 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- Main LSP plugin
   use "williamboman/nvim-lsp-installer" -- Easy to use language server installer
+  use "j-hui/fidget.nvim"
 
   -- JSON Schema
   use 'b0o/schemastore.nvim'

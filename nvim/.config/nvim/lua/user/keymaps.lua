@@ -82,7 +82,7 @@ map('v', 'p', '"_dP')
 
 -- Other --
 -- Open explorer, aka netrw
-map('n', '<leader>x', ':Lex 30<CR>')
+map('n', '<leader>e', ':NvimTreeToggle<CR>')
 
 -- write to a file when you accidentally opened it without root privileges
 map('c', 'w!!', 'w !sudo tee % > /dev/null')

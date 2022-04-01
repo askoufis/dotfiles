@@ -1,5 +1,5 @@
 local function prequire(m)
-  status_ok, module = pcall(require, m)
+  local status_ok, module = pcall(require, m)
   if not status_ok then
     return nil
   end
