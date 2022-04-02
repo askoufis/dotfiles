@@ -44,9 +44,13 @@ map("n", "<C-Right>", ":vertical resize +2<CR>")
 -- Highlights
 map('n', '<leader>n', ':noh<CR>')
 
--- Navigating uffers
-map('n', '<S-l>', ':bnext<CR>')
-map('n', '<S-h>', ':bprev<CR>')
+-- Buffers
+-- Navigating buffers with cokeline
+-- https://vi.stackexchange.com/a/31013 for info why these have to be non-recursive maps
+map('n', '<S-h>', '<Plug>(cokeline-focus-prev)', { noremap = false })
+map('n', '<S-l>', '<Plug>(cokeline-focus-next)', { noremap = false })
+map('n', '<Leader>p', '<Plug>(cokeline-switch-prev)', { noremap = false })
+map('n', '<Leader>n', '<Plug>(cokeline-switch-next)', { noremap = false })
 
 -- Visual
 -- Stay in indent mode

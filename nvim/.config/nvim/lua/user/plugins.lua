@@ -73,10 +73,9 @@ return packer.startup(function(use)
     cmd = 'Glow'
   }
 
-  -- Bufferline
   use {
-    'akinsho/bufferline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    'noib3/nvim-cokeline',
+    requires = 'kyazdani42/nvim-web-devicons',
   }
 
   -- cmp plugins
