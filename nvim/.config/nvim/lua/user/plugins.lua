@@ -94,6 +94,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- Main LSP plugin
   use "williamboman/nvim-lsp-installer" -- Easy to use language server installer
   use "j-hui/fidget.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
 
   -- JSON Schema
   use 'b0o/schemastore.nvim'

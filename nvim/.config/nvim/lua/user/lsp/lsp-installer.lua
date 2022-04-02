@@ -24,6 +24,11 @@ lsp_installer.on_server_ready(function(server)
     options = vim.tbl_deep_extend('force', yamlls_options, options)
   end
 
+  if server.name == 'tsserver' then
+    local tsserver_options = require('user.lsp.settings.tsserver')
+    options = vim.tbl_deep_extend('force', tsserver_options, options)
+  end
+
   -- This setup() function will take the provided server configuration and decorate it with the necessary properties
   -- before passing it onwards to lspconfig.
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
