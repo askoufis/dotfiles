@@ -14,7 +14,7 @@ vim.opt.scrolloff = 8
 
 -- Mouse
 -- Allow the mouse to be used
-vim.opt.mouse = "a"
+vim.opt.mouse = 'a'
 
 -- Colors
 -- enable 24-bit RGB colours in the TUI
@@ -24,7 +24,7 @@ vim.opt.termguicolors = true
 
 -- Interface
 -- show signs in the same spot as line numbers
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 -- show line number
 vim.opt.number = true
 -- show line number relative to the current line
@@ -40,7 +40,7 @@ vim.opt.smartindent = true
 vim.opt.smarttab = true
 vim.opt.softtabstop = 2
 vim.opt.cindent = true
-vim.opt.cinoptions = "(0"
+vim.opt.cinoptions = '(0'
 vim.opt.showmatch = true
 vim.opt.linebreak = true
 vim.opt.textwidth = 100
@@ -55,7 +55,7 @@ vim.opt.splitbelow = true
 -- Netrw
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
-vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
 -- Misc.
 vim.opt.undolevels = 1000
