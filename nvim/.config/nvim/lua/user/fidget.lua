@@ -1,2 +1,2 @@
-local prequire = require('prequire')
-prequire('fidget').setup{}
+local prequire = require("prequire")
+prequire("fidget").setup({})

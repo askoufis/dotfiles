@@ -1,6 +1,6 @@
-local prequire = require('prequire')
-prequire('lspconfig')
+local prequire = require("prequire")
+prequire("lspconfig")
 
-require('user.lsp.lsp-installer')
-require('user.lsp.handlers').setup()
-require('user.lsp.null-ls')
+require("user.lsp.lsp-installer")
+require("user.lsp.handlers").setup()
+require("user.lsp.null-ls")
