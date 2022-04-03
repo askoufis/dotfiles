@@ -11,6 +11,33 @@ lsp_installer.on_server_ready(function(server)
     capabilites = require('user.lsp.handlers').capabilites,
   }
 
+  options.on_attach = function(client, bufnr)
+    if client.resolved_capabilities.document_formatting then
+      vim.cmd([[
+        augroup LspFormatting
+            autocmd! * <buffer>
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+        augroup END
+        ]])
+    end
+
+    if server.name == 'eslint' then
+      vim.cmd([[
+        augroup LspFormatting
+            autocmd!
+            autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
+        augroup END
+        ]])
+    end
+
+    if client.name == 'tsserver' then
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+    end
+
+    common_on_attach(client, bufnr)
+  end
+
   if server.name == 'jsonls' then
     local jsonls_options = require('user.lsp.settings.jsonls')
     options = vim.tbl_deep_extend('force', jsonls_options, options)
@@ -32,17 +59,7 @@ lsp_installer.on_server_ready(function(server)
   end
 
   if server.name == 'eslint' then
-    vim.notify('eslint options')
     local eslint_options = require('user.lsp.settings.eslint')
-    options.on_attach = function(client, bufnr)
-      vim.cmd([[
-        augroup EslintFixAll
-          autocmd!
-          autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
-        augroup end
-      ]])
-      common_on_attach(client, bufnr)
-    end
     options = vim.tbl_deep_extend('force', eslint_options, options)
   end
 
