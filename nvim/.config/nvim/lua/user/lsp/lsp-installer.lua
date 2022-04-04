@@ -1,6 +1,9 @@
 local prequire = require('prequire')
 local lsp_installer = prequire('nvim-lsp-installer')
 
+-- Use a table with keys to true so the lookup is easy
+local clients_to_disable_formatting = { tsserver = true, jsonls = true }
+
 -- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
 -- or if the server is already installed).
 lsp_installer.on_server_ready(function(server)
@@ -30,7 +33,7 @@ lsp_installer.on_server_ready(function(server)
         ]])
     end
 
-    if client.name == 'tsserver' then
+    if clients_to_disable_formatting[server.name] then
       client.resolved_capabilities.document_formatting = false
       client.resolved_capabilities.document_range_formatting = false
     end
