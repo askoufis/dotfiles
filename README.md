@@ -13,6 +13,7 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
 - [ripgrep]
 - [fd]
 - [glow]
+- [prettierd]
 
 [fish shell]: https://fishshell.com/
 [gnu stow]: https://www.gnu.org/software/stow/
@@ -20,6 +21,7 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [fd]: https://github.com/sharkdp/fd
 [glow]: https://github.com/charmbracelet/glow
+[prettierd]: https://github.com/fsouza/prettierd
 
 ## Installation
 
