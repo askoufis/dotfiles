@@ -1,10 +1,12 @@
-local function prequire(m)
-  local status_ok, module = pcall(require, m)
-  if not status_ok then
-    return nil
+--- Protected require, just like pcall but for require()
+--- @param modname string
+--- @return nil
+return function(modname)
+  local success, mod_or_err = pcall(require, modname)
+  if not success then
+    vim.api.nvim_err_writeln(mod_or_err)
+    return
   end
 
-  return module
+  return mod_or_err
 end
-
-return prequire
