@@ -116,6 +116,8 @@ return packer.startup(function(use)
           cycle_navigation = true,
           -- enables default keybindings (C-hjkl) for normal mode
           enable_default_keybindings = true,
+          -- don't break zoom when changing panes
+          persist_zoom = true,
         },
       }
     end,
