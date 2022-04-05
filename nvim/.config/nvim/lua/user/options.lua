@@ -45,6 +45,9 @@ vim.opt.showmatch = true
 vim.opt.linebreak = true
 vim.opt.textwidth = 100
 
+-- Formatting
+-- vim.opt.formatoptions:remove { 't' }
+
 -- Security (apparently)
 vim.opt.modelines = 0
 
