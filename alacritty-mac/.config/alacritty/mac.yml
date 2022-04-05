@@ -78,3 +78,5 @@ key_bindings:
   - { key: E, mods: Alt, chars: "\x1be" }
   # For tmux plugin cleanup
   - { key: U, mods: Alt, chars: "\x1bu" }
+  # Fix Ctrl + Space
+  - { key: Space, mods: Control, chars: "\x00" }
