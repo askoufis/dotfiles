@@ -61,11 +61,11 @@ nvim_tree.setup {
   },
   filters = {
     dotfiles = false,
-    custom = {},
+    custom = { '^.git' },
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 500,
   },
   view = {
