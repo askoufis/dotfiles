@@ -51,6 +51,7 @@ map('n', '<S-h>', '<Plug>(cokeline-focus-prev)', { noremap = false })
 map('n', '<S-l>', '<Plug>(cokeline-focus-next)', { noremap = false })
 map('n', '<Leader>p', '<Plug>(cokeline-switch-prev)', { noremap = false })
 map('n', '<Leader>n', '<Plug>(cokeline-switch-next)', { noremap = false })
+map('n', '<Leader>bx', '<Plug>(cokeline-pick-close)', { noremap = false })
 
 for i = 1, 9 do
   map('n', ('<Leader>s%s'):format(i), ('<Plug>(cokeline-switch-%s)'):format(i), { noremap = false })
