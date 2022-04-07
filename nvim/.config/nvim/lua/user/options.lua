@@ -46,7 +46,9 @@ vim.opt.linebreak = true
 vim.opt.textwidth = 100
 
 -- Formatting
--- vim.opt.formatoptions:remove { 't' }
+-- Don't wrap text using textwidth
+-- See :help fo-table
+vim.opt.formatoptions:remove { 't' }
 
 -- Security (apparently)
 vim.opt.modelines = 0
