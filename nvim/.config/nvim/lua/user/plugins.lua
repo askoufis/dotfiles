@@ -140,6 +140,9 @@ return packer.startup(function(use)
   -- Toggleterm
   use('akinsho/toggleterm.nvim')
 
+  -- Navig
+  use('ggandor/lightspeed.nvim')
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
