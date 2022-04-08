@@ -143,8 +143,6 @@ return packer.startup(function(use)
   -- Navigation
   use('ggandor/lightspeed.nvim')
 
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
