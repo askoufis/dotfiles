@@ -21,3 +21,6 @@ set -x -g AWS_REGION ap-southeast-2
 
 # set fish greeting to be blank
 set fish_greeting
+
+set -x -g VOLTA_HOME $HOME/.local/share/.volta
+fish_add_path $VOLTA_HOME/bin
