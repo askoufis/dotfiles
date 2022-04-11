@@ -58,9 +58,11 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Netrw
+-- Even though nvim-tree is installed, worth keeping these settings
+-- just in case I ever need to use netrw for some reason
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
-vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+vim.g.netrw_bufsettings = 'nomodifiable nomodified number nowrap readonly nobuflisted'
 
 -- Misc.
 vim.opt.undolevels = 1000
