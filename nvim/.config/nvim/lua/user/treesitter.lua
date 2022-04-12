@@ -3,6 +3,7 @@ local configs = prequire('nvim-treesitter.configs')
 
 configs.setup {
   ensure_installed = {
+    'comment',
     'css',
     'dockerfile',
     'fish',
@@ -15,7 +16,6 @@ configs.setup {
     'lua',
     'regex',
     'rust',
-    'todo',
     'toml',
     'tsx',
     'typescript',
