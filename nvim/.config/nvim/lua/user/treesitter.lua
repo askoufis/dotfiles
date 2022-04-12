@@ -13,6 +13,7 @@ configs.setup {
     'jsdoc',
     'json',
     'json5',
+    'jsonc',
     'lua',
     'regex',
     'rust',
