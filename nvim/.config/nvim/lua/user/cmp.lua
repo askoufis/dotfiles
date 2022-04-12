@@ -62,11 +62,11 @@ cmp.setup {
   },
   mapping = {
     -- Navigate between suggestion items
-    ['<C-k>'] = cmp.mapping.select_prev_item(),
-    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<A-k>'] = cmp.mapping.select_prev_item(),
+    ['<A-j>'] = cmp.mapping.select_next_item(),
     -- Scroll through docs
-    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
+    ['<C-k>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
+    ['<C-j>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
     -- Manually open the the completions menu
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     -- I think this is usually bound to mapping.confirm({ select = false})
