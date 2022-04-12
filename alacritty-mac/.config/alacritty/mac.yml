@@ -76,6 +76,8 @@ key_bindings:
   - { key: L, mods: Alt, chars: "\x1bl" }
   # For nvim autopairs fast wrap keybind
   - { key: E, mods: Alt, chars: "\x1be" }
+  # For nvim quickfix
+  - { key: Q, mods: Alt, chars: "\x1bq" }
   # Tmux plugin cleanup
   - { key: U, mods: Alt, chars: "\x1bu" }
   - { key: Key1, mods: Alt, chars: "\x1b1" }
