@@ -15,6 +15,7 @@ configs.setup {
     'lua',
     'regex',
     'rust',
+    'todo',
     'toml',
     'tsx',
     'typescript',
