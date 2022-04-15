@@ -15,4 +15,5 @@ font:
     family: NotoSansMono Nerd Font
     style: Bold Italic
 
+  size: 11.0
   use_thin_strokes: false
