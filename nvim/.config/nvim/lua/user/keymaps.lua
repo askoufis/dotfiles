@@ -104,6 +104,9 @@ map('n', '<leader>mp', ':Glow<CR>')
 map('n', '<C-p>', ':lua require\'user.telescope\'.project_files()<CR>')
 map('n', '<leader>g', ':Telescope live_grep<CR>')
 
+-- Neogit
+map('n', '<leader>G', ':Neogit<CR>')
+
 -- Toggleterm
 function _G.set_terminal_keymaps()
   local opts = { noremap = true }
