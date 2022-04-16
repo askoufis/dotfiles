@@ -54,10 +54,10 @@ nvim_tree.setup {
     enable = true,
     icons = {
       -- These first two seem annoying
-      hint = '',
-      info = '',
-      warning = '',
       error = '',
+      warning = '',
+      hint = '',
+      info = '',
     },
   },
   update_focused_file = {
