@@ -6,6 +6,9 @@ vim.g.nvim_tree_highlight_opened_files = 2
 -- Don't highlight special files
 vim.g.nvim_tree_special_files = {}
 
+-- Compact folders that only contain a single folder into one node in the file tree
+vim.g.nvim_tree_group_empty = 1
+
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
