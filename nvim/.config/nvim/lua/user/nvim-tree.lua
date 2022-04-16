@@ -1,4 +1,8 @@
 local prequire = require('prequire')
+
+-- Highlight folder and file names
+vim.g.nvim_tree_highlight_opened_files = 2
+
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
@@ -61,7 +65,7 @@ nvim_tree.setup {
   },
   filters = {
     dotfiles = false,
-    custom = { '^.git' },
+    custom = { '^.git$' },
   },
   git = {
     enable = true,
