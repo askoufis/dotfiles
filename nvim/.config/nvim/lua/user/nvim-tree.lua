@@ -3,6 +3,9 @@ local prequire = require('prequire')
 -- Highlight folder and file names
 vim.g.nvim_tree_highlight_opened_files = 2
 
+-- Don't highlight special files
+vim.g.nvim_tree_special_files = {}
+
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
