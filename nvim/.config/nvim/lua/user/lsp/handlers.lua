@@ -13,7 +13,6 @@ M.setup = function()
   for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
   end
-
   local config = {
     -- disable virtual text
     virtual_text = false,
@@ -46,38 +45,49 @@ M.setup = function()
 end
 
 local function lsp_highlight_document(client)
-  -- Set autocommands conditional on server_capabilities
+  -- Set autocommands conditionally depending on server_capabilities
   if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec(
-      [[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]],
-      false
-    )
+    local lsp_document_highlight = vim.api.nvim_create_augroup('lsp_document_highlight', {})
+    vim.api.nvim_create_autocmd('CursorHold', {
+      pattern = '*',
+      group = lsp_document_highlight,
+      callback = vim.lsp.buf.document_highlight,
+    })
+    vim.api.nvim_create_autocmd('CursorMoved', {
+      pattern = '*',
+      group = lsp_document_highlight,
+      callback = vim.lsp.buf.clear_references,
+    })
   end
 end
 
 local function lsp_keymaps(bufnr)
-  local opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gh', ':lua vim.lsp.buf.hover()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-s>', ':lua vim.lsp.buf.signature_help()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F2>', ':lua vim.lsp.buf.rename()<CR>', opts) -- Too used to vscode
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', ':lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', ':lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gl', ':lua vim.diagnostic.open_float()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', ':lua vim.diagnostic.setloclist()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', ':lua vim.lsp.buf.formatting_sync()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lr', ':LspRestart<CR>', opts)
-  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+  local function map(mode, l, r, opts)
+    opts = opts or {}
+    opts.buffer = bufnr
+    vim.keymap.set(mode, l, r, opts)
+  end
+
+  local opts = { silent = true }
+
+  map('n', 'gD', vim.lsp.buf.declaration, opts)
+  map('n', 'gd', vim.lsp.buf.definition, opts)
+  map('n', 'gh', vim.lsp.buf.hover, opts)
+  map('n', 'gi', vim.lsp.buf.implementation, opts)
+  map('n', '<C-s>', vim.lsp.buf.signature_help, opts)
+  map('n', '<F2>', vim.lsp.buf.rename, opts) -- Too used to vscode
+  map('n', 'gr', vim.lsp.buf.references, opts)
+  map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+  map('n', '[d', function()
+    vim.diagnostic.goto_prev { border = 'rounded' }
+  end, opts)
+  map('n', ']d', function()
+    vim.diagnostic.goto_next { border = 'rounded' }
+  end, opts)
+  map('n', 'gl', vim.diagnostic.open_float, opts)
+  map('n', '<leader>q', vim.diagnostic.setloclist, opts)
+  map('n', '<leader>f', vim.lsp.buf.formatting_sync, opts)
+  map('n', '<leader>lr', ':LspRestart<CR>', opts)
 end
 
 M.on_attach = function(client, bufnr)

@@ -1,7 +1,4 @@
-local function map(mode, lhs, rhs, opts)
-  opts = vim.tbl_extend('force', { noremap = true, silent = true }, opts or {})
-  vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
-end
+local map = vim.keymap.set
 
 -- Modes
 --   normal_mode = "n",
@@ -24,16 +21,17 @@ map('n', 'k', 'gk')
 
 -- Overwrite <C-l> within netrw to it doesn't refresh the terminal
 -- https://github.com/christoomey/vim-tmux-navigator/issues/189#issuecomment-620485838
-vim.cmd([[
-  augroup netrw_mapping
-    autocmd!
-    autocmd filetype netrw call NetrwMapping()
-  augroup END
-
-  function! NetrwMapping()
-    nnoremap <silent> <buffer> <C-l> :lua require'tmux'.move_right()<CR>
-  endfunction
-]])
+-- NvimTree has its own filetype even though it hijacks netrw, but worth keeping this around just in case
+-- local netrw_mapping = vim.api.nvim_create_augroup('netrw_mapping', {})
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'netrw',
+--   group = netrw_mapping,
+--   callback = function(args)
+--     vim.notify(vim.inspect(args))
+--     vim.notify(tostring(args.buf))
+--     vim.keymap.set('n', '<C-l>', require('tmux').move_right, { buffer = 0 })
+--   end,
+-- })
 
 -- Resize with arrows
 map('n', '<C-Up>', ':resize -2<CR>')
@@ -100,22 +98,5 @@ map('c', 'w!!', 'w !sudo tee % > /dev/null')
 -- Glow
 map('n', '<leader>mp', ':Glow<CR>')
 
--- Telescope
-map('n', '<C-p>', ':lua require\'user.telescope\'.project_files()<CR>')
-map('n', '<leader>g', ':Telescope live_grep<CR>')
-
 -- Neogit
 map('n', '<leader>G', ':Neogit<CR>')
-
--- Toggleterm
-function _G.set_terminal_keymaps()
-  local opts = { noremap = true }
-  vim.api.nvim_buf_set_keymap(0, 't', '<ESC>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-w>h]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-w>j]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-w>k]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-w>l]], opts)
-end
-
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')

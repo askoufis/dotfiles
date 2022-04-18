@@ -16,21 +16,23 @@ lsp_installer.on_server_ready(function(server)
 
   options.on_attach = function(client, bufnr)
     if client.resolved_capabilities.document_formatting then
-      vim.cmd([[
-        augroup LspFormatting
-            autocmd! * <buffer>
-            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-        augroup END
-        ]])
+      local lsp_formatting = vim.api.nvim_create_augroup('lsp_formatting', {})
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = '*',
+        desc = 'Format the buffer on save',
+        group = lsp_formatting,
+        callback = vim.lsp.buf.formatting_sync,
+      })
     end
 
     if server.name == 'eslint' then
-      vim.cmd([[
-        augroup LspFormatting
-            autocmd!
-            autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
-        augroup END
-        ]])
+      local eslint_fixall = vim.api.nvim_create_augroup('eslint_fixall', {})
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+        desc = 'Fix all eslint problems on save',
+        group = eslint_fixall,
+        command = 'EslintFixAll',
+      })
     end
 
     if clients_to_disable_formatting[server.name] then

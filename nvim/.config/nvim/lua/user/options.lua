@@ -67,3 +67,7 @@ vim.g.netrw_bufsettings = 'nomodifiable nomodified number nowrap readonly nobufl
 -- Misc.
 vim.opt.undolevels = 1000
 vim.opt.lazyredraw = true
+
+-- Use new filetype
+vim.g.do_filetype_lua = 1
+vim.g.did_load_filetypes = 0

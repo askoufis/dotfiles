@@ -16,17 +16,22 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd([[packadd packer.nvim]])
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
 -- Use a protected call so we don't error out the first time we require packer
 local packer = prequire('packer')
 
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+local packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {})
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = 'plugins.lua',
+  group = packer_user_config,
+  desc = 'Reload plugins.lua and sync plugins when plugins.lua is saved',
+  callback = function()
+    -- Force unload this module so we can re-require it
+    package.loaded['user.plugins'] = nil
+    require('user.plugins')
+    packer.sync()
+  end,
+})
 -- Have packer use a popup window
 packer.init {
   display = {
@@ -132,6 +137,9 @@ return packer.startup {
 
     -- Git
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
+    -- Uncomment as needed
+    -- use('dstein64/vim-startuptime')
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

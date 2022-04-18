@@ -2,15 +2,18 @@ local prequire = require('prequire')
 local telescope = prequire('telescope')
 local actions = require('telescope.actions')
 
-local M = {}
-
-M.project_files = function()
+local project_files = function()
   local opts = {} -- define here if you want to define something
   local ok = pcall(require('telescope.builtin').git_files, opts)
   if not ok then
     require('telescope.builtin').find_files(opts)
   end
 end
+
+local map = vim.keymap.set
+
+map('n', '<C-p>', project_files)
+map('n', '<leader>g', ':Telescope live_grep<CR>')
 
 telescope.setup {
   defaults = {
@@ -118,5 +121,3 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
-
-return M
