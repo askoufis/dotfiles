@@ -31,6 +31,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 -- show and column number of the cursor
 vim.opt.ruler = true
+-- Highlight the current line
+vim.opt.cursorline = true
 
 -- Text
 vim.opt.expandtab = true
