@@ -108,6 +108,7 @@ return packer.startup {
       'nvim-telescope/telescope.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
     }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- Comments
     use('numToStr/Comment.nvim') -- Comment stuff
