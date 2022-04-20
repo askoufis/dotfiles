@@ -44,19 +44,19 @@ M.setup = function()
   })
 end
 
-local function lsp_highlight_document(client)
+local function lsp_highlight_document(client, bufnr)
   -- Set autocommands conditionally depending on server_capabilities
   if client.resolved_capabilities.document_highlight then
     local lsp_document_highlight = vim.api.nvim_create_augroup('lsp_document_highlight', {})
     vim.api.nvim_create_autocmd('CursorHold', {
-      pattern = '*',
+      buffer = bufnr,
       group = lsp_document_highlight,
       callback = function()
         vim.lsp.buf.document_highlight()
       end,
     })
     vim.api.nvim_create_autocmd('CursorMoved', {
-      pattern = '*',
+      buffer = bufnr,
       group = lsp_document_highlight,
       callback = function()
         vim.lsp.buf.clear_references()
@@ -94,7 +94,7 @@ end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
+  lsp_highlight_document(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
