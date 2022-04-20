@@ -139,6 +139,9 @@ return packer.startup {
     -- Git
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
+    -- Improve startup time
+    use('lewis6991/impatient.nvim')
+
     -- Uncomment as needed
     -- use('dstein64/vim-startuptime')
 

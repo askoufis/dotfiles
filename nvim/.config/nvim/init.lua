@@ -1,5 +1,6 @@
 require('user.keymaps')
 require('user.options')
+require('user.impatient')
 require('user.plugins')
 require('user.tmux')
 require('user.telescope')
