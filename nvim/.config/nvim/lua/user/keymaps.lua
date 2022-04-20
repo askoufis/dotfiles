@@ -1,4 +1,7 @@
-local map = vim.keymap.set
+local function map(mode, l, r, opts)
+  opts = opts or { silent = true }
+  vim.keymap.set(mode, l, r, opts)
+end
 
 -- Modes
 --   normal_mode = "n",
