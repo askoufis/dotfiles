@@ -10,7 +10,10 @@ local project_files = function()
   end
 end
 
-local map = vim.keymap.set
+local function map(mode, l, r, opts)
+  opts = opts or { silent = true }
+  vim.keymap.set(mode, l, r, opts)
+end
 
 map('n', '<C-p>', project_files)
 map('n', '<leader>g', ':Telescope live_grep<CR>')

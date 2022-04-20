@@ -15,7 +15,9 @@ null_ls.setup {
         pattern = '*',
         group = null_ls_formatting,
         desc = 'Format file before saving',
-        callback = vim.lsp.buf.formatting_sync,
+        callback = function()
+          vim.lsp.buf.formatting_sync()
+        end,
       })
     end
   end,

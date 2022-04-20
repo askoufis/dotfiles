@@ -21,7 +21,9 @@ lsp_installer.on_server_ready(function(server)
         pattern = '*',
         desc = 'Format the buffer on save',
         group = lsp_formatting,
-        callback = vim.lsp.buf.formatting_sync,
+        callback = function()
+          vim.lsp.buf.formatting_sync()
+        end,
       })
     end
 

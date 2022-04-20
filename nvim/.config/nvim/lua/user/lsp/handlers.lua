@@ -51,43 +51,45 @@ local function lsp_highlight_document(client)
     vim.api.nvim_create_autocmd('CursorHold', {
       pattern = '*',
       group = lsp_document_highlight,
-      callback = vim.lsp.buf.document_highlight,
+      callback = function()
+        vim.lsp.buf.document_highlight()
+      end,
     })
     vim.api.nvim_create_autocmd('CursorMoved', {
       pattern = '*',
       group = lsp_document_highlight,
-      callback = vim.lsp.buf.clear_references,
+      callback = function()
+        vim.lsp.buf.clear_references()
+      end,
     })
   end
 end
 
 local function lsp_keymaps(bufnr)
   local function map(mode, l, r, opts)
-    opts = opts or {}
+    opts = opts or { silent = true }
     opts.buffer = bufnr
     vim.keymap.set(mode, l, r, opts)
   end
 
-  local opts = { silent = true }
-
-  map('n', 'gD', vim.lsp.buf.declaration, opts)
-  map('n', 'gd', vim.lsp.buf.definition, opts)
-  map('n', 'gh', vim.lsp.buf.hover, opts)
-  map('n', 'gi', vim.lsp.buf.implementation, opts)
-  map('n', '<C-s>', vim.lsp.buf.signature_help, opts)
-  map('n', '<F2>', vim.lsp.buf.rename, opts) -- Too used to vscode
-  map('n', 'gr', vim.lsp.buf.references, opts)
-  map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+  map('n', 'gD', vim.lsp.buf.declaration)
+  map('n', 'gd', vim.lsp.buf.definition)
+  map('n', 'gh', vim.lsp.buf.hover)
+  map('n', 'gi', vim.lsp.buf.implementation)
+  map('n', '<C-s>', vim.lsp.buf.signature_help)
+  map('n', '<F2>', vim.lsp.buf.rename) -- Too used to vscode
+  map('n', 'gr', vim.lsp.buf.references)
+  map('n', '<leader>ca', vim.lsp.buf.code_action)
   map('n', '[d', function()
     vim.diagnostic.goto_prev { border = 'rounded' }
-  end, opts)
+  end)
   map('n', ']d', function()
     vim.diagnostic.goto_next { border = 'rounded' }
-  end, opts)
-  map('n', 'gl', vim.diagnostic.open_float, opts)
-  map('n', '<leader>q', vim.diagnostic.setloclist, opts)
-  map('n', '<leader>f', vim.lsp.buf.formatting_sync, opts)
-  map('n', '<leader>lr', ':LspRestart<CR>', opts)
+  end)
+  map('n', 'gl', vim.diagnostic.open_float)
+  map('n', '<leader>q', vim.diagnostic.setloclist)
+  map('n', '<leader>f', vim.lsp.buf.formatting_sync)
+  map('n', '<leader>lr', ':LspRestart<CR>')
 end
 
 M.on_attach = function(client, bufnr)
