@@ -9,6 +9,7 @@ return {
       schemas = prequire('schemastore').json.schemas {
         select = {
           'package.json',
+          'tsconfig.json',
         },
       },
     },
