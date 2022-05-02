@@ -9,6 +9,9 @@ vim.g.nvim_tree_special_files = {}
 -- Compact folders that only contain a single folder into one node in the file tree
 vim.g.nvim_tree_group_empty = 1
 
+-- Highlight files based on git status
+vim.g.nvim_tree_git_hl = 1
+
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
@@ -68,7 +71,6 @@ nvim_tree.setup {
     height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = true,
     mappings = {
       custom_only = false,
       list = {
@@ -85,14 +87,5 @@ nvim_tree.setup {
   trash = {
     cmd = 'trash',
     require_confirm = true,
-  },
-  git_hl = 1,
-  root_folder_modifier = ':t',
-  show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1,
-    tree_width = 30,
   },
 }
