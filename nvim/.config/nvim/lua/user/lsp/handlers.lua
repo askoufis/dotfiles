@@ -88,7 +88,7 @@ local function lsp_keymaps(bufnr)
   end)
   map('n', 'gl', vim.diagnostic.open_float)
   map('n', '<leader>q', vim.diagnostic.setloclist)
-  map('n', '<leader>f', vim.lsp.buf.formatting_sync)
+  map('n', '<leader>f', vim.lsp.buf.formatting)
   map('n', '<leader>lr', ':LspRestart<CR>')
 end
 

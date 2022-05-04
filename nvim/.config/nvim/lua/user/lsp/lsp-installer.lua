@@ -2,7 +2,7 @@ local prequire = require('prequire')
 local lsp_installer = prequire('nvim-lsp-installer')
 
 -- Use a table with keys to true so the lookup is easy
-local clients_to_disable_formatting = { tsserver = true, jsonls = true }
+local clients_to_disable_formatting = { tsserver = true, jsonls = true, sumneko_lua = true }
 
 -- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
 -- or if the server is already installed).
