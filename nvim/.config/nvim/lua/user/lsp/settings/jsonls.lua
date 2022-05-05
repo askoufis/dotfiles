@@ -1,8 +1,5 @@
 local prequire = require('prequire')
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 return {
   settings = {
     json = {
@@ -23,5 +20,13 @@ return {
       },
     },
   },
-  capabilities = capabilities,
+  capabilities = {
+    textDocument = {
+      completion = {
+        completionItem = {
+          snippetSupport = true,
+        },
+      },
+    },
+  },
 }
