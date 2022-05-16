@@ -15,6 +15,11 @@ lsp_installer.on_server_ready(function(server)
   }
 
   options.on_attach = function(client, bufnr)
+    if clients_to_disable_formatting[server.name] then
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+    end
+
     if client.resolved_capabilities.document_formatting then
       local lsp_formatting = vim.api.nvim_create_augroup('lsp_formatting', {})
       vim.api.nvim_create_autocmd('BufWritePre', {
@@ -35,11 +40,6 @@ lsp_installer.on_server_ready(function(server)
         group = eslint_fixall,
         command = 'EslintFixAll',
       })
-    end
-
-    if clients_to_disable_formatting[server.name] then
-      client.resolved_capabilities.document_formatting = false
-      client.resolved_capabilities.document_range_formatting = false
     end
 
     common_on_attach(client, bufnr)
