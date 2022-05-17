@@ -74,6 +74,18 @@ vim.opt.lazyredraw = true
 vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
 
--- Colors
+-- Moonfly
 vim.g.moonflyNormalFloat = 1
 vim.g.moonflyCursorColor = 1
+-- Line separators
+vim.g.moonflyWinSeparator = 2
+-- Better line separators
+vim.opt.fillchars = {
+  horiz = '━',
+  horizup = '┻',
+  horizdown = '┳',
+  vert = '┃',
+  vertleft = '┫',
+  vertright = '┣',
+  verthoriz = '╋',
+}
