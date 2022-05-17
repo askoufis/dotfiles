@@ -134,7 +134,7 @@ return packer.startup {
     use('akinsho/toggleterm.nvim')
 
     -- Navigation
-    use('ggandor/lightspeed.nvim')
+    use('ggandor/leap.nvim')
 
     -- Git
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
