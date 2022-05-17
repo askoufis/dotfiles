@@ -4,6 +4,10 @@ local luasnip = prequire('luasnip')
 
 require('luasnip/loaders/from_vscode').lazy_load()
 
+local winhighlight = {
+  winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel',
+}
+
 local check_backspace = function()
   local col = vim.fn.col('.') - 1
   return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
@@ -141,9 +145,8 @@ cmp.setup {
     select = false,
   },
   window = {
-    documentation = {
-      border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
-    },
+    completion = cmp.config.window.bordered(winhighlight),
+    documentation = cmp.config.window.bordered(winhighlight),
   },
   experimental = {
     ghost_text = false,
