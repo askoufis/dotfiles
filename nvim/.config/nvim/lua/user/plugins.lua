@@ -142,6 +142,9 @@ return packer.startup {
     -- Improve startup time
     use('lewis6991/impatient.nvim')
 
+    -- Notifications
+    use('rcarriga/nvim-notify')
+
     -- Uncomment as needed
     -- use('dstein64/vim-startuptime')
 
