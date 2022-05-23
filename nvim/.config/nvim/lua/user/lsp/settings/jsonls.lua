@@ -3,6 +3,7 @@ local prequire = require('prequire')
 return {
   settings = {
     json = {
+      validate = { enable = true },
       schemas = prequire('schemastore').json.schemas {
         select = {
           'package.json',
