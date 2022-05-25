@@ -131,7 +131,7 @@ return packer.startup {
     use('lukas-reineke/indent-blankline.nvim')
 
     -- For sxhkd highlighting
-    use('baskerville/vim-sxhkdrc')
+    use { 'baskerville/vim-sxhkdrc', ft = 'sxhkdrc' }
 
     -- Toggleterm
     use('akinsho/toggleterm.nvim')
