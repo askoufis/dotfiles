@@ -111,7 +111,7 @@ return packer.startup {
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- Comments
-    use('numToStr/Comment.nvim') -- Comment stuff
+    use('numToStr/Comment.nvim')
 
     -- TMUX navigaion
     use('aserowy/tmux.nvim')
@@ -145,6 +145,7 @@ return packer.startup {
     -- Notifications
     use('rcarriga/nvim-notify')
 
+    -- Measure startup time
     -- Uncomment as needed
     -- use('dstein64/vim-startuptime')
 
