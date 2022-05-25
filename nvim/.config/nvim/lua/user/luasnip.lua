@@ -7,3 +7,4 @@ ls.config.set_config {
 }
 
 prequire('luasnip.loaders.from_lua').load { paths = './lua/user/snippets' }
+ls.filetype_extend('typescriptreact', { 'typescript' })

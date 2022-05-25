@@ -1,7 +1,7 @@
 return {
   s(
     'clog',
-    fmt('console.log({{{}}})', {
+    fmt('console.log({{ {} }})', {
       i(1),
     })
   ),
