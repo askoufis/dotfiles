@@ -103,3 +103,6 @@ map('n', '<leader>mp', ':Glow<CR>')
 
 -- Neogit
 map('n', '<leader>G', ':Neogit<CR>')
+
+-- Luasnip
+map('n', '<leader><leader>s', '<cmd>source ~/.config/nvim/lua/user/luasnip.lua<CR>')
