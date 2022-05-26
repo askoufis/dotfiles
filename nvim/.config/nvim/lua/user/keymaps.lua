@@ -105,4 +105,7 @@ map('n', '<leader>mp', ':Glow<CR>')
 map('n', '<leader>G', ':Neogit<CR>')
 
 -- Luasnip
-map('n', '<leader><leader>s', '<cmd>source ~/.config/nvim/lua/user/luasnip.lua<CR>')
+map('n', '<leader><leader>s', ':source ~/.config/nvim/lua/user/luasnip.lua<CR>')
+
+-- Run the current file
+map('n', '<leader><leader>x', ':w<CR>:source %<CR>')
