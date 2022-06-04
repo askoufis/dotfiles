@@ -1,6 +1,4 @@
-local prequire = require('prequire')
-
-local nvim_tree = prequire('nvim-tree')
+local nvim_tree = require('nvim-tree')
 
 nvim_tree.setup {
   ignore_ft_on_setup = {

@@ -1,5 +1,4 @@
-local prequire = require('prequire')
-local tmux = prequire('tmux')
+local tmux = require('tmux')
 
 tmux.setup {
   navigation = {

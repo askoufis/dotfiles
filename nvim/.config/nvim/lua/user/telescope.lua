@@ -1,5 +1,4 @@
-local prequire = require('prequire')
-local telescope = prequire('telescope')
+local telescope = require('telescope')
 local actions = require('telescope.actions')
 
 local project_files = function()

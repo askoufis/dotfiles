@@ -1,6 +1,5 @@
-local prequire = require('prequire')
-local cmp = prequire('cmp')
-local luasnip = prequire('luasnip')
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 require('luasnip/loaders/from_vscode').lazy_load()
 

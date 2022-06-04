@@ -147,7 +147,7 @@ return packer.startup {
 
     -- Measure startup time
     -- Uncomment as needed
-    -- use('dstein64/vim-startuptime')
+    use('dstein64/vim-startuptime')
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

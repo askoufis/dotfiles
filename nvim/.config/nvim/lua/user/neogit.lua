@@ -1,4 +1,3 @@
-local prequire = require('prequire')
-local neogit = prequire('neogit')
+local neogit = require('neogit')
 
 neogit.setup {}

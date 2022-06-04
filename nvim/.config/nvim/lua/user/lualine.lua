@@ -1,9 +1,8 @@
-local prequire = require('prequire')
-
 -- Simple config
 -- require('lualine').setup({options = {icons_enabled = false, theme = 'moonfly'}})
+local lualine = require('lualine')
 
-prequire('lualine').setup {
+lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'moonfly',

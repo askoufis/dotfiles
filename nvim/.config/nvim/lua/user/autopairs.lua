@@ -1,5 +1,4 @@
-local prequire = require('prequire')
-local autopairs = prequire('nvim-autopairs')
+local autopairs = require('nvim-autopairs')
 
 autopairs.setup {
   check_ts = true,
@@ -23,6 +22,6 @@ autopairs.setup {
 }
 
 local autopairs_cmp = require('nvim-autopairs.completion.cmp')
-local cmp = prequire('cmp')
+local cmp = require('cmp')
 
 cmp.event:on('confirm_done', autopairs_cmp.on_confirm_done { map_char = { tex = '' } })

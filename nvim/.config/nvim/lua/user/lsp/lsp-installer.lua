@@ -1,5 +1,4 @@
-local prequire = require('prequire')
-local lsp_installer = prequire('nvim-lsp-installer')
+local lsp_installer = require('nvim-lsp-installer')
 
 -- Use a table with keys to true so the lookup is easy
 local clients_to_disable_formatting = { tsserver = true, jsonls = true, html = true, sumneko_lua = true }

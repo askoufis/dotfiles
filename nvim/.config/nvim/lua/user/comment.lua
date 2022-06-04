@@ -1,5 +1,4 @@
-local prequire = require('prequire')
-local comment = prequire('Comment')
+local comment = require('Comment')
 
 comment.setup {
   pre_hook = function(ctx)

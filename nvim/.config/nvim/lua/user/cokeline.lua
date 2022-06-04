@@ -1,5 +1,4 @@
-local prequire = require('prequire')
-local cokeline = prequire('cokeline')
+local cokeline = require('cokeline')
 
 local get_hex = require('cokeline/utils').get_hex
 local mappings = require('cokeline/mappings')

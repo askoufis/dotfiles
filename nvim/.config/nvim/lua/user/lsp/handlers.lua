@@ -1,4 +1,3 @@
-local prequire = require('prequire')
 local M = {}
 
 -- TODO: backfill this to template
@@ -99,7 +98,7 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local cmp_nvim_lsp = prequire('cmp_nvim_lsp')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 

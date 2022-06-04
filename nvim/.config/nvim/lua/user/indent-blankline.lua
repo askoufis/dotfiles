@@ -1,5 +1,4 @@
-local prequire = require('prequire')
-local indent_blankline = prequire('indent_blankline')
+local indent_blankline = require('indent_blankline')
 
 vim.cmd([[highlight IndentBlanklineContextChar guifg=#626262 gui=nocombine]]) -- MoonflyGrey241
 

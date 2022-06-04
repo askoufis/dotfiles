@@ -1,5 +1,4 @@
-local prequire = require('prequire')
-local gitsigns = prequire('gitsigns')
+local gitsigns = require('gitsigns')
 
 gitsigns.setup {
   signs = {

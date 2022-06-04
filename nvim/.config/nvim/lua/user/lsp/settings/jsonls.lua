@@ -1,10 +1,8 @@
-local prequire = require('prequire')
-
 return {
   settings = {
     json = {
       validate = { enable = true },
-      schemas = prequire('schemastore').json.schemas {
+      schemas = require('schemastore').json.schemas {
         select = {
           'package.json',
           'tsconfig.json',
