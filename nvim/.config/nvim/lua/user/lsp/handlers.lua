@@ -1,6 +1,5 @@
 local M = {}
 
--- TODO: backfill this to template
 M.setup = function()
   local signs = {
     { name = 'DiagnosticSignError', text = '' },
@@ -12,6 +11,7 @@ M.setup = function()
   for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
   end
+
   local config = {
     -- disable virtual text
     virtual_text = false,
@@ -91,9 +91,28 @@ local function lsp_keymaps(bufnr)
   map('n', '<leader>lr', ':LspRestart<CR>')
 end
 
-M.on_attach = function(client, bufnr)
-  lsp_keymaps(bufnr)
-  lsp_highlight_document(client, bufnr)
+M.on_attach = function(options)
+  return function(client, bufnr)
+    lsp_keymaps(bufnr)
+    lsp_highlight_document(client, bufnr)
+
+    if options.disable_formatting then
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+    end
+
+    if client.resolved_capabilities.document_formatting then
+      local lsp_formatting = vim.api.nvim_create_augroup('lsp_formatting', {})
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = '*',
+        desc = 'Format the buffer on save',
+        group = lsp_formatting,
+        callback = function()
+          vim.lsp.buf.formatting_sync()
+        end,
+      })
+    end
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

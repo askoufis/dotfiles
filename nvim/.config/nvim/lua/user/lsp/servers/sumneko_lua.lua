@@ -2,7 +2,11 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-return {
+local lspconfig = require('lspconfig')
+local common_on_attach = require('user.lsp.handlers').on_attach
+
+lspconfig.sumneko_lua.setup {
+  on_attach = common_on_attach { disable_formatting = true },
   settings = {
     Lua = {
       runtime = {

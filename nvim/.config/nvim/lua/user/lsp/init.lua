@@ -1,5 +1,11 @@
-require('lspconfig')
-
 require('user.lsp.lsp-installer')
 require('user.lsp.handlers').setup()
 require('user.lsp.null-ls')
+
+-- LSP Server setup
+require('user.lsp.servers.eslint')
+require('user.lsp.servers.html')
+require('user.lsp.servers.jsonls')
+require('user.lsp.servers.sumneko_lua')
+require('user.lsp.servers.tsserver')
+require('user.lsp.servers.yamlls')
