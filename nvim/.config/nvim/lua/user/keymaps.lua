@@ -109,3 +109,10 @@ map('n', '<leader><leader>s', ':source ~/.config/nvim/lua/user/luasnip.lua<CR>')
 
 -- Run the current file
 map('n', '<leader><leader>x', ':w<CR>:source %<CR>')
+
+-- Better keymaps for increment and decrement
+map('n', '+', '<C-a>')
+map('n', '-', '<C-x>')
+-- Keep the visual selection after incrementing/decrementing
+map('x', '+', 'g<C-a>gv')
+map('x', '-', 'g<C-x>gv')
