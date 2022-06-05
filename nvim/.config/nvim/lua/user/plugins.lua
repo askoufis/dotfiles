@@ -74,7 +74,7 @@ return packer.startup {
     -- markdown renderer
     use {
       'ellisonleao/glow.nvim',
-      cmd = 'Glow',
+      ft = 'markdown',
     }
 
     use {
