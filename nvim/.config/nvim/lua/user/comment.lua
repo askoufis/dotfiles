@@ -6,9 +6,6 @@ comment.setup {
     if vim.bo.filetype == 'typescriptreact' then
       local U = require('Comment.utils')
 
-      -- Detemine whether to use linewise or blockwise commentstring
-      local type = ctx.ctype == U.ctype.line and '__default' or '__multiline'
-
       -- Determine the location where to calculate commentstring from
       local location = nil
 
@@ -18,17 +15,13 @@ comment.setup {
         location = require('ts_context_commentstring.utils').get_visual_start_location()
       end
 
+      -- Detemine whether to use linewise or blockwise commentstring
+      local type = ctx.ctype == U.ctype.line and '__default' or '__multiline'
+
       return require('ts_context_commentstring.internal').calculate_commentstring {
         key = type,
         location = location,
       }
     end
   end,
-  -- post_hook = function(ctx)
-  --   if ctx.range.srow == ctx.range.erow then
-  --     -- do something with the current line
-  --   else
-  --     -- do something with lines range
-  --   end
-  -- end
 }
