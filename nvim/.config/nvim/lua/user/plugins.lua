@@ -144,6 +144,7 @@ return packer.startup {
 
     -- Notifications
     use('rcarriga/nvim-notify')
+    use { 'chr4/nginx.vim', ft = 'nginx' }
 
     -- Measure startup time
     -- Uncomment as needed
