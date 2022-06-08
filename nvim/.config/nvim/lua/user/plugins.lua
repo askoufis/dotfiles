@@ -144,7 +144,11 @@ return packer.startup {
 
     -- Notifications
     use('rcarriga/nvim-notify')
+
     use { 'chr4/nginx.vim', ft = 'nginx' }
+
+    -- Workaround for https://github.com/neovim/neovim/issues/12587
+    use { 'antoinemadec/FixCursorHold.nvim' }
 
     -- Measure startup time
     -- Uncomment as needed
