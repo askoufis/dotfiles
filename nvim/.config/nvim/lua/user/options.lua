@@ -96,3 +96,6 @@ vim.opt.fillchars = {
   vertright = '┣',
   verthoriz = '╋',
 }
+
+-- For FixCursorHold.nvim
+vim.g.cursorhold_updatetime = 100
