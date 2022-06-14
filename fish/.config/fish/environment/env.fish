@@ -24,3 +24,7 @@ set fish_greeting
 
 set -x -g VOLTA_HOME $HOME/.local/share/.volta
 fish_add_path $VOLTA_HOME/bin
+
+# Ensure prettierd uses the local version of prettier
+# https://github.com/fsouza/prettierd#local-instance
+set -x -g PRETTIERD_LOCAL_PRETTIER_ONLY true
