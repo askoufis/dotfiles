@@ -134,8 +134,7 @@ return packer.startup {
     use { 'baskerville/vim-sxhkdrc', ft = 'sxhkdrc' }
 
     -- Navigation
-    -- Not using it much, keeping it around for another time
-    -- use('ggandor/leap.nvim')
+    use('ggandor/leap.nvim')
 
     -- Git
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
