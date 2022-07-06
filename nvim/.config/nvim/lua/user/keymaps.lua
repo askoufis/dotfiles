@@ -59,6 +59,21 @@ for i = 1, 9 do
   map('n', ('<Leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i), { noremap = false })
 end
 
+-- Delete all buffers except for the current buffer
+local delete_other_buffers = function()
+  local buffers = vim.api.nvim_list_bufs()
+  local current_bufnr = vim.api.nvim_get_current_buf()
+
+  for _, bufnr in ipairs(buffers) do
+    if vim.api.nvim_buf_is_loaded(bufnr) and not (bufnr == current_bufnr) then
+      vim.api.nvim_buf_delete(bufnr, {})
+    end
+  end
+end
+map('n', '<leader>bo', delete_other_buffers)
+-- Delete all buffers
+map('n', '<leader>bd', ':bufdo bdelete<CR>')
+
 -- Visual
 -- Stay in indent mode
 map('v', '<', '<gv')
