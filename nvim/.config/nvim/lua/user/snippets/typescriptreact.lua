@@ -8,7 +8,7 @@
 -- Then this function would return `{"prop1", "prop2"}
 ---@param id_node {} Stands for "interface declaration node"
 ---@return string[]
-local function get_prop_names(id_node)
+local get_prop_names = function(id_node)
   local object_type_node = id_node:child(2)
   if object_type_node:type() ~= 'object_type' then
     return {}

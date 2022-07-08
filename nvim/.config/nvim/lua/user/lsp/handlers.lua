@@ -43,7 +43,7 @@ M.setup = function()
   })
 end
 
-local function lsp_highlight_document(client, bufnr)
+local lsp_highlight_document = function(client, bufnr)
   -- Set autocommands conditionally depending on server_capabilities
   if client.resolved_capabilities.document_highlight then
     local lsp_document_highlight = vim.api.nvim_create_augroup('lsp_document_highlight', {})
@@ -64,8 +64,8 @@ local function lsp_highlight_document(client, bufnr)
   end
 end
 
-local function lsp_keymaps(bufnr)
-  local function map(mode, l, r, opts)
+local lsp_keymaps = function(bufnr)
+  local map = function(mode, l, r, opts)
     opts = opts or { silent = true }
     opts.buffer = bufnr
     vim.keymap.set(mode, l, r, opts)
