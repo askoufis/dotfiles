@@ -72,7 +72,7 @@ local delete_other_buffers = function()
 end
 map('n', '<leader>bo', delete_other_buffers)
 -- Delete all buffers
-map('n', '<leader>bd', ':bufdo bdelete<CR>')
+map('n', '<leader>bd', ':%bd<CR>')
 
 -- Visual
 -- Stay in indent mode
