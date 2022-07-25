@@ -96,7 +96,8 @@ return packer.startup {
 
     -- LSP
     use('neovim/nvim-lspconfig') -- Main LSP plugin
-    use('williamboman/nvim-lsp-installer') -- Easy to use language server installer
+    use('williamboman/mason.nvim') -- Package manager
+    use('williamboman/mason-lspconfig.nvim') -- Language server mason plugin
     use('j-hui/fidget.nvim')
     use('jose-elias-alvarez/null-ls.nvim')
 

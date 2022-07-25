@@ -1,6 +1,18 @@
-local lsp_installer = require('nvim-lsp-installer')
+local mason = require('mason')
 
-lsp_installer.setup {}
+mason.setup {
+  ui = {
+    icons = {
+      package_installed = '✓',
+    },
+  },
+}
+
+local masonLspconfig = require('mason-lspconfig')
+
+masonLspconfig.setup {
+  ensure_installed = { 'sumneko_lua', 'eslint', 'html', 'jsonls', 'tsserver', 'yamlls' },
+}
 
 local lspconfig = require('lspconfig')
 
