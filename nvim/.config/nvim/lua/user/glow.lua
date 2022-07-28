@@ -1,2 +1,6 @@
-vim.g.glow_border = 'rounded'
-vim.g.glow_style = 'dark'
+local glow = require('glow')
+
+glow.setup {
+  border = 'rounded',
+  style = 'dark',
+}
