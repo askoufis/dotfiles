@@ -13,7 +13,8 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
 - [ripgrep]
 - [fd]
 - [glow]
-- [prettierd]
+- [prettierd]: Install via [`:Mason`][mason]
+- [stylua]: Install via [`:Mason`][mason]
 
 [fish shell]: https://fishshell.com/
 [gnu stow]: https://www.gnu.org/software/stow/
@@ -22,6 +23,8 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
 [fd]: https://github.com/sharkdp/fd
 [glow]: https://github.com/charmbracelet/glow
 [prettierd]: https://github.com/fsouza/prettierd
+[stylua]: https://github.com/JohnnyMorganz/StyLua
+[mason]: https://github.com/williamboman/mason.nvim
 
 ## Installation
 
