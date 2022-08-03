@@ -1,13 +1,3 @@
-local mason = require('mason')
-
-mason.setup {
-  ui = {
-    icons = {
-      package_installed = '✓',
-    },
-  },
-}
-
 local masonLspconfig = require('mason-lspconfig')
 
 masonLspconfig.setup {
