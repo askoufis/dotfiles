@@ -138,9 +138,6 @@ return packer.startup {
     -- Improve startup time
     use('lewis6991/impatient.nvim')
 
-    -- Notifications
-    use('rcarriga/nvim-notify')
-
     use { 'chr4/nginx.vim', ft = 'nginx' }
 
     -- Workaround for https://github.com/neovim/neovim/issues/12587

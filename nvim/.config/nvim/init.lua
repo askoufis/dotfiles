@@ -22,7 +22,6 @@ require('user.fidget')
 require('user.indent-blankline')
 require('user.neogit')
 require('user.leap')
-require('user.notify')
 require('user.luasnip')
 
 require('globals')
