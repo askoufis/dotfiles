@@ -53,7 +53,10 @@ return packer.startup {
     -- colorschemes
     use('bluz71/vim-moonfly-colors')
 
-    use('windwp/nvim-autopairs') -- Autopairs, integrates with both cmp and treesitter
+    -- Autopairs, integrates with both cmp and treesitter
+    use('windwp/nvim-autopairs')
+    -- Autocomplete xml tags
+    use('windwp/nvim-ts-autotag')
 
     -- status line
     use {

@@ -27,6 +27,9 @@ configs.setup {
   autopairs = {
     enable = true,
   },
+  autotag = {
+    enable = true,
+  },
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { '' }, -- list of languages to disable
