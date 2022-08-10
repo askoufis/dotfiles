@@ -19,6 +19,14 @@ end
 -- Use a protected call so we don't error out the first time we require packer
 local packer = prequire('packer')
 
+local print_plugin_name = function(plugin_name)
+  print(string.format('Plugin name: %s', plugin_name))
+end
+
+local lua_path = function(name)
+  return string.format('require\'plugins.%s\'', name)
+end
+
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 local packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {})
 vim.api.nvim_create_autocmd('BufWritePost', {
