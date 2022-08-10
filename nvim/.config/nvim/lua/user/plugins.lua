@@ -42,6 +42,8 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 -- Have packer use a popup window
 packer.init {
+  -- Just in case I get rate-limited by github
+  -- max_jobs = 1,
   display = {
     open_fn = function()
       return require('packer.util').float { border = 'rounded' }
