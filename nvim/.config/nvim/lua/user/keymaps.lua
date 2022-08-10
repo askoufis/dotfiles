@@ -65,11 +65,14 @@ end
 -- Delete all buffers except for the current buffer
 local delete_other_buffers = function()
   local buffers = vim.api.nvim_list_bufs()
-  local current_bufnr = vim.api.nvim_get_current_buf()
+  local current_buffer = vim.api.nvim_get_current_buf()
 
-  for _, bufnr in ipairs(buffers) do
-    if vim.api.nvim_buf_is_loaded(bufnr) and not (bufnr == current_bufnr) then
-      vim.api.nvim_buf_delete(bufnr, {})
+  for _, buffer in ipairs(buffers) do
+    local is_loaded = vim.api.nvim_buf_is_loaded(buffer)
+    local is_current_buffer = buffer == current_buffer
+
+    if is_loaded and not is_current_buffer then
+      vim.api.nvim_buf_delete(buffer, {})
     end
   end
 end
