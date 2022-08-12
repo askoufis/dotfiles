@@ -1,17 +1,28 @@
 local lspconfig = require('lspconfig')
 local common_on_attach = require('user.lsp.handlers').on_attach
 
+local schemas = require('schemastore').json.schemas {
+  select = {
+    'package.json',
+    'tsconfig.json',
+  },
+}
+-- Schema object from https://github.com/b0o/SchemaStore.nvim/blob/main/lua/schemastore/catalog.lua#L596
+local nx_schema = {
+  description = 'JSON schema for nx.json file',
+  fileMatch = { 'nx.json' },
+  name = 'nx.json',
+  url = 'https://raw.githubusercontent.com/nrwl/nx/master/packages/nx/schemas/nx-schema.json',
+}
+
+table.insert(schemas, nx_schema)
+
 lspconfig.jsonls.setup {
   on_attach = common_on_attach { disable_formatting = true },
   settings = {
     json = {
       validate = { enable = true },
-      schemas = require('schemastore').json.schemas {
-        select = {
-          'package.json',
-          'tsconfig.json',
-        },
-      },
+      schemas = schemas,
     },
   },
   setup = {
