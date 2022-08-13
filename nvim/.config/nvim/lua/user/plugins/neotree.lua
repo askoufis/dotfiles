@@ -30,7 +30,6 @@ require('neo-tree').setup {
     },
   },
   mappings = {
-    ['l'] = 'open',
     ['s'] = 'open_split',
     ['v'] = 'open_vsplit',
   },
