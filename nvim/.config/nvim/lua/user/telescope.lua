@@ -2,7 +2,7 @@ local telescope = require('telescope')
 local actions = require('telescope.actions')
 
 local project_files = function()
-  local opts = { hidden = true }
+  local opts = { hidden = true, show_untracked = true }
   local ok = pcall(require('telescope.builtin').git_files, opts)
   if not ok then
     require('telescope.builtin').find_files(opts)
