@@ -19,12 +19,8 @@ end
 -- Use a protected call so we don't error out the first time we require packer
 local packer = prequire('packer')
 
-local print_plugin_name = function(plugin_name)
-  print(string.format('Plugin name: %s', plugin_name))
-end
-
-local lua_path = function(name)
-  return string.format('require\'plugins.%s\'', name)
+local from_plugin_file = function(name)
+  return string.format('require\'user.plugins.%s\'', name)
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -58,13 +54,12 @@ return packer.startup {
 
     -- An implementation of the popup API from vim in neovim
     use('nvim-lua/popup.nvim')
-    -- Useful lua functions used by a lot of plugins
 
     -- colorschemes
     use('bluz71/vim-moonfly-colors')
 
     -- Autopairs, integrates with both cmp and treesitter
-    use('windwp/nvim-autopairs')
+    use { 'windwp/nvim-autopairs', config = from_plugin_file('autopairs') }
     -- Autocomplete xml tags
     use('windwp/nvim-ts-autotag')
 
@@ -76,8 +71,14 @@ return packer.startup {
 
     -- File tree
     use {
-      'kyazdani42/nvim-tree.lua',
-      requires = { 'kyazdani42/nvim-web-devicons' },
+      'nvim-neo-tree/neo-tree.nvim',
+      branch = 'v2.x',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
+        'MunifTanjim/nui.nvim',
+      },
+      config = from_plugin_file('neotree'),
     }
 
     -- Treesitter
