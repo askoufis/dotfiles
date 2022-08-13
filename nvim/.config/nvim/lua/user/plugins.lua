@@ -19,10 +19,6 @@ end
 -- Use a protected call so we don't error out the first time we require packer
 local packer = prequire('packer')
 
-local from_plugin_file = function(name)
-  return string.format('require\'user.plugins.%s\'', name)
-end
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 local packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {})
 vim.api.nvim_create_autocmd('BufWritePost', {
@@ -59,7 +55,7 @@ return packer.startup {
     use('bluz71/vim-moonfly-colors')
 
     -- Autopairs, integrates with both cmp and treesitter
-    use { 'windwp/nvim-autopairs', config = from_plugin_file('autopairs') }
+    use { 'windwp/nvim-autopairs' }
     -- Autocomplete xml tags
     use('windwp/nvim-ts-autotag')
 
@@ -78,7 +74,6 @@ return packer.startup {
         'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
         'MunifTanjim/nui.nvim',
       },
-      config = from_plugin_file('neotree'),
     }
 
     -- Treesitter
