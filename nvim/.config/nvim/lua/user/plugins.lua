@@ -153,8 +153,8 @@ return packer.startup {
     use { 'antoinemadec/FixCursorHold.nvim' }
 
     -- Measure startup time
-    -- Uncomment as needed
-    -- use('dstein64/vim-startuptime')
+    -- Enable as needed
+    use { 'dstein64/vim-startuptime', disable = true }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
