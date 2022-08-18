@@ -12,6 +12,8 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
 end
 
+local disable_cmp_in = { TelescopePrompt = true }
+
 local kind_icons = {
   Text = '',
   Method = 'm',
@@ -45,7 +47,7 @@ local enable_cmp = function()
   -- keep command mode completion enabled when cursor is in a comment
   if vim.api.nvim_get_mode().mode == 'c' then
     return true
-  elseif vim.bo.filetype == 'TelescopePrompt' then
+  elseif disable_cmp_in[vim.bo.filetype] then
     return false
   else
     -- disable completion inside a comment
