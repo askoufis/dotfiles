@@ -1,4 +1,4 @@
-set -x -g STOW_FOLDERS alacritty alacritty-mac nvim fish fish-mac tmux
+set -x -g STOW_FOLDERS alacritty alacritty-mac nvim fish fish-mac tmux tmuxinator
 
 # Bun
 set -Ux BUN_INSTALL "/Users/askoufis/.bun"
