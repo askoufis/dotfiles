@@ -1,0 +1,19 @@
+# /Users/askoufis/.config/tmuxinator/work.yml
+
+name: work
+root: ~/
+
+windows:
+  - fep:
+      root: ~/code/fep
+      panes:
+        - null
+  - fep2:
+      root: ~/code/fep
+      panes:
+        - null
+  - scratch: null
+  - dotfiles:
+      root: ~/code/askoufis/dotfiles
+      panes:
+        - vim
