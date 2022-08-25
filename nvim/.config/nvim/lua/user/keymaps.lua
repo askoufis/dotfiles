@@ -22,20 +22,6 @@ vim.g.maplocalleader = ' '
 map('n', 'j', 'gj')
 map('n', 'k', 'gk')
 
--- Overwrite <C-l> within netrw to it doesn't refresh the terminal
--- https://github.com/christoomey/vim-tmux-navigator/issues/189#issuecomment-620485838
--- NvimTree has its own filetype even though it hijacks netrw, but worth keeping this around just in case
--- local netrw_mapping = vim.api.nvim_create_augroup('netrw_mapping', {})
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = 'netrw',
---   group = netrw_mapping,
---   callback = function(args)
---     vim.notify(vim.inspect(args))
---     vim.notify(tostring(args.buf))
---     vim.keymap.set('n', '<C-l>', require('tmux').move_right, { buffer = 0 })
---   end,
--- })
-
 -- Resize with arrows
 map('n', '<C-Up>', ':resize -2<CR>')
 map('n', '<C-Down>', ':resize +2<CR>')
