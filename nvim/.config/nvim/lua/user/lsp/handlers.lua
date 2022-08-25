@@ -46,10 +46,9 @@ end
 local lsp_highlight_document = function(client, bufnr)
   -- Set autocommands conditionally depending on server_capabilities
   if client.resolved_capabilities.document_highlight then
-    local lsp_document_highlight = vim.api.nvim_create_augroup('lsp_document_highlight', {})
     vim.api.nvim_create_autocmd('CursorHold', {
       buffer = bufnr,
-      group = lsp_document_highlight,
+      group = vim.api.nvim_create_augroup('lsp_document_highlight', {}),
       callback = function()
         vim.lsp.buf.document_highlight()
       end,
@@ -102,11 +101,10 @@ M.on_attach = function(options)
     end
 
     if client.resolved_capabilities.document_formatting then
-      local lsp_formatting = vim.api.nvim_create_augroup('lsp_formatting', {})
       vim.api.nvim_create_autocmd('BufWritePre', {
         pattern = '*',
         desc = 'Format the buffer on save',
-        group = lsp_formatting,
+        group = vim.api.nvim_create_augroup('lsp_formatting', {}),
         callback = function()
           vim.lsp.buf.formatting_sync()
         end,

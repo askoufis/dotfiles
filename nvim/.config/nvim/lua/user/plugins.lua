@@ -20,10 +20,9 @@ end
 local packer = prequire('packer')
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-local packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {})
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = 'plugins.lua',
-  group = packer_user_config,
+  group = vim.api.nvim_create_augroup('packer_user_config', {}),
   desc = 'Reload plugins.lua and sync plugins when plugins.lua is saved',
   callback = function()
     -- Force unload this module so we can re-require it
