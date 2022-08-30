@@ -7,6 +7,11 @@ vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSi
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
 require('neo-tree').setup {
+  default_component_configs = {
+    container = {
+      enable_character_fade = false,
+    },
+  },
   filesystem = {
     filtered_items = {
       hide_dotfiles = false,
