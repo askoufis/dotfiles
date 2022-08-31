@@ -26,9 +26,8 @@ telescope.setup {
         ['<C-n>'] = actions.cycle_history_next,
         ['<C-p>'] = actions.cycle_history_prev,
 
-        -- Can't get this to behave well with tmux using alt or ctrl
-        ['<S-j>'] = actions.move_selection_next,
-        ['<S-k>'] = actions.move_selection_previous,
+        ['<M-j>'] = actions.move_selection_next,
+        ['<M-k>'] = actions.move_selection_previous,
 
         ['<C-c>'] = actions.close,
 
