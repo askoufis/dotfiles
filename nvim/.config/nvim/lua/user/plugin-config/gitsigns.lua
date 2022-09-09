@@ -49,7 +49,7 @@ gitsigns.setup {
   },
   on_attach = function(bufnr)
     local map = function(mode, l, r, opts)
-      opts = opts or {}
+      opts = opts or { silent = true }
       opts.buffer = bufnr
       vim.keymap.set(mode, l, r, opts)
     end
