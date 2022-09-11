@@ -16,4 +16,4 @@ windows:
   - dotfiles:
       root: ~/code/askoufis/dotfiles
       panes:
-        - vim
+        - null
