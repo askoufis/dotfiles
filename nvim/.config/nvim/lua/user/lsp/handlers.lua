@@ -43,19 +43,20 @@ M.setup = function()
   })
 end
 
+local lsp_document_highlight_group = vim.api.nvim_create_augroup('lsp_document_highlight', {})
 local lsp_highlight_document = function(client, bufnr)
   -- Set autocommands conditionally depending on server_capabilities
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_create_autocmd('CursorHold', {
       buffer = bufnr,
-      group = vim.api.nvim_create_augroup('lsp_document_highlight', {}),
+      group = lsp_document_highlight_group,
       callback = function()
         vim.lsp.buf.document_highlight()
       end,
     })
     vim.api.nvim_create_autocmd('CursorMoved', {
       buffer = bufnr,
-      group = lsp_document_highlight,
+      group = lsp_document_highlight_group,
       callback = function()
         vim.lsp.buf.clear_references()
       end,
