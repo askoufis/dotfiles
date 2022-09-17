@@ -1,6 +1,7 @@
 require('user.lsp.mason-lspconfig')
 require('user.lsp.handlers').setup()
 require('user.lsp.null-ls')
+require('user.lsp.mason-null-ls')
 
 -- LSP Server setup
 require('user.lsp.servers.eslint')
