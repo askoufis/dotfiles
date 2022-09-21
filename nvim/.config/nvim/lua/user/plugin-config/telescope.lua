@@ -1,5 +1,6 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
+local telescope_custom_pickers = require('user.telescope_custom_pickers')
 
 local project_files = function()
   local opts = { hidden = true, show_untracked = true }
@@ -15,12 +16,22 @@ local map = function(mode, l, r, opts)
 end
 
 map('n', '<C-p>', project_files)
-map('n', '<leader>g', require('telescope.builtin').live_grep)
+map('n', '<leader>g', telescope_custom_pickers.live_grep)
 
 telescope.setup {
   defaults = {
     path_display = { 'smart' },
-
+    extensions = {
+      fzf = {
+        fuzzy = true,
+        override_generic_sorter = true,
+        override_file_sorter = true,
+        case_mode = 'smart_case',
+      },
+      ['ui-select'] = {
+        require('telescope.themes').get_dropdown {},
+      },
+    },
     mappings = {
       i = {
         ['<C-n>'] = actions.cycle_history_next,
@@ -89,6 +100,14 @@ telescope.setup {
   pickers = {
     find_file = {
       hidden = true,
+    },
+    live_grep = {
+      mappings = {
+        i = {
+          ['<c-f>'] = telescope_custom_pickers.actions.set_extension,
+          ['<c-l>'] = telescope_custom_pickers.actions.set_folders,
+        },
+      },
     },
   },
 }
