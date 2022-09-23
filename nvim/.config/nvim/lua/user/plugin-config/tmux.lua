@@ -9,4 +9,7 @@ tmux.setup {
     -- don't break zoom when changing panes
     persist_zoom = true,
   },
+  resize = {
+    enable_default_keybindings = false,
+  },
 }
