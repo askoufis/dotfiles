@@ -8,7 +8,7 @@ null_ls.setup {
     formatting.stylua,
   },
   on_attach = function(client)
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.documentFormattingProvider then
       vim.api.nvim_create_autocmd('BufWritePre', {
         pattern = '*',
         group = vim.api.nvim_create_augroup('null_ls_formatting', {}),

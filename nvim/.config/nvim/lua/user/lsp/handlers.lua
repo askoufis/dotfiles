@@ -46,7 +46,7 @@ end
 local lsp_document_highlight_group = vim.api.nvim_create_augroup('lsp_document_highlight', {})
 local lsp_highlight_document = function(client, bufnr)
   -- Set autocommands conditionally depending on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.documentHighlight then
     vim.api.nvim_create_autocmd('CursorHold', {
       buffer = bufnr,
       group = lsp_document_highlight_group,
@@ -99,11 +99,11 @@ M.on_attach = function(options)
     lsp_highlight_document(client, bufnr)
 
     if options.disable_formatting then
-      client.resolved_capabilities.document_formatting = false
-      client.resolved_capabilities.document_range_formatting = false
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
     end
 
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.documentFormattingProvider then
       vim.api.nvim_create_autocmd('BufWritePre', {
         pattern = '*',
         desc = 'Format the buffer on save',
