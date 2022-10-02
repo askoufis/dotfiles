@@ -87,7 +87,9 @@ local lsp_keymaps = function(bufnr)
   end)
   map('n', 'gl', vim.diagnostic.open_float)
   map('n', '<leader>q', vim.diagnostic.setloclist)
-  map('n', '<leader>f', vim.lsp.buf.formatting)
+  map('n', '<leader>f', function()
+    vim.lsp.buf.format { async = false }
+  end)
   map('n', '<leader>lr', ':LspRestart<CR>')
 end
 
@@ -107,7 +109,7 @@ M.on_attach = function(options)
         desc = 'Format the buffer on save',
         group = vim.api.nvim_create_augroup('lsp_formatting', {}),
         callback = function()
-          vim.lsp.buf.formatting_sync()
+          vim.lsp.buf.format()
         end,
       })
     end

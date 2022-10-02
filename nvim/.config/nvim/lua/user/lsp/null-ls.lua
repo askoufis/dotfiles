@@ -14,7 +14,7 @@ null_ls.setup {
         group = vim.api.nvim_create_augroup('null_ls_formatting', {}),
         desc = 'Format file before saving',
         callback = function()
-          vim.lsp.buf.formatting_sync()
+          vim.lsp.buf.format()
         end,
       })
     end
