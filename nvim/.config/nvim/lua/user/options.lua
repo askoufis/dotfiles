@@ -33,6 +33,9 @@ vim.opt.relativenumber = true
 vim.opt.ruler = true
 -- Highlight the current line
 vim.opt.cursorline = true
+-- Hide the command line when not in use
+-- Results in the command line covering the status line when entering a command
+vim.opt.cmdheight = 0
 
 -- Text
 vim.opt.expandtab = true
