@@ -47,6 +47,8 @@ return packer.startup {
     -- Have packer manage itself
     use('wbthomason/packer.nvim')
 
+    use('nathom/filetype.nvim')
+
     -- An implementation of the popup API from vim in neovim
     use('nvim-lua/popup.nvim')
 
