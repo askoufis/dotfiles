@@ -76,10 +76,6 @@ vim.g.netrw_bufsettings = 'nomodifiable nomodified number nowrap readonly nobufl
 vim.opt.undolevels = 1000
 vim.opt.lazyredraw = true
 
--- Use new filetype
-vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
-
 -- Moonfly
 vim.g.moonflyNormalFloat = 1
 vim.g.moonflyCursorColor = 1
