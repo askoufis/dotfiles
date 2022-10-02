@@ -54,7 +54,7 @@ vim.api.nvim_create_autocmd('Filetype', {
   group = vim.api.nvim_create_augroup('format_options', {}),
   desc = 'Disable auto-wrap in markdown files',
   callback = function()
-    vim.opt.formatoptions:remove { 't' }
+    vim.opt.formatoptions = vim.list_del_key(vim.opt.formatoptions, 't')
   end,
 })
 
