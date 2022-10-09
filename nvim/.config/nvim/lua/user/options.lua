@@ -36,6 +36,7 @@ vim.opt.cursorline = true
 -- Hide the command line when not in use
 -- Results in the command line covering the status line when entering a command
 vim.opt.cmdheight = 0
+vim.g.more = 'off'
 
 -- Text
 vim.opt.expandtab = true
