@@ -145,7 +145,7 @@ return packer.startup {
     -- Improve startup time
     use('lewis6991/impatient.nvim')
 
-    use { 'chr4/nginx.vim', ft = 'nginx' }
+    use { 'chr4/nginx.vim', ft = 'nginx', disable = true }
 
     -- Measure startup time
     -- Enable as needed
