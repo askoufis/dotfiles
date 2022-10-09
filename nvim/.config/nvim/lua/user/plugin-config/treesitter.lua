@@ -15,6 +15,7 @@ configs.setup {
     'jsonc',
     'lua',
     'markdown',
+    'markdown_inline',
     'regex',
     'rust',
     'toml',
