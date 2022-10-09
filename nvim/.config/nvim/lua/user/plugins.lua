@@ -139,9 +139,6 @@ return packer.startup {
     -- For sxhkd highlighting
     use { 'baskerville/vim-sxhkdrc', ft = 'sxhkdrc' }
 
-    -- Navigation
-    use('ggandor/leap.nvim')
-
     -- Git
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 

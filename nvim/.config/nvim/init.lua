@@ -21,7 +21,6 @@ require('user.plugin-config.cokeline')
 require('user.plugin-config.fidget')
 require('user.plugin-config.indent-blankline')
 require('user.plugin-config.neogit')
-require('user.plugin-config.leap')
 require('user.plugin-config.luasnip')
 
 require('globals')
