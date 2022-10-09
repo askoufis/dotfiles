@@ -147,9 +147,6 @@ return packer.startup {
 
     use { 'chr4/nginx.vim', ft = 'nginx' }
 
-    -- Workaround for https://github.com/neovim/neovim/issues/12587
-    use { 'antoinemadec/FixCursorHold.nvim' }
-
     -- Measure startup time
     -- Enable as needed
     use { 'dstein64/vim-startuptime', disable = true }
