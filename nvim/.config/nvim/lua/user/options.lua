@@ -50,17 +50,6 @@ vim.opt.showmatch = true
 vim.opt.linebreak = true
 vim.opt.textwidth = 100
 
--- Formatting
--- Don't wrap text using textwidth in markdown files
-vim.api.nvim_create_autocmd('Filetype', {
-  pattern = 'markdown',
-  group = vim.api.nvim_create_augroup('format_options', {}),
-  desc = 'Disable auto-wrap in markdown files',
-  callback = function()
-    vim.opt.formatoptions = vim.list_del_key(vim.opt.formatoptions, 't')
-  end,
-})
-
 -- Security (apparently)
 vim.opt.modelines = 0
 
