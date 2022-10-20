@@ -53,7 +53,7 @@ cursor:
   unfocused_hollow: true
 
 shell:
-  program: /usr/local/bin/fish
+  program: /opt/homebrew/bin/fish
   args:
     - --login
 
