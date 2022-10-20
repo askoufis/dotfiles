@@ -1,12 +1,5 @@
-# --- Path ---
-
 # rust
-fish_add_path $HOME/.cargo/bin
-
-# homebrew complained about this
-fish_add_path /usr/local/sbin
-
-# --- General ---
+fish_add_path -aP $HOME/.cargo/bin
 
 # editors
 set -x -g EDITOR nvim
@@ -23,10 +16,7 @@ set -x -g AWS_REGION ap-southeast-2
 set fish_greeting
 
 set -x -g VOLTA_HOME $HOME/.local/share/.volta
-fish_add_path $VOLTA_HOME/bin
-
-set -gx PNPM_HOME "/usr/local/bin/pnpm"
-fish_add_path $PNPM_HOME
+fish_add_path -aP $VOLTA_HOME/bin
 
 # Ensure prettierd uses the local version of prettier
 # https://github.com/fsouza/prettierd#local-instance
