@@ -76,10 +76,7 @@ return packer.startup {
     }
 
     -- Treesitter
-    -- Pin the commit to just before https://github.com/nvim-treesitter/nvim-treesitter/commit/42ab95d5e11f247c6f0c8f5181b02e816caa4a4f
-    -- This commit removed some highlight groups that are used by moonfly resulting in
-    -- highlights looking not great
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use('JoosepAlviste/nvim-ts-context-commentstring') -- Context-aware comments via treesitter
 
     -- markdown renderer
