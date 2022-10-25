@@ -146,8 +146,11 @@ return packer.startup {
     use { 'baskerville/vim-sxhkdrc', ft = 'sxhkdrc' }
 
     -- Git
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
-
+    use {
+      'TimUntersberger/neogit',
+      requires = 'nvim-lua/plenary.nvim',
+      commit = '478d95d28229cd3e7ed49aeab903b3c77c1fc0e5',
+    }
     -- Improve startup time
     use('lewis6991/impatient.nvim')
 
