@@ -80,7 +80,13 @@ return packer.startup {
     use('JoosepAlviste/nvim-ts-context-commentstring') -- Context-aware comments via treesitter
 
     -- markdown renderer
-    use('ellisonleao/glow.nvim')
+    use {
+      'ellisonleao/glow.nvim',
+      ft = 'markdown',
+      config = function()
+        require('user.plugin-config.glow')
+      end,
+    }
 
     use {
       'noib3/nvim-cokeline',
