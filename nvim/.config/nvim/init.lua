@@ -1,10 +1,10 @@
 require('user.keymaps')
 require('user.options')
 require('user.plugins')
+require('user.plugin-config.impatient')
 require('user.colorscheme')
 require('user.lsp')
 
-require('user.plugin-config.impatient')
 require('user.plugin-config.telescope')
 require('user.plugin-config.neotree')
 require('user.plugin-config.mason')
