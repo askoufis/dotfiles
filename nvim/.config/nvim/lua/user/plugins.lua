@@ -53,11 +53,6 @@ return packer.startup {
     -- colorschemes
     use('bluz71/vim-moonfly-colors')
 
-    -- Autopairs, integrates with both cmp and treesitter
-    use { 'windwp/nvim-autopairs' }
-    -- Autocomplete xml tags
-    use('windwp/nvim-ts-autotag')
-
     -- status line
     use {
       'nvim-lualine/lualine.nvim',
@@ -77,7 +72,17 @@ return packer.startup {
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use('JoosepAlviste/nvim-ts-context-commentstring') -- Context-aware comments via treesitter
+    -- Context-aware comments via treesitter
+    use {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      event = 'BufAdd',
+      config = "require('user.plugin-config.context-commentstring')",
+    }
+
+    -- Autopairs, integrates with both cmp and treesitter
+    use { 'windwp/nvim-autopairs', event = 'InsertEnter', config = "require('user.plugin-config.autopairs')" }
+    -- Autocomplete xml tags
+    use { 'windwp/nvim-ts-autotag', event = 'InsertEnter', config = "require('user.plugin-config.autotag')" }
 
     -- markdown renderer
     use {
@@ -91,6 +96,9 @@ return packer.startup {
       requires = 'kyazdani42/nvim-web-devicons',
     }
 
+    -- snippets
+    use('L3MON4D3/LuaSnip') -- snippet engine
+
     -- cmp plugins
     use('hrsh7th/nvim-cmp') -- The completion plugin
     use('hrsh7th/cmp-buffer') -- buffer completions
@@ -100,14 +108,13 @@ return packer.startup {
     use('hrsh7th/cmp-nvim-lsp') -- LSP completions
     use('hrsh7th/cmp-nvim-lua') -- nvim lua config completions
 
-    -- snippets
-    use('L3MON4D3/LuaSnip') -- snippet engine
-
     -- LSP
     use('neovim/nvim-lspconfig') -- Main LSP plugin
     use('williamboman/mason.nvim') -- Package manager
     use('williamboman/mason-lspconfig.nvim') -- Language server mason plugin
-    use('j-hui/fidget.nvim')
+
+    use { 'j-hui/fidget.nvim', event = 'BufAdd', config = "require('user.plugin-config.fidget')" }
+
     use('jose-elias-alvarez/null-ls.nvim')
 
     use { 'jayp0521/mason-null-ls.nvim' }
@@ -124,7 +131,12 @@ return packer.startup {
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- Comments
-    use('numToStr/Comment.nvim')
+    use {
+      'numToStr/Comment.nvim',
+      event = 'InsertEnter',
+      config = "require('user.plugin-config.comment')",
+      after = 'nvim-ts-context-commentstring',
+    }
 
     -- TMUX navigaion
     use('aserowy/tmux.nvim')
@@ -135,10 +147,16 @@ return packer.startup {
     -- Surround
     use {
       'kylechui/nvim-surround',
+      event = 'InsertEnter',
+      config = "require('user.plugin-config.surround')",
     }
 
     -- Indent highlighting
-    use('lukas-reineke/indent-blankline.nvim')
+    use {
+      'lukas-reineke/indent-blankline.nvim',
+      event = 'InsertEnter',
+      config = "require('user.plugin-config.indent-blankline')",
+    }
 
     -- For sxhkd highlighting
     use { 'baskerville/vim-sxhkdrc', ft = 'sxhkdrc' }
@@ -146,9 +164,12 @@ return packer.startup {
     -- Git
     use {
       'TimUntersberger/neogit',
-      requires = 'nvim-lua/plenary.nvim',
       commit = '478d95d28229cd3e7ed49aeab903b3c77c1fc0e5',
+      requires = 'nvim-lua/plenary.nvim',
+      cmd = 'Neogit',
+      config = "require('user.plugin-config.neogit')",
     }
+
     -- Improve startup time
     use('lewis6991/impatient.nvim')
 
