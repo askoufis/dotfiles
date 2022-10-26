@@ -91,8 +91,8 @@ map('n', '<A-k>', ':m .-2<CR>==')
 map('v', '<A-j>', ':m .+1<CR>==')
 map('v', '<A-k>', ':m .-2<CR>==')
 -- Visual block
-map('x', '<A-j>', ':m \'>+1<CR>gv-gv')
-map('x', '<A-k>', ':m \'<-2<CR>gv-gv')
+map('x', '<A-j>', ":m '>+1<CR>gv-gv")
+map('x', '<A-k>', ":m '<-2<CR>gv-gv")
 
 -- Pasting
 -- Don't yank to buffer when pasting
