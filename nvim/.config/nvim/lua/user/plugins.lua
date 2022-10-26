@@ -83,9 +83,7 @@ return packer.startup {
     use {
       'ellisonleao/glow.nvim',
       ft = 'markdown',
-      config = function()
-        require('user.plugin-config.glow')
-      end,
+      config = "require('user.plugin-config.glow')",
     }
 
     use {
