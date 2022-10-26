@@ -175,10 +175,6 @@ return packer.startup {
 
     use { 'chr4/nginx.vim', ft = 'nginx' }
 
-    -- Measure startup time
-    -- Enable as needed
-    use { 'dstein64/vim-startuptime', disable = true }
-
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
