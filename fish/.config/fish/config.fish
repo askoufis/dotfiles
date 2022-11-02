@@ -16,8 +16,15 @@ if status --is-interactive
 
     # Source env first as other files depend on envars
     # --- Environment ---
-    for FILE in $HOME/.config/fish/environment/*
-        source $FILE
+    # Source base `env.fish` before OS-specific env files
+    source $HOME/.config/fish/environment/env.fish
+
+    if test -e $HOME/.config/fish/environment/env-mac.fish
+        source $HOME/.config/fish/environment/env-mac.fish
+    end
+
+    if test -e $HOME/.config/fish/environment/env-linux.fish
+        source $HOME/.config/fish/environment/env-linux.fish
     end
 
     # --- Abbreviations
