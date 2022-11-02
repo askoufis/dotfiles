@@ -4,6 +4,7 @@ vim.cmd([[highlight IndentBlanklineContextChar guifg=#626262 gui=nocombine]]) --
 
 indent_blankline.setup {
   char = '▏',
+  context_char = '▏',
   show_current_context = true,
   show_current_context_start = false,
 }
