@@ -164,7 +164,6 @@ return packer.startup {
     -- Git
     use {
       'TimUntersberger/neogit',
-      commit = '478d95d28229cd3e7ed49aeab903b3c77c1fc0e5',
       requires = 'nvim-lua/plenary.nvim',
       cmd = 'Neogit',
       config = "require('user.plugin-config.neogit')",
