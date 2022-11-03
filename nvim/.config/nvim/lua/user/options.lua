@@ -83,3 +83,6 @@ vim.opt.fillchars = {
 
 -- For FixCursorHold.nvim
 vim.g.cursorhold_updatetime = 100
+
+-- Spell
+vim.opt.spelllang = 'en_au'

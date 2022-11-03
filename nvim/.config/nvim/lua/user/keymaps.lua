@@ -126,3 +126,15 @@ map('x', '-', 'g<C-x>gv')
 
 -- Set filetype to nginx in-case the plugin doesn't detect the filetype correctly
 map('n', '<leader>r', ':set ft=nginx<CR>')
+
+-- Spell
+
+--- Toggle the spell option
+local toggle_spell = function()
+  if vim.opt_local.spell:get() then
+    vim.opt_local.spell = false
+  else
+    vim.opt_local.spell = true
+  end
+end
+map('n', '<leader>sp', toggle_spell)
