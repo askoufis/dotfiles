@@ -1,8 +1,8 @@
 local lspconfig = require('lspconfig')
 local common_on_attach = require('user.lsp.handlers').on_attach
 
-local on_attach = function()
-  common_on_attach { disable_formatting = false }()
+local on_attach = function(client, bufnr)
+  common_on_attach { disable_formatting = false }(client, bufnr)
 
   vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
@@ -13,7 +13,7 @@ local on_attach = function()
 end
 
 lspconfig.eslint.setup {
-  on_attach,
+  on_attach = on_attach,
   settings = {
     eslint = {
       settings = {
