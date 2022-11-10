@@ -3,6 +3,7 @@ require('user.options')
 require('user.plugins')
 require('user.plugin-config.impatient')
 require('user.colorscheme')
+require('user.autocommands')
 require('user.lsp')
 
 require('user.plugin-config.telescope')
