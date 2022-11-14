@@ -22,6 +22,10 @@ vim.g.maplocalleader = ' '
 map('n', 'j', 'gj')
 map('n', 'k', 'gk')
 
+-- Move up and down while staying centred vertically
+map('n', '<C-u>', '<C-u>zz')
+map('n', '<C-d>', '<C-d>zz')
+
 -- Resize with arrows
 map('n', '<C-Up>', ':resize -2<CR>')
 map('n', '<C-Down>', ':resize +2<CR>')
@@ -97,6 +101,11 @@ map('x', '<A-k>', ":m '<-2<CR>gv-gv")
 -- Pasting
 -- Don't yank to buffer when pasting
 map('v', 'p', '"_dP')
+
+-- Searching
+-- Move to search and centre the current line vertically
+map('n', 'n', 'nzz')
+map('n', 'N', 'Nzz')
 
 -- Other --
 -- Open explorer, aka netrw
