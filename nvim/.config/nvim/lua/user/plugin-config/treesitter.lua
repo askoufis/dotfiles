@@ -23,14 +23,11 @@ configs.setup {
     'typescript',
     'vim',
     'yaml',
-  }, -- either "all" or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { '' }, -- List of parsers to ignore installing
+  },
+  sync_install = false,
   highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { '' }, -- list of languages to disable
+    enable = true,
     additional_vim_regex_highlighting = false,
   },
-  -- indent is experimental
   indent = { enable = true, disable = { 'yaml' } },
 }
