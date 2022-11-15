@@ -72,6 +72,7 @@ return packer.startup {
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/playground', event = 'BufAdd' }
     -- Context-aware comments via treesitter
     use {
       'JoosepAlviste/nvim-ts-context-commentstring',
