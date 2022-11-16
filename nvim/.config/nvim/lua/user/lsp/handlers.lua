@@ -41,6 +41,8 @@ M.setup = function()
   vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = 'rounded',
   })
+
+  vim.lsp.handlers['textDocument/references'] = vim.lsp.with(require('telescope.builtin').lsp_references, {})
 end
 
 local lsp_document_highlight_group = vim.api.nvim_create_augroup('lsp_document_highlight', {})
