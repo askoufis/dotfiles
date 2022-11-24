@@ -16,5 +16,6 @@ require('user.plugin-config.luasnip')
 require('user.plugin-config.cmp')
 require('user.plugin-config.gitsigns')
 require('user.plugin-config.cokeline')
+require('user.plugin-config.dap')
 
 require('globals')

@@ -159,6 +159,10 @@ return packer.startup {
       config = "require('user.plugin-config.indent-blankline')",
     }
 
+    -- Debugging
+    use { 'mfussenegger/nvim-dap' }
+    use { 'mxsdev/nvim-dap-vscode-js', requires = { 'mfussenegger/nvim-dap' } }
+
     -- For sxhkd highlighting
     use { 'baskerville/vim-sxhkdrc', ft = 'sxhkdrc' }
 
