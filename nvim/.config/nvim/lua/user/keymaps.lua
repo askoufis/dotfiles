@@ -87,6 +87,7 @@ map('n', '<CR>', 'o<Esc>', {})
 map('i', '<F1>', '<Esc>')
 -- globally replace the word under the cursor
 map('n', '<leader>*', ':%s/<c-r><c-w>//g<left><left>')
+
 -- move text up and down
 -- Normal
 map('n', '<A-j>', ':m +1<CR>')
@@ -101,9 +102,13 @@ map('x', '<A-k>', ":m '<-2<CR>gv")
 -- Pasting
 -- Don't yank to buffer when pasting
 map('v', 'p', '"_dP')
+-- Yank to clipboard
+map('n', '<leader>y', '"+y')
+map('v', '<leader>y', '"+y')
 
 -- Searching
 -- Move to search and centre the current line vertically
+-- Can append `zv` to these to open folds
 map('n', 'n', 'nzz')
 map('n', 'N', 'Nzz')
 
