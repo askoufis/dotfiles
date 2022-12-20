@@ -89,14 +89,14 @@ map('i', '<F1>', '<Esc>')
 map('n', '<leader>*', ':%s/<c-r><c-w>//g<left><left>')
 -- move text up and down
 -- Normal
-map('n', '<A-j>', ':m .+1<CR>==')
-map('n', '<A-k>', ':m .-2<CR>==')
+map('n', '<A-j>', ':m +1<CR>')
+map('n', '<A-k>', ':m -2<CR>')
 -- Visual
-map('v', '<A-j>', ':m .+1<CR>==')
-map('v', '<A-k>', ':m .-2<CR>==')
+map('v', '<A-j>', ':m +1<CR>')
+map('v', '<A-k>', ':m -2<CR>')
 -- Visual block
-map('x', '<A-j>', ":m '>+1<CR>gv-gv")
-map('x', '<A-k>', ":m '<-2<CR>gv-gv")
+map('x', '<A-j>', ":m '>+1<CR>gv")
+map('x', '<A-k>', ":m '<-2<CR>gv")
 
 -- Pasting
 -- Don't yank to buffer when pasting
