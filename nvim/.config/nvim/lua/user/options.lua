@@ -46,6 +46,7 @@ vim.opt.cinoptions = '(0'
 vim.opt.showmatch = true
 vim.opt.linebreak = true
 vim.opt.textwidth = 100
+vim.opt.wrap = true
 
 -- Security (apparently)
 vim.opt.modelines = 0
