@@ -6,7 +6,7 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
 
 ## Requirements
 
-- [Fish shell]
+- [Fish shell] (At least v3.6.0)
 - [GNU stow]
 - [NotoSansMono Nerd Font][nerd fonts] on linux (Regular, Bold, Italic and Bold Italic)
 - [RobotoMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)

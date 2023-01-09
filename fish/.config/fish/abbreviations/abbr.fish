@@ -18,6 +18,9 @@ abbr -a -g gpr gh pr view --web
 abbr -a -g gup "git fetch && git pull origin (git branch --show-current)"
 
 # --- Misc ---
+# Emulate other shells' !! feature
+function last_history_item; echo $history[1]; end
+abbr -a !! --position anywhere --function last_history_item
 
 # --- Config files ---
 abbr -a -g ef $EDITOR $HOME/.config/fish/config.fish
