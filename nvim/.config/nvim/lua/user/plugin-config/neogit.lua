@@ -1,3 +1,5 @@
 local neogit = require('neogit')
 
-neogit.setup {}
+neogit.setup {
+  auto_show_console = false,
+}
