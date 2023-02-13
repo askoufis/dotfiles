@@ -5,7 +5,7 @@ table.insert(runtime_path, 'lua/?/init.lua')
 local lspconfig = require('lspconfig')
 local common_on_attach = require('user.lsp.handlers').on_attach
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   on_attach = common_on_attach { disable_formatting = true },
   settings = {
     Lua = {
@@ -23,8 +23,8 @@ lspconfig.sumneko_lua.setup {
         library = vim.api.nvim_get_runtime_file('', true),
         -- Don't really care that much about having a setup that matches my runtime
         -- since I'm not doing any serious lua dev at the moment
-        -- https://github.com/sumneko/lua-language-server/wiki/Settings#workspacecheckthirdparty
-        checkThirdParty = false
+        -- https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacecheckthirdparty
+        checkThirdParty = false,
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {

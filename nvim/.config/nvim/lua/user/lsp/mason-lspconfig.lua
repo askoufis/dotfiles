@@ -1,7 +1,7 @@
 local masonLspconfig = require('mason-lspconfig')
 
 masonLspconfig.setup {
-  ensure_installed = { 'sumneko_lua', 'eslint', 'html', 'jsonls', 'tsserver', 'yamlls' },
+  ensure_installed = { 'lua_ls', 'eslint', 'html', 'jsonls', 'tsserver', 'yamlls' },
 }
 
 local lspconfig = require('lspconfig')
