@@ -4,6 +4,7 @@ fish_add_path -aP $HOME/.cargo/bin
 # editors
 set -x -g EDITOR nvim
 set -x -g GIT_EDITOR nvim
+set -x -g GIT_PAGER bat
 set -x -g MYVIMRC ~/.config/nvim/init.lua
 
 # Set XDG folder
