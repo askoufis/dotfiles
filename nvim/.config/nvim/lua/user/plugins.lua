@@ -118,7 +118,7 @@ return packer.startup {
 
     use('jose-elias-alvarez/null-ls.nvim')
 
-    use { 'jayp0521/mason-null-ls.nvim' }
+    use { 'jayp0521/mason-null-ls.nvim', tag = 'stable' }
 
     -- JSON Schema
     use('b0o/schemastore.nvim')
