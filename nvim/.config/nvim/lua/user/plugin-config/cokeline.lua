@@ -1,14 +1,10 @@
 local cokeline = require('cokeline')
-
 local get_hex = require('cokeline/utils').get_hex
-local mappings = require('cokeline/mappings')
 
 local comments_fg = get_hex('Comment', 'fg')
 local errors_fg = get_hex('DiagnosticError', 'fg')
 local warnings_fg = get_hex('DiagnosticWarn', 'fg')
 
-local red = get_hex('MoonflyRed', 'fg')
-local yellow = get_hex('MoonflyYellow', 'fg')
 local green = get_hex('MoonflyLime', 'fg')
 local violet = get_hex('MoonflyViolet', 'fg')
 
@@ -31,20 +27,6 @@ local components = {
     fg = function(buffer)
       return buffer.is_focused and violet or nil
     end,
-  },
-
-  devicon = {
-    text = function(buffer)
-      return (mappings.is_picking_focus() or mappings.is_picking_close()) and buffer.pick_letter .. ' '
-        or buffer.devicon.icon
-    end,
-    fg = function(buffer)
-      return (mappings.is_picking_focus() and yellow) or (mappings.is_picking_close() and red) or buffer.devicon.color
-    end,
-    style = function(_)
-      return (mappings.is_picking_focus() or mappings.is_picking_close()) and 'italic,bold' or nil
-    end,
-    truncation = { priority = 1 },
   },
 
   index = {
@@ -128,7 +110,6 @@ cokeline.setup {
 
   components = {
     components.separator,
-    components.devicon,
     components.space,
     components.index,
     components.unique_prefix,
