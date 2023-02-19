@@ -1,10 +1,14 @@
 local cokeline = require('cokeline')
+local is_picking_focus = require('cokeline/mappings').is_picking_focus
+local is_picking_close = require('cokeline/mappings').is_picking_close
 local get_hex = require('cokeline/utils').get_hex
 
 local comments_fg = get_hex('Comment', 'fg')
 local errors_fg = get_hex('DiagnosticError', 'fg')
 local warnings_fg = get_hex('DiagnosticWarn', 'fg')
 
+local red = get_hex('MoonflyRed', 'fg')
+local yellow = get_hex('MoonflyYellow', 'fg')
 local green = get_hex('MoonflyLime', 'fg')
 local violet = get_hex('MoonflyViolet', 'fg')
 
@@ -16,6 +20,11 @@ local components = {
 
   two_spaces = {
     text = '  ',
+    truncation = { priority = 1 },
+  },
+
+  colon = {
+    text = ':',
     truncation = { priority = 1 },
   },
 
@@ -31,7 +40,14 @@ local components = {
 
   index = {
     text = function(buffer)
-      return buffer.index .. ': '
+      local letter_or_index = (is_picking_focus() or is_picking_close()) and buffer.pick_letter or buffer.index
+      return letter_or_index
+    end,
+    fg = function()
+      return (is_picking_focus() and yellow) or (is_picking_close() and red) or nil
+    end,
+    style = function()
+      return (is_picking_focus()) or (is_picking_close()) and 'bold,underline'
     end,
     truncation = { priority = 1 },
   },
@@ -112,6 +128,8 @@ cokeline.setup {
     components.separator,
     components.space,
     components.index,
+    components.colon,
+    components.space,
     components.unique_prefix,
     components.filename,
     components.diagnostics,
