@@ -22,6 +22,7 @@ abbr -a -g nb --position anywhere --set-cursor "git checkout -B % origin/master"
 # Emulate other shells' !! feature
 function last_history_item; echo $history[1]; end
 abbr -a !! --position anywhere --function last_history_item
+abbr -a nvimbench 'hyperfine "nvim --headless +qa" --warmup 5'
 
 # --- Config files ---
 abbr -a -g ef $EDITOR $HOME/.config/fish/config.fish
