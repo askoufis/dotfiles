@@ -1,20 +1,22 @@
 require('user.keymaps')
 require('user.options')
-require('user.plugins')
-require('user.plugin-config.impatient')
-require('user.colorscheme')
-require('user.autocommands')
-require('user.lsp')
-
-require('user.plugin-config.telescope')
-require('user.plugin-config.neotree')
-require('user.plugin-config.mason')
-require('user.plugin-config.tmux')
-require('user.plugin-config.lualine')
-require('user.plugin-config.treesitter')
-require('user.plugin-config.luasnip')
-require('user.plugin-config.cmp')
-require('user.plugin-config.gitsigns')
-require('user.plugin-config.cokeline')
-
 require('globals')
+require('user.autocommands')
+
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system {
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  }
+end
+vim.opt.rtp:prepend(lazypath)
+
+local lazy = require('lazy')
+
+-- Plugin specs are defined in the plugins module
+lazy.setup('user.plugins')

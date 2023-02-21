@@ -38,20 +38,6 @@ map('n', '<Leader>w', ':wincmd =<CR>')
 -- Highlights
 map('n', '<Leader>n', ':noh<CR>')
 
--- Buffers
--- Navigating buffers with cokeline
--- https://vi.stackexchange.com/a/31013 for info why these have to be non-recursive maps
-map('n', '<S-h>', '<Plug>(cokeline-focus-prev)', { noremap = false })
-map('n', '<S-l>', '<Plug>(cokeline-focus-next)', { noremap = false })
-map('n', '<Leader>p', '<Plug>(cokeline-switch-prev)', { noremap = false })
-map('n', '<Leader>n', '<Plug>(cokeline-switch-next)', { noremap = false })
-map('n', '<Leader>x', '<Plug>(cokeline-pick-close)', { noremap = false })
-
-for i = 1, 9 do
-  map('n', ('<Leader>s%s'):format(i), ('<Plug>(cokeline-switch-%s)'):format(i), { noremap = false })
-  map('n', ('<Leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i), { noremap = false })
-end
-
 -- Delete all buffers except for the current buffer
 local delete_other_buffers = function()
   local buffers = vim.api.nvim_list_bufs()
@@ -112,21 +98,8 @@ map('v', '<leader>y', '"+y')
 map('n', 'n', 'nzz')
 map('n', 'N', 'Nzz')
 
--- Other --
--- Open explorer, aka netrw
-map('n', '\\', ':Neotree toggle<CR>')
-
 -- write to a file when you accidentally opened it without root privileges
 map('c', 'w!!', 'w !sudo tee % > /dev/null')
-
--- Glow
-map('n', '<leader>mp', ':Glow<CR>')
-
--- Neogit
-map('n', '<leader>G', ':Neogit<CR>')
-
--- Luasnip
-map('n', '<leader><leader>s', ':source ~/.config/nvim/lua/user/luasnip.lua<CR>')
 
 -- Run the current file
 map('n', '<leader><leader>x', ':w<CR>:source %<CR>')
@@ -137,9 +110,6 @@ map('n', '-', '<C-x>')
 -- Keep the visual selection after incrementing/decrementing
 map('x', '+', 'g<C-a>gv')
 map('x', '-', 'g<C-x>gv')
-
--- Set filetype to nginx in-case the plugin doesn't detect the filetype correctly
-map('n', '<leader>r', ':set ft=nginx<CR>')
 
 -- Spell
 
