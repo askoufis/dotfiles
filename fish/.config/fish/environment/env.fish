@@ -18,3 +18,5 @@ set fish_greeting
 
 set -x -g VOLTA_HOME $HOME/.local/share/.volta
 fish_add_path -pP $VOLTA_HOME/bin
+
+fish_add_path -pP ~/.bun/bin
