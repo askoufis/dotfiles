@@ -8,7 +8,10 @@ return {
       local telescope = require('telescope.builtin')
       local project_files = function()
         local opts = { hidden = true, show_untracked = true }
-        telescope.find_files(opts)
+        local ok = pcall(require('telescope.builtin').git_files, opts)
+        if not ok then
+          require('telescope.builtin').find_files(opts)
+        end
       end
 
       return {
