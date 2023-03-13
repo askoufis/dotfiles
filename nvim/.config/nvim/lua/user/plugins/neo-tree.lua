@@ -11,6 +11,7 @@ return {
       '\\',
       ':Neotree toggle<CR>',
       desc = 'Toggle NeoTree',
+      silent = true,
     },
   },
   cmd = 'Neotree',
