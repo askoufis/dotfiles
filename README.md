@@ -13,8 +13,7 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
 - [ripgrep]
 - [fd]
 - [glow]
-- [prettierd]: Install via [`:Mason`][mason]
-- [stylua]: Install via [`:Mason`][mason]
+- [rust-analyzer]: Install with `rustup component add rust-analyzer`
 
 [fish shell]: https://fishshell.com/
 [gnu stow]: https://www.gnu.org/software/stow/
@@ -22,9 +21,7 @@ My personal dotfiles. Inspired by [ThePrimagen's dotfiles][dotfiles].
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [fd]: https://github.com/sharkdp/fd
 [glow]: https://github.com/charmbracelet/glow
-[prettierd]: https://github.com/fsouza/prettierd
-[stylua]: https://github.com/JohnnyMorganz/StyLua
-[mason]: https://github.com/williamboman/mason.nvim
+[rust-analyzer]: https://github.com/rust-lang/rust-analyzer
 
 ## Installation
 
@@ -52,9 +49,9 @@ If you're installing dotfiles to a machine for the first time, there's a few thi
 
 2. Run `fisher update`
 
-3. Open `nvim`. It should install [packer] automatically.
+3. Open `nvim`. It should install [lazy.nvim] automatically.
 
-4. Close `nvim`, then re-open it and run `:PackerSync` to install all plugins
+4. Close `nvim`, then re-open it plugins should start being installed
 
 5. Clone `tpm`, but not to the usual place:
 
@@ -63,7 +60,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 ```
 
 [fisher]: https://github.com/jorgebucaran/fisher
-[packer]: https://github.com/wbthomason/packer.nvim
+[lazy.nvim]: https://github.com/folke/lazy.nvim
 
 6. Restart tmux, then press `prefix` + `I` to install all tmux plugins
 
@@ -79,6 +76,6 @@ The exception to this is for OS-specific config. In those cases, a suffix of `-{
 
 ## Known issues/bugs
 
-- On MacOS, a warning starting with `BUG in find_stowed_path? Absolute/relative mismatch between Stow dir` is showed when stowing/unstowing folders. According to [this issue][issue], the error is mostly harmless, and should be addressed in future versions stow.
+- On MacOS, a warning starting with `BUG in find_stowed_path? Absolute/relative mismatch between Stow dir` is showed when stowing/unstowing folders. According to [this issue], the error is mostly harmless, and should be addressed in future versions stow.
 
-[issue]: https://github.com/aspiers/stow/issues/65
+[this issue]: https://github.com/aspiers/stow/issues/65
