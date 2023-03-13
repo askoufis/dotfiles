@@ -19,4 +19,4 @@ vim.opt.rtp:prepend(lazypath)
 local lazy = require('lazy')
 
 -- Plugin specs are defined in the plugins module
-lazy.setup('user.plugins')
+lazy.setup({ import = 'user.plugins' }, { ui = { border = 'rounded' } })
