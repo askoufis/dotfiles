@@ -1,7 +1,7 @@
 draw_bold_text_with_bright_colors: true
 
 colourschemes:
-  # vim moonfly from https://github.com/bluz71/vim-moonfly-colors/blob/master/terminal_themes/alacritty.yml
+  # vim moonfly from https://github.com/bluz71/vim-moonfly-colors/blob/d3ff722e84a9571acbb489e8e85b2a44bbefb602/terminal_themes/alacritty.yml
   moonfly: &moonfly # Default colors
     primary:
       background: "#080808"
@@ -25,7 +25,7 @@ colourschemes:
       green: "#8cc85f"
       yellow: "#e3c78a"
       blue: "#80a0ff"
-      magenta: "#d183e8"
+      magenta: "#cf87e8"
       cyan: "#79dac8"
       white: "#c6c6c6"
 
