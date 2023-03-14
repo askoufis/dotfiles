@@ -15,6 +15,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [fd]
 - [glow]
 - [rust-analyzer]: Install with `rustup component add rust-analyzer`
+- [rustfmt]: Install with `rustup component add rustfmt`
 
 [fish shell]: https://fishshell.com/
 [gnu stow]: https://www.gnu.org/software/stow/
@@ -23,6 +24,7 @@ Inspired by [ThePrimagen's dotfiles].
 [fd]: https://github.com/sharkdp/fd
 [glow]: https://github.com/charmbracelet/glow
 [rust-analyzer]: https://github.com/rust-lang/rust-analyzer
+[rustfmt]: https://github.com/rust-lang/rustfmt
 
 ## Installation
 
