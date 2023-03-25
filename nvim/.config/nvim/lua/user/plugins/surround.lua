@@ -1,6 +1,7 @@
 return {
   'kylechui/nvim-surround',
-  event = 'InsertEnter',
+  version = '*',
+  event = 'VeryLazy',
   config = true,
   opts = {
     keymaps = {

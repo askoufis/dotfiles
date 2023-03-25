@@ -1,6 +1,7 @@
 return {
   -- Indent highlighting
   'lukas-reineke/indent-blankline.nvim',
+  version = '*',
   event = 'InsertEnter',
   config = function(_, opts)
     require('indent_blankline').setup(opts)
