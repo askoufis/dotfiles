@@ -3,14 +3,10 @@ local common_on_attach = require('user.plugins.lsp.handlers').on_attach
 
 local schemas = require('schemastore').json.schemas {
   select = {
+    '.eslintrc',
     'package.json',
+    'tsconfig.json',
   },
-}
-
-local tsconfig_schema = {
-  description = 'JSON schema for tsconfig.json file',
-  fileMatch = { 'tsconfig.json', 'tsconfig.*.json' },
-  url = 'https://json.schemastore.org/tsconfig.json',
 }
 
 -- Schema object from https://github.com/b0o/SchemaStore.nvim/blob/main/lua/schemastore/catalog.lua#L596
@@ -21,7 +17,6 @@ local nx_schema = {
 }
 
 table.insert(schemas, nx_schema)
-table.insert(schemas, tsconfig_schema)
 
 lspconfig.jsonls.setup {
   on_attach = common_on_attach { disable_formatting = true },
