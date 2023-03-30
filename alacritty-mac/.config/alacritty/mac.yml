@@ -61,9 +61,6 @@ hints:
   url:
     modifiers: None
 
-# Does literally nothing
-alt_send_esc: true
-
 key_bindings:
   # Make Option + HJKL work like Alt + HJKL in neovim
   # https://github.com/alacritty/alacritty/issues/93#issuecomment-271043197
