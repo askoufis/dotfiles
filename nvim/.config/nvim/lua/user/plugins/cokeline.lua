@@ -28,15 +28,16 @@ return {
     local is_picking_focus = require('cokeline/mappings').is_picking_focus
     local is_picking_close = require('cokeline/mappings').is_picking_close
     local get_hex = require('cokeline/utils').get_hex
+    local moonfly_palette = require('moonfly').palette
 
     local comments_fg = get_hex('Comment', 'fg')
     local errors_fg = get_hex('DiagnosticError', 'fg')
     local warnings_fg = get_hex('DiagnosticWarn', 'fg')
 
-    local red = get_hex('MoonflyRed', 'fg')
-    local yellow = get_hex('MoonflyYellow', 'fg')
-    local green = get_hex('MoonflyLime', 'fg')
-    local violet = get_hex('MoonflyViolet', 'fg')
+    local red = moonfly_palette.red
+    local yellow = moonfly_palette.yellow
+    local green = moonfly_palette.green
+    local violet = moonfly_palette.violet
 
     local components = {
       space = {
