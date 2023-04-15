@@ -18,10 +18,6 @@ return {
       desc = 'Reload all snippets',
     },
   },
-  -- Having issues cloning jsregexp submodule, disabling this for now since the dependency is pinned
-  -- to a specific version
-  -- https://github.com/L3MON4D3/LuaSnip/tree/025886915e7a1442019f467e0ae2847a7cf6bf1a/deps
-  submodules = false,
   config = function(_, opts)
     local ls = require('luasnip')
     ls.setup(opts)
