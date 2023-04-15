@@ -28,29 +28,10 @@ local kind_icons = {
   TypeParameter = '',
 }
 
-local enable_cmp = function()
-  local context = require('cmp.config.context')
-  -- keep command mode completion enabled when cursor is in a comment
-  if vim.api.nvim_get_mode().mode == 'c' then
-    return true
-  elseif disable_cmp_in[vim.bo.filetype] then
-    return false
-  else
-    -- disable completion inside a comment
-    local is_comment = context.in_treesitter_capture('comment') or context.in_syntax_group('Comment')
-    -- disable completion if inside a git commit or rebase
-    -- local buffer_name = vim.fn.expand('%:t')
-    -- local is_git_commit = buffer_name == 'COMMIT_EDITMSG' or buffer_name == 'git-rebase-todo'
-    -- return not is_comment and not is_git_commit
-    return not is_comment
-  end
-end
-
 return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   version = false, -- last release is way too old
-  enabled = enable_cmp,
   dependencies = {
     'hrsh7th/cmp-buffer', -- buffer completions
     'hrsh7th/cmp-path', -- path completions
@@ -79,6 +60,26 @@ return {
           luasnip.lsp_expand(args.body) -- For `luasnip` users.
         end,
       },
+      -- I actually didn't realize this wasn't working for a while, and I'm kind of used
+      -- to using completion inside comments now.
+      -- I'll keep the code around for now
+      -- enabled = function()
+      --   local context = require('cmp.config.context')
+      --   -- keep command mode completion enabled when cursor is in a comment
+      --   if vim.api.nvim_get_mode().mode == 'c' then
+      --     return true
+      --   elseif disable_cmp_in[vim.bo.filetype] then
+      --     return false
+      --   else
+      --     -- disable completion inside a comment
+      --     local is_comment = context.in_treesitter_capture('comment') or context.in_syntax_group('Comment')
+      --     -- disable completion if inside a git commit or rebase
+      --     -- local buffer_name = vim.fn.expand('%:t')
+      --     -- local is_git_commit = buffer_name == 'COMMIT_EDITMSG' or buffer_name == 'git-rebase-todo'
+      --     -- return not is_comment and not is_git_commit
+      --     return not is_comment
+      --   end
+      -- end,
       mapping = {
         -- Navigate between suggestion items
         ['<A-k>'] = cmp.mapping.select_prev_item(),
