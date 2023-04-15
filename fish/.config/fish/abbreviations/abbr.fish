@@ -25,11 +25,7 @@ abbr -a !! --position anywhere --function last_history_item
 abbr -a nvimbench 'hyperfine "nvim --headless +qa" --warmup 5'
 
 # --- Config files ---
-abbr -a -g ef $EDITOR $HOME/.config/fish/config.fish
 abbr -a -g sf source $HOME/.config/fish/config.fish
-abbr -a -g et $EDITOR $HOME/.config/tmux/tmux.conf
-abbr -a -g ev $EDITOR $HOME/.config/nvim/init.vim
-abbr -a -g eabbr $EDITOR $HOME/.config/fish/abbreviations/abbr.fish
 
 # --- Remaps ---
 abbr -a -g se sudoedit
