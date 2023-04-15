@@ -10,6 +10,10 @@ return {
           package_installed = '✓',
         },
       },
+      ensure_installed = {
+        'stylua',
+        'prettierd',
+      },
     },
   },
   { 'neovim/nvim-lspconfig' },
