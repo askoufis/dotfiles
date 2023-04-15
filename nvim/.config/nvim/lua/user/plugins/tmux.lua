@@ -1,6 +1,7 @@
 return {
   'aserowy/tmux.nvim',
   config = true,
+  event = 'VeryLazy',
   opts = {
     navigation = {
       -- cycles to opposite pane while navigating into the border

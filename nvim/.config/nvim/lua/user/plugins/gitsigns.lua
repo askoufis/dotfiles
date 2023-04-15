@@ -1,6 +1,7 @@
 return {
   'lewis6991/gitsigns.nvim',
   tag = 'release',
+  event = { 'BufReadPre', 'BufNewFile' },
   config = true,
   opts = function()
     local gitsigns = require('gitsigns')

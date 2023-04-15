@@ -2,7 +2,7 @@ return {
   -- Indent highlighting
   'lukas-reineke/indent-blankline.nvim',
   version = '*',
-  event = 'InsertEnter',
+  event = { 'BufReadPost', 'BufNewFile' },
   config = function(_, opts)
     require('indent_blankline').setup(opts)
     vim.api.nvim_set_hl(0, 'IndentBlanklineContextChar', { link = 'MoonflyGrey241' })
