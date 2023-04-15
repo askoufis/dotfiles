@@ -50,4 +50,18 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
     lazy = true,
   },
+  {
+    'nvim-treesitter/playground',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    cmd = 'TSPlaygroundToggle',
+    opts = {
+      query_linter = {
+        enable = true,
+        use_virtual_text = true,
+        lint_events = { 'BufWrite', 'CursorHold' },
+      },
+    },
+  },
 }
