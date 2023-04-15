@@ -76,16 +76,4 @@ return {
       }
     end,
   },
-  {
-    'jay-babu/mason-null-ls.nvim',
-    config = true,
-    dependencies = {
-      'williamboman/mason.nvim',
-      'jose-elias-alvarez/null-ls.nvim',
-    },
-    opts = {
-      automatic_installation = true,
-      ensure_installed = { 'prettierd', 'stylua' },
-    },
-  },
 }
