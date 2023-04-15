@@ -4,9 +4,11 @@ return {
     version = false,
     build = ':TSUpdate',
     event = { 'BufReadPost', 'BufNewFile' },
+    ---@param opts TSConfig
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
     end,
+    ---@type TSConfig
     opts = {
       ensure_installed = {
         'comment',
