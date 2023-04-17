@@ -16,3 +16,8 @@
   (comment) @_tsx_comment (#eq? @_tsx_comment "/* tsx */")
   (template_string) @tsx (#offset! @tsx 0 1 0 -1)
 )
+
+(
+  (comment) @_html_comment (#eq? @_html_comment "/* html */")
+  (template_string) @html (#offset! @html 0 1 0 -1)
+)
