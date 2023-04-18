@@ -38,7 +38,11 @@ map('n', '<Leader>w', ':wincmd =<CR>')
 -- Highlights
 map('n', '<Leader>n', ':noh<CR>')
 
--- Delete all buffers except for the current buffer
+local ends_with = function(str, ending)
+  return ending == '' or str:sub(-#ending) == ending
+end
+
+-- Delete all buffers except for the current buffer, or the NeogitConsole
 local delete_other_buffers = function()
   local buffers = vim.api.nvim_list_bufs()
   local current_buffer = vim.api.nvim_get_current_buf()
@@ -47,11 +51,15 @@ local delete_other_buffers = function()
     local is_loaded = vim.api.nvim_buf_is_loaded(buffer)
     local is_current_buffer = buffer == current_buffer
 
-    if is_loaded and not is_current_buffer then
+    local buffer_name = vim.api.nvim_buf_get_name(buffer)
+    local is_neogit_console_buffer = ends_with(buffer_name, 'NeogitConsole')
+
+    if is_loaded and not is_current_buffer and not is_neogit_console_buffer then
       vim.api.nvim_buf_delete(buffer, {})
     end
   end
 end
+
 map('n', '<leader>bo', delete_other_buffers)
 -- Delete all buffers
 map('n', '<leader>bd', ':%bd<CR>')
