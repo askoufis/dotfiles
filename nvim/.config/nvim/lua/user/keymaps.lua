@@ -58,6 +58,9 @@ local delete_other_buffers = function()
       vim.api.nvim_buf_delete(buffer, {})
     end
   end
+
+  -- Refresh the tabline so deleted buffers disappear
+  vim.cmd.redrawtabline()
 end
 
 map('n', '<leader>bo', delete_other_buffers)
