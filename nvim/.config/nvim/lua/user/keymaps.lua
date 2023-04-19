@@ -40,8 +40,8 @@ map('n', '<Leader>n', ':noh<CR>')
 
 local buffer_deletion = require('user.utilities.buffer-deletion')
 map('n', '<leader>bo', buffer_deletion.delete_other_buffers)
--- Delete all buffers
-map('n', '<leader>bd', ':%bd<CR>')
+-- Not using `:%bd<CR>` so we can preserve the NeoGit console buffer
+map('n', '<leader>bd', buffer_deletion.delete_all_buffers)
 map('n', '<leader>bn', buffer_deletion.delete_node_modules_buffers)
 
 -- Visual
