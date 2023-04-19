@@ -38,34 +38,11 @@ map('n', '<Leader>w', ':wincmd =<CR>')
 -- Highlights
 map('n', '<Leader>n', ':noh<CR>')
 
-local ends_with = function(str, ending)
-  return ending == '' or str:sub(-#ending) == ending
-end
-
--- Delete all buffers except for the current buffer, or the NeogitConsole
-local delete_other_buffers = function()
-  local buffers = vim.api.nvim_list_bufs()
-  local current_buffer = vim.api.nvim_get_current_buf()
-
-  for _, buffer in ipairs(buffers) do
-    local is_loaded = vim.api.nvim_buf_is_loaded(buffer)
-    local is_current_buffer = buffer == current_buffer
-
-    local buffer_name = vim.api.nvim_buf_get_name(buffer)
-    local is_neogit_console_buffer = ends_with(buffer_name, 'NeogitConsole')
-
-    if is_loaded and not is_current_buffer and not is_neogit_console_buffer then
-      vim.api.nvim_buf_delete(buffer, {})
-    end
-  end
-
-  -- Refresh the tabline so deleted buffers disappear
-  vim.cmd.redrawtabline()
-end
-
-map('n', '<leader>bo', delete_other_buffers)
+local buffer_deletion = require('user.utilities.buffer-deletion')
+map('n', '<leader>bo', buffer_deletion.delete_other_buffers)
 -- Delete all buffers
 map('n', '<leader>bd', ':%bd<CR>')
+map('n', '<leader>bn', buffer_deletion.delete_node_modules_buffers)
 
 -- Visual
 -- Stay in indent mode
