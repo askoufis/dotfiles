@@ -11,6 +11,7 @@ return {
     ---@type TSConfig
     opts = {
       ensure_installed = {
+        'astro',
         'comment',
         'css',
         'dockerfile',
