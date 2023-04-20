@@ -6,6 +6,7 @@ local schemas = require('schemastore').json.schemas {
     '.eslintrc',
     'package.json',
     'tsconfig.json',
+    'jsconfig.json',
   },
 }
 
