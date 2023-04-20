@@ -7,6 +7,9 @@ return {
     ---@param opts TSConfig
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
+
+      local filetype_to_parsername = require('nvim-treesitter.parsers').filetype_to_parsername
+      filetype_to_parsername.mdx = 'markdown'
     end,
     ---@type TSConfig
     opts = {
