@@ -46,6 +46,12 @@ return {
         enable_autocmd = false,
       },
       indent = { enable = true, disable = { 'yaml' } },
+      -- Playground config
+      query_linter = {
+        enable = true,
+        use_virtual_text = true,
+        lint_events = { 'BufWrite', 'CursorHold' },
+      },
     },
   },
   {
@@ -59,12 +65,6 @@ return {
       'nvim-treesitter/nvim-treesitter',
     },
     cmd = 'TSPlaygroundToggle',
-    opts = {
-      query_linter = {
-        enable = true,
-        use_virtual_text = true,
-        lint_events = { 'BufWrite', 'CursorHold' },
-      },
-    },
+    config = false,
   },
 }
