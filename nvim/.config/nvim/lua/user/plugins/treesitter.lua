@@ -8,8 +8,7 @@ return {
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
 
-      local filetype_to_parsername = require('nvim-treesitter.parsers').filetype_to_parsername
-      filetype_to_parsername.mdx = 'markdown'
+      vim.treesitter.language.register('markdown', 'mdx')
     end,
     ---@type TSConfig
     opts = {
