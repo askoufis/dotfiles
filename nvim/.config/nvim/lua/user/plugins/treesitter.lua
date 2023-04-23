@@ -15,6 +15,7 @@ return {
     opts = {
       ensure_installed = {
         'astro',
+        'bash',
         'comment',
         'css',
         'dockerfile',
