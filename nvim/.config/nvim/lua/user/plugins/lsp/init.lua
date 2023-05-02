@@ -1,6 +1,7 @@
 return {
   {
     'williamboman/mason.nvim', -- Package manager
+    version = '*',
     cmd = 'Mason',
     config = true,
     opts = {
