@@ -19,3 +19,7 @@ set -x -g VOLTA_HOME $HOME/.local/share/.volta
 fish_add_path -pP $VOLTA_HOME/bin
 
 fish_add_path -pP ~/.bun/bin
+
+# Set `bat` as the `man` pager
+# https://github.com/sharkdp/bat/#man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
