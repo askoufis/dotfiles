@@ -19,6 +19,8 @@ return {
         'css',
         'dockerfile',
         'fish',
+        'git_config',
+        'git_rebase',
         'html',
         'http',
         'javascript',
