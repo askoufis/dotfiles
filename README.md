@@ -14,6 +14,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [ripgrep]
 - [fd]
 - [glow]
+- [delta]
 - [rust-analyzer]: Install with `rustup component add rust-analyzer`
 - [rustfmt]: Install with `rustup component add rustfmt`
 
@@ -23,6 +24,7 @@ Inspired by [ThePrimagen's dotfiles].
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [fd]: https://github.com/sharkdp/fd
 [glow]: https://github.com/charmbracelet/glow
+[delta]: https://github.com/dandavison/delta
 [rust-analyzer]: https://github.com/rust-lang/rust-analyzer
 [rustfmt]: https://github.com/rust-lang/rustfmt
 
