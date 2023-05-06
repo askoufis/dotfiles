@@ -39,7 +39,7 @@ git clone https://github.com/askoufis/dotfiles.git
 2. Set the `STOW_FOLDERS` envar to the list of folders you want to install:
 
 ```fish
-set -x -g STOW_FOLDERS alacritty alacritty-linux nvim fish fish-linux tmux
+set -x -g STOW_FOLDERS alacritty alacritty-linux git nvim fish fish-linux tmux
 ```
 
 3. Run `./install`
