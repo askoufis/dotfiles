@@ -1,5 +1,4 @@
 private.fish
-nvim/.config/nvim/plugin
 
 # Log file I use to debug sometimes
 nvim.log
