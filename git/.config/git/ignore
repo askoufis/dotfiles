@@ -1,0 +1,6 @@
+# system files
+.DS_Store
+Thumbs.db
+
+# error logs
+yarn-error.log

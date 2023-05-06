@@ -1,0 +1,33 @@
+[include]
+  path = ./user.gitconfig # Machine-specific config that doesn't need to be checked in
+
+[core]
+  pager = delta
+
+  fsmonitor = true
+  preloadindex = true
+
+[delta]
+  navigate = true
+  light = false
+  line-numbers = true
+  side-by-side = true
+
+[push]
+  default = current
+
+[pull]
+  rebase = false
+
+[fetch]
+  prune = true
+
+[init]
+  defaultBranch = master
+
+[diff]
+  colorMoved = default
+
+[interactive]
+  diffFilter = delta --color-only
+
