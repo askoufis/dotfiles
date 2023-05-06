@@ -1,6 +1,9 @@
 # Private stuff that I don't want on github
 private.fish
 
+# Machine-specific config that doesn't really need to be in git
+user.gitconfig
+
 # Log file I use to debug sometimes
 nvim.log
 
