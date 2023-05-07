@@ -1,18 +1,18 @@
 font:
   normal:
-    family: NotoSansMono Nerd Font
+    family: NotoSansM Nerd Font
     style: Regular
 
   bold:
-    family: NotoSansMono Nerd Font
+    family: NotoSansM Nerd Font
     style: Bold
 
   italic:
-    family: NotoSansMono Nerd Font
+    family: NotoSansM Nerd Font
     style: Italic
 
   bold_italic:
-    family: NotoSansMono Nerd Font
+    family: NotoSansM Nerd Font
     style: Bold Italic
 
   size: 11.0
