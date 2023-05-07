@@ -32,3 +32,8 @@
 [interactive]
   diffFilter = delta --color-only
 
+[rebase]
+  abbreviateCommands = true
+
+[safe]
+  bareRepository = explicit
