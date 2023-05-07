@@ -18,16 +18,16 @@ return {
           linehl = 'GitSignsChangeLn',
         },
       },
-      signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-      numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-      linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
-      word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+      signcolumn = true,
+      numhl = false,
+      linehl = false,
+      word_diff = false,
       watch_gitdir = {
         interval = 1000,
         follow_files = true,
       },
       attach_to_untracked = true,
-      current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+      current_line_blame = false,
       current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
@@ -81,8 +81,8 @@ return {
         end, { expr = true })
 
         -- Actions
-        map({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<CR>')
-        map({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+        map({ 'n', 'v' }, '<leader>hs', gitsigns.stage_hunk)
+        map({ 'n', 'v' }, '<leader>hr', gitsigns.reset_hunk)
 
         map('n', '<leader>hS', gitsigns.stage_buffer)
         map('n', '<leader>hu', gitsigns.undo_stage_hunk)
