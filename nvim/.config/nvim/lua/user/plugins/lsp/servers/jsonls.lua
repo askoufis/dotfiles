@@ -7,6 +7,7 @@ local schemas = require('schemastore').json.schemas {
     'package.json',
     'tsconfig.json',
     'jsconfig.json',
+    'babelrc.json',
   },
 }
 
