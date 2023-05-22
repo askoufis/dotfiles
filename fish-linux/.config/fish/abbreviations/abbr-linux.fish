@@ -9,3 +9,6 @@ abbr -a -g ss "maim -s -u | xclip -selection clipboard -t image/png -i"
 # Removes old packages from the pacman cache, keeping the last 3 versions
 abbr -a -g clear-package-cache "sudo paccache -rk3; paru -Sc --aur --noconfirm"
 abbr -a -g update-package-mirrors reflector --save /etc/pacman.d/mirrorlist -c AU -c NZ --latest 10 --sort rate --protocol https
+
+# --- Misc ---
+abbr -a -g sway "WLR_NO_HARDWARE_CURSORS=1 sway --unsupported-gpu"
