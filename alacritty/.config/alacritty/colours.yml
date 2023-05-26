@@ -1,11 +1,11 @@
 draw_bold_text_with_bright_colors: true
 
 colourschemes:
-  # vim moonfly from https://github.com/bluz71/vim-moonfly-colors/blob/d3ff722e84a9571acbb489e8e85b2a44bbefb602/terminal_themes/alacritty.yml
+  # vim moonfly from https://github.com/bluz71/vim-moonfly-colors/blob/c4ae6851441edfe74f7fb46b0e8cc43f534b0aa5/terminal_themes/alacritty.yml
   moonfly: &moonfly # Default colors
     primary:
       background: "#080808"
-      foreground: "#b2b2b2"
+      foreground: "#bdbdbd"
       bright_foreground: "#eeeeee"
 
     # Cursor colors
