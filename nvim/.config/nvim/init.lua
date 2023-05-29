@@ -1,4 +1,5 @@
 require('user.keymaps')
+require('user.commands')
 require('user.options')
 require('globals')
 require('user.autocommands')
