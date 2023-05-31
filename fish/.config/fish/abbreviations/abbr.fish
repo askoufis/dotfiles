@@ -23,6 +23,8 @@ abbr -a -g nb --position anywhere --set-cursor "git checkout -B % origin/master"
 function last_history_item; echo $history[1]; end
 abbr -a !! --position anywhere --function last_history_item
 abbr -a nvimbench 'hyperfine "nvim --headless +qa" --warmup 5'
+# Get latest version of a package in the npm registry
+abbr -a -g --set-cursor pv 'npm view % dist-tags.latest'
 
 # --- Config files ---
 abbr -a -g sf source $HOME/.config/fish/config.fish
