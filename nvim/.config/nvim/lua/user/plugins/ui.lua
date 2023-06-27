@@ -9,5 +9,7 @@ return {
   { 'nvim-lua/popup.nvim', lazy = true },
 
   -- LSP progress inidicator
-  { 'j-hui/fidget.nvim', event = 'BufAdd', config = true },
+  -- Plugin is being re-written, pinned to `legacy` tag to avoid breaking changes
+  -- See https://github.com/j-hui/fidget.nvim/tree/f1c375ba68839eaa4a65efdf2aa078c0da0548fe#fidgetnvim
+  { 'j-hui/fidget.nvim', tag = 'legacy', event = 'BufAdd', config = true },
 }
