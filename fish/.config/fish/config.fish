@@ -32,6 +32,9 @@ if status --is-interactive
         source $FILE
     end
 
+    # --- Colorscheme
+    source $HOME/.config/fish/colors/moonfly.fish
+
     # --- Prompt --- https://github.com/pure-fish/pure
     _pure_set_default pure_show_subsecond_command_duration true
 end
