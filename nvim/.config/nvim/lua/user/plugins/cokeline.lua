@@ -38,6 +38,7 @@ return {
     local yellow = moonfly_palette.yellow
     local green = moonfly_palette.green
     local violet = moonfly_palette.violet
+    local grey = moonfly_palette.grey246
 
     local components = {
       space = {
@@ -127,8 +128,7 @@ return {
         end,
         fg = function(buffer)
           local modified_color = buffer.is_modified and green
-          local close_color = not is_picking_close() and red
-          return buffer.is_focused and (modified_color or close_color)
+          return buffer.is_focused and modified_color or grey
         end,
         delete_buffer_on_left_click = true,
         truncation = { priority = 1 },
