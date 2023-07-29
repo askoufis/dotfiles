@@ -1,6 +1,6 @@
 return {
   'nvim-neo-tree/neo-tree.nvim',
-  branch = 'v2.x',
+  version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
@@ -16,9 +16,6 @@ return {
   },
   cmd = 'Neotree',
   init = function()
-    -- remove the deprecated commands from v1.x
-    vim.g.neo_tree_remove_legacy_commands = 1
-
     vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
     vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
     vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
@@ -30,25 +27,15 @@ return {
       container = {
         enable_character_fade = false,
       },
-      icon = {
-        folder_closed = '',
-        folder_open = '',
-        folder_empty = '󰜌',
-        folder_empty_open = '󰜌',
-      },
       git_status = {
         symbols = {
           -- Change type
-          added = '', -- or "✚", but this is redundant info if you use git_status_colors on the name
-          modified = '', -- or "", but this is redundant info if you use git_status_colors on the name
+          -- Make these empty as `use_git_status_colors` is true by default, so the symbols
+          -- provide redundant information
+          added = '',
+          modified = '',
           deleted = '✖', -- this can only be used in the git_status source
           renamed = '󰁕', -- this can only be used in the git_status source
-          -- Status type
-          untracked = '',
-          ignored = '',
-          unstaged = '󰄱',
-          staged = '',
-          conflict = '',
         },
       },
     },
