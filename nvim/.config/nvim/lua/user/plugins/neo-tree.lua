@@ -45,7 +45,9 @@ return {
         hide_gitignored = false,
         never_show = { '.git' },
       },
-      follow_current_file = true,
+      follow_current_file = {
+        enabled = true,
+      },
     },
     mappings = {
       ['s'] = 'open_split',
