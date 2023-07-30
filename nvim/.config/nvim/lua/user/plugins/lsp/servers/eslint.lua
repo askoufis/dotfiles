@@ -5,7 +5,7 @@ local on_attach = function(client, bufnr)
   common_on_attach { disable_formatting = false }(client, bufnr)
 
   vim.api.nvim_create_autocmd('BufWritePre', {
-    pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+    pattern = { '*.tsx', '*.ts', '*.jsx', '*.js', '*.cjs', '*.mjs' },
     desc = 'Fix all eslint problems on save',
     group = vim.api.nvim_create_augroup('eslint_fixall', {}),
     command = 'EslintFixAll',
