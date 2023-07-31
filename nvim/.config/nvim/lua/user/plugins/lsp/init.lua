@@ -52,6 +52,7 @@ return {
       require('user.plugins.lsp.servers.cssls')
       require('user.plugins.lsp.servers.astro')
       require('user.plugins.lsp.servers.rust_analyzer')
+      require('user.plugins.lsp.servers.markdoc')
     end,
   },
   {
