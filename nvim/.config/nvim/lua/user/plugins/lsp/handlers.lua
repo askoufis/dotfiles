@@ -66,13 +66,7 @@ local lsp_highlight_document = function(client, bufnr)
   end
 end
 
-local lsp_keymaps = function(bufnr)
-  local map = function(mode, l, r, opts)
-    opts = opts or { silent = true }
-    opts.buffer = bufnr
-    vim.keymap.set(mode, l, r, opts)
-  end
-
+local lsp_keymaps = function(map)
   map('n', 'gD', vim.lsp.buf.declaration)
   map('n', 'gd', vim.lsp.buf.definition)
   map('n', 'gh', vim.lsp.buf.hover)
@@ -89,15 +83,18 @@ local lsp_keymaps = function(bufnr)
   end)
   map('n', 'gl', vim.diagnostic.open_float)
   map('n', '<leader>q', vim.diagnostic.setloclist)
-  map('n', '<leader>f', function()
-    vim.lsp.buf.format { async = true }
-  end)
   map('n', '<leader>lr', ':LspRestart<CR>')
 end
 
 M.on_attach = function(options)
   return function(client, bufnr)
-    lsp_keymaps(bufnr)
+    local map = function(mode, l, r, opts)
+      opts = opts or { silent = true }
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    lsp_keymaps(map)
     lsp_highlight_document(client, bufnr)
 
     if options.disable_formatting then
@@ -106,10 +103,14 @@ M.on_attach = function(options)
     end
 
     if client.server_capabilities.documentFormattingProvider then
+      map('n', '<leader>f', function()
+        vim.lsp.buf.format { async = true }
+      end)
+
       vim.api.nvim_create_autocmd('BufWritePre', {
-        pattern = '*',
+        buffer = bufnr,
         desc = 'Format the buffer on save',
-        group = vim.api.nvim_create_augroup('lsp_formatting', {}),
+        group = vim.api.nvim_create_augroup('lsp_formatting_buf_' .. bufnr, {}),
         callback = function()
           vim.lsp.buf.format()
         end,
