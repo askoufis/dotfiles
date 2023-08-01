@@ -76,5 +76,8 @@ key_bindings:
   - { key: U, mods: Alt, chars: "\x1bu" }
   - { key: Key1, mods: Alt, chars: "\x1b1" }
   - { key: Key2, mods: Alt, chars: "\x1b2" }
+  # Neovim github copilot keymaps
+  - { key: LBracket, mods: Alt, chars: "\x1b[" }
+  - { key: RBracket, mods: Alt, chars: "\x1b]" }
   # Fix Ctrl + Space
   - { key: Space, mods: Control, chars: "\x00" }
