@@ -110,3 +110,6 @@ local toggle_spell = function()
   end
 end
 map('n', '<leader>sp', toggle_spell)
+
+-- Utilities
+map('n', '<leader>cl', ':g/console\\.log/d<CR>')
