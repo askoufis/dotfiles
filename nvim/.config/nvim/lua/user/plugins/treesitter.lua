@@ -80,12 +80,4 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
     lazy = true,
   },
-  {
-    'nvim-treesitter/playground',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
-    cmd = 'TSPlaygroundToggle',
-    config = false,
-  },
 }
