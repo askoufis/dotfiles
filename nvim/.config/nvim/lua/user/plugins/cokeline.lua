@@ -1,6 +1,9 @@
 return {
   'noib3/nvim-cokeline',
-  dependencies = 'nvim-tree/nvim-web-devicons',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
+  },
   event = 'VeryLazy',
   keys = function()
     local keys = {}
