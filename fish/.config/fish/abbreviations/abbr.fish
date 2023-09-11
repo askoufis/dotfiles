@@ -33,8 +33,8 @@ abbr -a -g sf source $HOME/.config/fish/config.fish
 abbr -a -g se sudoedit
 abbr -a -g vim nvim
 abbr -a -g v nvim
-abbr -a -g ls exa
-abbr -a -g la exa -la
+abbr -a -g ls eza
+abbr -a -g la eza -la
 abbr -a -g cat bat
 
 # --- tmux ---
