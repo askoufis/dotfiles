@@ -48,6 +48,7 @@ return {
       follow_current_file = {
         enabled = true,
       },
+      use_libuv_file_watcher = true,
     },
     mappings = {
       ['s'] = 'open_split',
