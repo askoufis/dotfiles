@@ -1,8 +1,10 @@
 local load_snippets = function()
-  local ls = require('luasnip')
   require('luasnip.loaders.from_lua').load { paths = './lua/user/snippets' }
+
+  local ls = require('luasnip')
   ls.filetype_extend('typescriptreact', { 'javascript', 'typescript' })
   ls.filetype_extend('typescript', { 'javascript' })
+  ls.filetype_extend('javascriptreact', { 'javascript' })
 end
 
 return {
