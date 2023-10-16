@@ -1,0 +1,44 @@
+#!/usr/bin/env fish
+# Fish version of script from https://theosteiner.de/open-neovim-from-your-browser-integrating-nvim-with-sveltes-inspector
+
+set filename $argv[1]
+
+if test -n $argv[2]
+  set line $argv[2]
+else
+  set line 1
+end
+
+if test -n $argv[3]
+  set column $argv[3]
+else
+  set column 1
+end
+
+# <C-\\><C-N> -> go to normal mode, open file, navigate to correct line and column
+set command "<C-\\><C-N>:n $filename<CR>:call cursor($line,$column)<CR>"
+
+# nvim default sockets are always nested somewhere in here
+# see: https://github.com/neovim/neovim/blob/7c661207cc4357553ed2b057b6c8f28400024361/src/nvim/msgpack_rpc/server.c#L89
+set socket_directory {$TMPDIR}nvim.{$USER}
+
+# use find to find all sockets
+set nvim_sockets (find "$socket_directory" -type s)
+
+for socket in $nvim_sockets
+  # now it gets nasty...
+  # socket is of shape something.user.pid.count
+  # so to get the pid we do this:
+  # replace "dots" in socket with linebreaks and return the second to last line (the pid)
+  set pid (echo $socket | tr "." "\n" | tail -2 | head -n 1)
+
+  # now we want to get the cwd this process is running in
+  # use lsof to get table for this pid, grep row with file descriptor cwd
+  # now replace spaces in row with linebreaks and return the second to last line (the pid)
+  set pid_cwd (lsof -p $pid | grep cwd | tr " " "\n" | tail -n 1)
+
+  # only if process cwd is the same as the pwd, run the command
+  if test $PWD = $pid_cwd
+     nvim --server $socket --remote-send "$command"
+  end
+end
