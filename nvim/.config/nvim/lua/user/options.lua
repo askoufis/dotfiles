@@ -87,3 +87,13 @@ vim.g.cursorhold_updatetime = 100
 
 -- Spell
 vim.opt.spelllang = 'en_au'
+
+-- Disable swapfiles and instead trigger autoread every time a buffer is entered/ focused
+vim.opt.swapfile = false
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter' }, {
+  pattern = { '*.*' },
+  callback = function()
+    vim.cmd([[checktime]])
+  end,
+})
