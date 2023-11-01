@@ -14,3 +14,6 @@ scrolling:
   faux_multiplier: 3
 
 live_config_reload: true
+
+window:
+  dynamic_title: false
