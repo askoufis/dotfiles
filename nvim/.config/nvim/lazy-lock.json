@@ -36,6 +36,7 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" },
   "tmux.nvim": { "branch": "main", "commit": "ea67d59721eb7e12144ce2963452e869bfd60526" },
+  "tshjkl.nvim": { "branch": "main", "commit": "3e4d3ad51afccec8cdb934ccdd014e284174082c" },
   "vim-moonfly-colors": { "branch": "master", "commit": "5f121c0e8103181a16aa86e9f80e99204eef6c39" },
   "vim-sxhkdrc": { "branch": "master", "commit": "7b8abc305ba346c3af7d57da0ebec2b2f2d3f5b0" }
 }

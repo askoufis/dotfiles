@@ -74,6 +74,8 @@ key_bindings:
   - { key: Q, mods: Alt, chars: "\x1bq" }
   # Tmux plugin cleanup
   - { key: U, mods: Alt, chars: "\x1bu" }
+  # tshjkl.nvim
+  - { key: V, mods: Alt, chars: "\x1bv" }
   - { key: Key1, mods: Alt, chars: "\x1b1" }
   - { key: Key2, mods: Alt, chars: "\x1b2" }
   # Neovim github copilot keymaps

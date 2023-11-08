@@ -80,4 +80,10 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
     lazy = true,
   },
+  {
+    -- Visual mode selection powered by treesitter
+    'gsuuon/tshjkl.nvim',
+    config = true,
+    lazy = true,
+  },
 }
