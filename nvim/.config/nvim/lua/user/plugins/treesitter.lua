@@ -84,6 +84,6 @@ return {
     -- Visual mode selection powered by treesitter
     'gsuuon/tshjkl.nvim',
     config = true,
-    lazy = true,
+    event = 'VeryLazy',
   },
 }
