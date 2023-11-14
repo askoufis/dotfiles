@@ -4,14 +4,12 @@ return {
   event = { 'BufReadPost', 'BufNewFile' },
   main = 'ibl',
   opts = {
-    debounce = 30,
     indent = {
       char = '▏',
+      highlight = { 'MoonflyGrey236' },
     },
     scope = {
-      show_start = false,
-      show_end = false,
-      highlight = { 'MoonflyGrey241' },
+      enabled = false,
     },
   },
 }
