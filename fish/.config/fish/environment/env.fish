@@ -25,7 +25,8 @@ fish_add_path -pP ~/.local/bin
 
 # Set `bat` as the `man` pager
 # https://github.com/sharkdp/bat/#man
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+set -x -g MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x -g MANROFFOPT "-c"
 
 # Custom editor launch script so inspector plugins work with neovim
 # https://theosteiner.de/open-neovim-from-your-browser-integrating-nvim-with-sveltes-inspector
