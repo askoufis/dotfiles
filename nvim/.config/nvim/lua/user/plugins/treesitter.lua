@@ -90,4 +90,8 @@ return {
     config = true,
     event = 'VeryLazy',
   },
+  {
+    'windwp/nvim-ts-autotag',
+    event = 'InsertEnter',
+  },
 }
