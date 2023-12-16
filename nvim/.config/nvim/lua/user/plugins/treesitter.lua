@@ -88,7 +88,7 @@ return {
     -- Visual mode selection powered by treesitter
     'gsuuon/tshjkl.nvim',
     config = true,
-    event = 'VeryLazy',
+    event = 'BufEnter',
   },
   {
     'windwp/nvim-ts-autotag',
