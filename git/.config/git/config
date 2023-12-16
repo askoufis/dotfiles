@@ -35,5 +35,6 @@
 [rebase]
   abbreviateCommands = true
 
-[safe]
-  bareRepository = explicit
+# This breaks AUR git packages :(
+# [safe]
+#   bareRepository = explicit
