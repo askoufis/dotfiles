@@ -85,6 +85,9 @@ vim.opt.fillchars = {
 -- For FixCursorHold.nvim
 vim.g.cursorhold_updatetime = 100
 
+-- Skip backwards compat for nvim-ts-context-commentstring
+vim.g.skip_ts_context_commentstring_module = true
+
 -- Spell
 vim.opt.spelllang = 'en_au'
 

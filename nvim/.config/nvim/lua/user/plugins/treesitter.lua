@@ -63,10 +63,6 @@ return {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
       autotag = {
         enable = true,
       },
@@ -82,7 +78,10 @@ return {
   {
     -- Context-aware comments via treesitter
     'JoosepAlviste/nvim-ts-context-commentstring',
-    lazy = true,
+    config = true,
+    opts = {
+      enable_autocmd = false,
+    },
   },
   {
     -- Visual mode selection powered by treesitter
