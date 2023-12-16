@@ -56,6 +56,7 @@ return {
         'vim',
         'vimdoc',
         'yaml',
+        'zig',
       },
       sync_install = false,
       highlight = {
