@@ -15,7 +15,7 @@ _G.Reverse = function(list)
   return rev
 end
 
---- Note: `noremap` and `silent` are true by default
+--- Note: `noremap` is not required, and `silent` are true by default, unless overridden
 _G.set_keymap = function(mode, l, r, opts)
   opts = opts or { silent = true }
   vim.keymap.set(mode, l, r, opts)
