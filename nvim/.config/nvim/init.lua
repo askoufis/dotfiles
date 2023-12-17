@@ -1,7 +1,7 @@
+require('globals')
 require('user.keymaps')
 require('user.commands')
 require('user.options')
-require('globals')
 require('user.autocommands')
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
