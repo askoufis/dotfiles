@@ -1,10 +1,9 @@
-local M = {}
-
 local ends_with = function(str, ending)
   return ending == '' or str:sub(-#ending) == ending
 end
 
-M.delete_all_buffers = function()
+-- Not using `:%bd<CR>` so we can preserve the NeoGit console buffer
+local delete_all_buffers = function()
   local buffers = vim.api.nvim_list_bufs()
 
   for _, buffer in ipairs(buffers) do
@@ -25,7 +24,7 @@ M.delete_all_buffers = function()
 end
 
 -- Delete all buffers except for the current buffer, or the NeogitConsole
-M.delete_other_buffers = function()
+local delete_other_buffers = function()
   local buffers = vim.api.nvim_list_bufs()
   local current_buffer = vim.api.nvim_get_current_buf()
 
@@ -48,7 +47,7 @@ M.delete_other_buffers = function()
 end
 
 -- Delete all buffers that contain `node_modules` in their name
-M.delete_node_modules_buffers = function()
+local delete_node_modules_buffers = function()
   local buffers = vim.api.nvim_list_bufs()
 
   for _, buffer in ipairs(buffers) do
@@ -66,4 +65,6 @@ M.delete_node_modules_buffers = function()
   vim.cmd.redrawtabline()
 end
 
-return M
+set_keymap('n', '<leader>bo', delete_other_buffers)
+set_keymap('n', '<leader>bd', delete_all_buffers)
+set_keymap('n', '<leader>bn', delete_node_modules_buffers)

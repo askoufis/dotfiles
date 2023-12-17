@@ -28,16 +28,10 @@ set_keymap('n', '<C-Left>', ':vertical resize -2<CR>')
 set_keymap('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- Make all windows (almost) equally high and wide
-set_keymap('n', '<Leader>w', ':wincmd =<CR>')
+set_keymap('n', '<leader>w', ':wincmd =<CR>')
 
 -- Highlights
-set_keymap('n', '<Leader>n', ':noh<CR>')
-
-local buffer_deletion = require('user.utilities.buffer-deletion')
-set_keymap('n', '<leader>bo', buffer_deletion.delete_other_buffers)
--- Not using `:%bd<CR>` so we can preserve the NeoGit console buffer
-set_keymap('n', '<leader>bd', buffer_deletion.delete_all_buffers)
-set_keymap('n', '<leader>bn', buffer_deletion.delete_node_modules_buffers)
+set_keymap('n', '<leader>n', ':noh<CR>')
 
 -- Visual
 -- Stay in indent mode

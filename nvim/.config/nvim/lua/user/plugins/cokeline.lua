@@ -10,16 +10,16 @@ return {
 
     -- https://vi.stackexchange.com/a/31013 for info why these have to be non-recursive maps
     for i = 1, 9 do
-      table.insert(keys, { ('<Leader>s%s'):format(i), ('<Plug>(cokeline-switch-%s)'):format(i), noremap = false })
-      table.insert(keys, { ('<Leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i), noremap = false })
+      table.insert(keys, { ('<leader>s%s'):format(i), ('<Plug>(cokeline-switch-%s)'):format(i), noremap = false })
+      table.insert(keys, { ('<leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i), noremap = false })
     end
 
     local more_keys = {
       { '<S-h>', '<Plug>(cokeline-focus-prev)', noremap = false },
       { '<S-l>', '<Plug>(cokeline-focus-next)', noremap = false },
-      { '<Leader>p', '<Plug>(cokeline-switch-prev)', noremap = false },
-      { '<Leader>n', '<Plug>(cokeline-switch-next)', noremap = false },
-      { '<Leader>x', '<Plug>(cokeline-pick-close)', noremap = false },
+      { '<leader>p', '<Plug>(cokeline-switch-prev)', noremap = false },
+      { '<leader>n', '<Plug>(cokeline-switch-next)', noremap = false },
+      { '<leader>x', '<Plug>(cokeline-pick-close)', noremap = false },
     }
 
     vim.list_extend(keys, more_keys)
