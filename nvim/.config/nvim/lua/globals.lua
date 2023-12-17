@@ -1,5 +1,5 @@
 _G.P = function(v)
-  print(vim.inspect(v))
+  vim.print(v)
 
   return v
 end
