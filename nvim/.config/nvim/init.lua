@@ -3,6 +3,7 @@ require('user.keymaps')
 require('user.commands')
 require('user.options')
 require('user.autocommands')
+require('user.buffer-deletion')
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
