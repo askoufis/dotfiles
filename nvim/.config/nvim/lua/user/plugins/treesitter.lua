@@ -73,7 +73,29 @@ return {
         use_virtual_text = true,
         lint_events = { 'BufWrite', 'CursorHold' },
       },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+          keymaps = {
+            ['ap'] = '@parameter.outer',
+            ['ip'] = '@parameter.inner',
+            ['af'] = '@function.outer',
+            ['if'] = '@function.inner',
+            ['ii'] = '@conditional.inner',
+            ['ai'] = '@conditional.outer',
+            ['il'] = '@loop.inner',
+            ['al'] = '@loop.outer',
+            ['at'] = '@comment.outer',
+          },
+        },
+      },
     },
+  },
+  {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = { 'BufReadPost', 'BufNewFile' },
   },
   {
     -- Context-aware comments via treesitter
