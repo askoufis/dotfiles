@@ -105,5 +105,15 @@ return {
     config = function()
       require('lsp-file-operations').setup()
     end,
+    -- This is a copy of the Neo-tree lazy keymap. We copy it so both plugins load when the keymap
+    -- is pressed.
+    keys = {
+      {
+        '\\',
+        ':Neotree toggle<CR>',
+        desc = 'Toggle NeoTree',
+        silent = true,
+      },
+    },
   },
 }

@@ -100,7 +100,9 @@ return {
   {
     -- Context-aware comments via treesitter
     'JoosepAlviste/nvim-ts-context-commentstring',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = true,
+    event = { 'BufReadPost', 'BufNewFile' },
     opts = {
       enable_autocmd = false,
     },
