@@ -1,5 +1,7 @@
-"window.dynamic_title" = true
-window_opacity = 1.0
+[window]
+dynamic_title = true
+decorations = "full"
+dynamic_padding = false
 
 [bell]
 animation = "EaseOutExpo"
@@ -28,9 +30,6 @@ style = "Italic"
 [font.normal]
 family = "JetBrainsMono NFM"
 style = "Regular"
-
-[hints.url]
-modifiers = "None"
 
 # Make Option + HJKL work like Alt + HJKL in neovim
 # https://github.com/alacritty/alacritty/issues/93#issuecomment-271043197
@@ -108,12 +107,6 @@ mods = "Control"
 [mouse]
 hide_when_typing = false
 
-[mouse.double_click]
-threshold = 300
-
-[mouse.triple_click]
-threshold = 300
-
 [selection]
 save_to_clipboard = false
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
@@ -121,10 +114,6 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 [shell]
 args = ["--login"]
 program = "/opt/homebrew/bin/fish"
-
-[window]
-decorations = "full"
-dynamic_padding = false
 
 [window.dimensions]
 columns = 0

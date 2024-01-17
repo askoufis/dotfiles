@@ -34,36 +34,3 @@ foreground = "#bdbdbd"
 [colors.selection]
 background = "#b2ceee"
 text = "#080808"
-
-[colourschemes.moonfly.bright]
-black = "#949494"
-blue = "#74b2ff"
-cyan = "#85dc85"
-green = "#36c692"
-magenta = "#ae81ff"
-red = "#ff5189"
-white = "#e4e4e4"
-yellow = "#c2c292"
-
-[colourschemes.moonfly.cursor]
-cursor = "#9e9e9e"
-text = "#080808"
-
-[colourschemes.moonfly.normal]
-black = "#323437"
-blue = "#80a0ff"
-cyan = "#79dac8"
-green = "#8cc85f"
-magenta = "#cf87e8"
-red = "#ff5454"
-white = "#c6c6c6"
-yellow = "#e3c78a"
-
-[colourschemes.moonfly.primary]
-background = "#080808"
-bright_foreground = "#eeeeee"
-foreground = "#bdbdbd"
-
-[colourschemes.moonfly.selection]
-background = "#b2ceee"
-text = "#080808"
