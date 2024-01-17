@@ -1,4 +1,4 @@
-import = ["/Users/askoufis/.config/alacritty/linux.toml", "/Users/askoufis/.config/alacritty/mac.toml", "/Users/askoufis/.config/alacritty/colours.toml"]
+import = ["~/.config/alacritty/linux.toml", "~/.config/alacritty/mac.toml", "~/.config/alacritty/colours.toml"]
 live_config_reload = true
 
 [env]
