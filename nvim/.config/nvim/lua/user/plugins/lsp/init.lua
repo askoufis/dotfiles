@@ -57,46 +57,6 @@ return {
     end,
   },
   {
-    'jose-elias-alvarez/null-ls.nvim',
-    config = true,
-    event = { 'BufReadPre', 'BufNewFile' },
-    opts = function()
-      local null_ls = require('null-ls')
-      local formatting = null_ls.builtins.formatting
-
-      return {
-        sources = {
-          formatting.prettierd,
-          formatting.stylua,
-        },
-        on_attach = function(client)
-          if client.server_capabilities.documentFormattingProvider then
-            local bufnr = vim.api.nvim_get_current_buf()
-
-            local map = function(mode, l, r, opts)
-              opts = opts or { silent = true }
-              opts.buffer = bufnr
-              vim.keymap.set(mode, l, r, opts)
-            end
-
-            map('n', '<leader>f', function()
-              vim.lsp.buf.format { async = true }
-            end)
-
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              buffer = bufnr,
-              group = vim.api.nvim_create_augroup('null_ls_formatting_buf_' .. bufnr, {}),
-              desc = 'Format file before saving',
-              callback = function()
-                vim.lsp.buf.format()
-              end,
-            })
-          end
-        end,
-      }
-    end,
-  },
-  {
     'antosha417/nvim-lsp-file-operations',
     dependencies = {
       'nvim-lua/plenary.nvim',
