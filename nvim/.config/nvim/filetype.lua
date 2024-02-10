@@ -4,5 +4,6 @@ vim.filetype.add {
   },
   filename = {
     ['user.gitconfig'] = 'gitconfig',
+    ['.prettierignore'] = 'gitignore',
   },
 }
