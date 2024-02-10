@@ -23,6 +23,9 @@ return {
   end,
   config = true,
   opts = {
+    window = {
+      position = 'right',
+    },
     default_component_configs = {
       container = {
         enable_character_fade = false,
