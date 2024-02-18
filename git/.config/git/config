@@ -38,3 +38,7 @@
 # This breaks AUR git packages :(
 # [safe]
 #   bareRepository = explicit
+
+[rerere]
+  enabled = true
+  autoUpdate = true
