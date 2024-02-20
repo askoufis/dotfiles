@@ -23,8 +23,8 @@ vim.opt.mouse = 'a'
 vim.opt.termguicolors = true
 
 -- Interface
--- show signs in the same spot as line numbers
-vim.opt.signcolumn = 'yes'
+-- Always show a 1-column-wide sign column
+vim.opt.signcolumn = 'yes:1'
 -- show line number
 vim.opt.number = true
 -- show line number relative to the current line
