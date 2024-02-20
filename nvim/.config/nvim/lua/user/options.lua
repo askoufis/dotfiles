@@ -9,7 +9,7 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = false
 
 -- Navigation
--- scroll when the cursor is 8 lines from the top/vim.opt.tom of the screen
+-- scroll when the cursor is 8 lines from the top of the screen
 vim.opt.scrolloff = 8
 
 -- Mouse
