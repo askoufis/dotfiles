@@ -23,7 +23,6 @@ function sshagent_testsocket
             rm -f $SSH_AUTH_SOCK
             return 4
         else
-            echo "Found ssh-agent $SSH_AUTH_SOCK"
             return 0
         end
     else
@@ -65,8 +64,5 @@ function ssh_agent_init
         echo need to start a new agent
         eval (ssh-agent -c)
     end
-
-    # Finally, show what keys are currently in the agent
-    # ssh-add -l
 end
 
