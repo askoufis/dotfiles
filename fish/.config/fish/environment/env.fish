@@ -31,3 +31,12 @@ set -x -g MANROFFOPT "-c"
 # Custom editor launch script so inspector plugins work with neovim
 # https://theosteiner.de/open-neovim-from-your-browser-integrating-nvim-with-sveltes-inspector
 set -x -g LAUNCH_EDITOR launch_editor_script
+
+# Pure prompt config
+# https://pure-fish.github.io/pure/
+
+set --universal pure_show_subsecond_command_duration true
+# Disable some settings for environments I rarely use
+set --universal pure_enable_virtualenv false
+set --universal pure_enable_container_detection false
+set --universal pure_enable_aws_profile false
