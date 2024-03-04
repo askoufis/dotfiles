@@ -30,6 +30,7 @@ return {
       return {
         { '<C-p>', project_files, desc = 'Project files picker' },
         { '<leader>g', telescope.live_grep, desc = 'Live grep picker' },
+        { '<leader>sr', telescope.resume, desc = 'Resume previous search' },
       }
     end,
     config = function(_, opts)
