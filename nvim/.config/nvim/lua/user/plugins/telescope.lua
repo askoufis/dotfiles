@@ -1,9 +1,22 @@
 return {
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', lazy = true },
   {
-    'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-fzf-native.nvim' },
     branch = '0.1.x',
+    'nvim-telescope/telescope.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      {
+        'natecraddock/telescope-zf-native.nvim',
+        config = function()
+          require('telescope').load_extension('zf-native')
+        end,
+      },
+      {
+        'nvim-telescope/telescope-ui-select.nvim',
+        config = function()
+          require('telescope').load_extension('ui-select')
+        end,
+      },
+    },
     keys = function()
       local telescope = require('telescope.builtin')
       local project_files = function()
@@ -22,7 +35,6 @@ return {
     config = function(_, opts)
       local telescope = require('telescope')
       telescope.setup(opts)
-      telescope.load_extension('fzf')
     end,
     opts = function()
       local actions = require('telescope.actions')
@@ -31,14 +43,26 @@ return {
         defaults = {
           path_display = { 'smart' },
           extensions = {
-            fzf = {
-              fuzzy = true,
-              override_generic_sorter = true,
-              override_file_sorter = true,
-              case_mode = 'smart_case',
+            ['zf-native'] = {
+              file = {
+                enable = true,
+                highlight_results = true,
+                match_filename = true,
+              },
+              generic = {
+                enable = true,
+                highlight_results = true,
+                match_filename = false,
+              },
             },
             ['ui-select'] = {
-              require('telescope.themes').get_dropdown {},
+              -- Nothing I put here seems to have any effect for some reason
+              require('telescope.themes').get_dropdown {
+                sorting_strategy = 'descending',
+                layout_config = {
+                  height = 10,
+                },
+              },
             },
           },
           mappings = {
