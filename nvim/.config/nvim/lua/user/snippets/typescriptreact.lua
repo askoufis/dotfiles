@@ -80,4 +80,19 @@ return {
       }
     )
   ),
+
+  s(
+    {
+      trig = 'wrap',
+      desc = 'Wrap the selection in a tag',
+    },
+    fmt('<{}{}>{}</{}>', {
+      i(1),
+      i(0),
+      f(function(_, snip)
+        return snip.env.TM_SELECTED_TEXT[1] or {}
+      end, {}),
+      rep(1),
+    })
+  ),
 }
