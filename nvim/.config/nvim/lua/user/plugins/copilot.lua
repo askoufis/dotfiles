@@ -1,6 +1,6 @@
 return {
   'github/copilot.vim',
-  version = '*',
+  version = '1.23.0',
   event = 'VeryLazy',
   config = function()
     set_keymap('i', '<C-l>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
