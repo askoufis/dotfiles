@@ -6,7 +6,7 @@ return {
   opts = {
     indent = {
       char = '▏',
-      highlight = { 'MoonflyGrey236' },
+      highlight = { 'MoonflyGrey18' },
     },
     scope = {
       enabled = false,
