@@ -25,6 +25,7 @@ return {
       javasriptreact = { prettierd },
       json = { prettierd },
       jsonc = { prettierd },
+      json5 = { prettierd },
       less = { prettierd },
       markdown = { prettierd },
       typescript = { prettierd },
