@@ -36,7 +36,7 @@ Inspired by [ThePrimagen's dotfiles].
 git clone https://github.com/askoufis/dotfiles.git
 ```
 
-2. Set the `STOW_FOLDERS` envar to the list of folders you want to install:
+2. Set the `$STOW_FOLDERS` environment variable to a space-separated list of folders you want to install:
 
 ```fish
 set -x -g STOW_FOLDERS alacritty alacritty-linux git nvim fish fish-linux tmux
@@ -48,7 +48,7 @@ set -x -g STOW_FOLDERS alacritty alacritty-linux git nvim fish fish-linux tmux
 
 ## Bootstrapping
 
-If you're installing dotfiles to a machine for the first time, there's a few things you need to do in order to bootstrap the plugins for various programs.
+After installing dotfiles to a machine for the first time, there's a few things you need to do in order to bootstrap the plugins for various programs.
 
 1. Install [fisher]
 
@@ -56,7 +56,7 @@ If you're installing dotfiles to a machine for the first time, there's a few thi
 
 3. Open `nvim`. It should install [lazy.nvim] automatically.
 
-4. Close `nvim`, then re-open it plugins should start being installed
+4. Close `nvim`, then re-open it and open some files to confirm that all plugins are installed correctly
 
 5. Clone [`tpm`], but not to the usual place:
 
@@ -64,11 +64,11 @@ If you're installing dotfiles to a machine for the first time, there's a few thi
 git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 ```
 
+6. Restart tmux, then press <kbd>prefix</kbd> + <kbd>I</kbd> to install all tmux plugins
+
 [fisher]: https://github.com/jorgebucaran/fisher
 [lazy.nvim]: https://github.com/folke/lazy.nvim
 [`tpm`]: https://github.com/tmux-plugins/tpm
-
-6. Restart tmux, then press <kbd>prefix</kbd> + <kbd>I</kbd> to install all tmux plugins
 
 ## Cleanup
 
@@ -76,9 +76,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 
 ## Folder structure
 
-Top-level folder names don't really matter, but in most cases they are the same as whatever the config folder name is.
-Each top-level folder contains a `.config` folder, since that's my `$XDG_CONFIG_HOME` folder name, and hence where all my config is actually stored.
-Inside each `.config` folder is a folder named with the specific config folder name required by a specific app; this folder is where the actual config file(s) are.
+Top-level folder names don't really matter, but in most cases they are the same as whatever the app's config folder name is.
+Each top-level folder contains a `.config` folder as that's my `$XDG_CONFIG_HOME` folder name, and hence where all my config is actually stored.
+
+Inside each `.config` folder is the app's config folder; this folder is where the actual config file(s) are.
 For example, the `alacritty` top-level folder contains the following structure: `alacritty/.config/alacritty/alacritty.yml`.
 
 The exception to this is for OS-specific config.
