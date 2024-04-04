@@ -68,7 +68,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 [lazy.nvim]: https://github.com/folke/lazy.nvim
 [`tpm`]: https://github.com/tmux-plugins/tpm
 
-6. Restart tmux, then press `prefix` + `I` to install all tmux plugins
+6. Restart tmux, then press <kbd>prefix</kbd> + <kbd>I</kbd> to install all tmux plugins
 
 ## Cleanup
 
