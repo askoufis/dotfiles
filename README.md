@@ -11,8 +11,6 @@ Inspired by [ThePrimagen's dotfiles].
 - [GNU stow]
 - [NotoSansMono Nerd Font][nerd fonts] on linux (Regular, Bold, Italic and Bold Italic)
 - [JetBrainsMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
-- [ripgrep]
-- [fd]
 - [glow]
 - [delta]
 - [eza]
@@ -23,8 +21,6 @@ Inspired by [ThePrimagen's dotfiles].
 [fish shell]: https://fishshell.com/
 [gnu stow]: https://www.gnu.org/software/stow/
 [nerd fonts]: https://www.nerdfonts.com/font-downloads
-[ripgrep]: https://github.com/BurntSushi/ripgrep
-[fd]: https://github.com/sharkdp/fd
 [glow]: https://github.com/charmbracelet/glow
 [delta]: https://github.com/dandavison/delta
 [eza]: https://github.com/SEEK-Jobs/metropolis/pull/3248
