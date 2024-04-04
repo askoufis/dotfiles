@@ -58,7 +58,7 @@ If you're installing dotfiles to a machine for the first time, there's a few thi
 
 4. Close `nvim`, then re-open it plugins should start being installed
 
-5. Clone `tpm`, but not to the usual place:
+5. Clone [`tpm`], but not to the usual place:
 
 ```fish
 git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
@@ -66,6 +66,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 
 [fisher]: https://github.com/jorgebucaran/fisher
 [lazy.nvim]: https://github.com/folke/lazy.nvim
+[`tpm`]: https://github.com/tmux-plugins/tpm
 
 6. Restart tmux, then press `prefix` + `I` to install all tmux plugins
 
