@@ -85,9 +85,3 @@ For example, the `alacritty` top-level folder contains the following structure: 
 The exception to this is for OS-specific config.
 In those cases, a suffix of `-{OS}` is appended to the folder.
 For example `alacritty-linux` contains the linux-specific configuration for `alacritty`, whereas `alacritty-mac` contains the macOS-specific configuration for `alacritty`.
-
-## Known issues/bugs
-
-- On MacOS, a warning starting with `BUG in find_stowed_path? Absolute/relative mismatch between Stow dir` is showed when stowing/unstowing folders. According to [this issue], the error is mostly harmless, and should be addressed in future versions of stow.
-
-[this issue]: https://github.com/aspiers/stow/issues/65
