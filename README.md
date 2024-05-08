@@ -57,7 +57,7 @@ After installing dotfiles to a machine for the first time, there's a few things 
 
 2. Run `fisher update`
 
-3. Open `nvim`. It should install [lazy.nvim] automatically.
+3. Open `nvim`. It should install [lazy.nvim] and plugins automatically.
 
 4. Close `nvim`, then re-open it and open some files to confirm that all plugins are installed correctly
 
@@ -88,3 +88,5 @@ For example, the `alacritty` top-level folder contains the following structure: 
 The exception to this is for OS-specific config.
 In those cases, a suffix of `-{OS}` is appended to the folder.
 For example `alacritty-linux` contains the linux-specific configuration for `alacritty`, whereas `alacritty-mac` contains the macOS-specific configuration for `alacritty`.
+OS-specific configuration is usually included into the main configuration file via some method exposed by the app you're configuring.
+For example, `alacritty` supports including other `.toml` files within your man config file.
