@@ -8,7 +8,7 @@ Inspired by [ThePrimagen's dotfiles].
 ## Requirements
 
 - [Fish shell] (At least v3.6.0)
-- [GNU stow]
+- [GNU stow] (Only if you want to use the [install] script)
 - [NotoSansMono Nerd Font][nerd fonts] on linux (Regular, Bold, Italic and Bold Italic)
 - [JetBrainsMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
 - [glow]
@@ -20,6 +20,7 @@ Inspired by [ThePrimagen's dotfiles].
 
 [fish shell]: https://fishshell.com/
 [gnu stow]: https://www.gnu.org/software/stow/
+[install]: ./install
 [nerd fonts]: https://www.nerdfonts.com/font-downloads
 [glow]: https://github.com/charmbracelet/glow
 [delta]: https://github.com/dandavison/delta
