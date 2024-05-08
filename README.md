@@ -43,6 +43,8 @@ git clone https://github.com/askoufis/dotfiles.git
 set -x -g STOW_FOLDERS alacritty alacritty-linux git nvim fish fish-linux tmux
 ```
 
+A valid folder names is any top-level folder in this repo.
+
 3. Run `./install`
 
 4. (Optional but recommended) Run `sf` to source the `config.fish`. This will add useful abbreviations and set up your environment correctly.
