@@ -1,6 +1,8 @@
 -- Searching
 -- show matching strings while performing a search
 vim.opt.incsearch = true
+-- Show search/substitution matches in a split
+vim.opt.inccommand = 'split'
 -- case insensitive search
 vim.opt.ignorecase = true
 -- override ignorecase if the search pattern contains uppercase characters
