@@ -75,12 +75,6 @@ local lsp_keymaps = function(map)
   map('n', '<F2>', vim.lsp.buf.rename) -- Too used to vscode
   map('n', 'gr', vim.lsp.buf.references)
   map('n', '<leader>ca', vim.lsp.buf.code_action)
-  map('n', '[d', function()
-    vim.diagnostic.goto_prev { border = 'rounded' }
-  end)
-  map('n', ']d', function()
-    vim.diagnostic.goto_next { border = 'rounded' }
-  end)
   map('n', 'gl', vim.diagnostic.open_float)
   map('n', '<leader>q', vim.diagnostic.setloclist)
   map('n', '<leader>lr', ':LspRestart<CR>')
