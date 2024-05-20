@@ -69,7 +69,6 @@ end
 local lsp_keymaps = function(map)
   map('n', 'gD', vim.lsp.buf.declaration)
   map('n', 'gd', vim.lsp.buf.definition)
-  map('n', 'gh', vim.lsp.buf.hover)
   map('n', 'gi', vim.lsp.buf.implementation)
   map('n', '<C-s>', vim.lsp.buf.signature_help)
   map('n', '<F2>', vim.lsp.buf.rename) -- Too used to vscode
