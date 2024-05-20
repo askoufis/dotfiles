@@ -18,12 +18,6 @@ vim.opt.scrolloff = 8
 -- Allow the mouse to be used
 vim.opt.mouse = 'a'
 
--- Colors
--- enable 24-bit RGB colours in the TUI
--- make colours appear correctly with tmux + alacritty
--- https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6#vim-neovim
-vim.opt.termguicolors = true
-
 -- Interface
 -- Always show a 1-column-wide sign column
 vim.opt.signcolumn = 'yes:1'
