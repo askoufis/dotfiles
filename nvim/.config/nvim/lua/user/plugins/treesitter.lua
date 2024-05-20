@@ -98,16 +98,6 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
   },
   {
-    -- Context-aware comments via treesitter
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    config = true,
-    event = { 'BufReadPost', 'BufNewFile' },
-    opts = {
-      enable_autocmd = false,
-    },
-  },
-  {
     -- Visual mode selection powered by treesitter
     'gsuuon/tshjkl.nvim',
     config = true,
