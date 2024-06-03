@@ -36,6 +36,7 @@ abbr -a -g v nvim
 abbr -a -g ls eza
 abbr -a -g la eza -la
 abbr -a -g cat bat
+abbr -a -g cd z
 
 # --- tmux ---
 # break the current tmux pane into a new window
