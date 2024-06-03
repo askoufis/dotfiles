@@ -15,6 +15,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [delta]
 - [eza]
 - [bat]
+- [zoxide]
 - [rust-analyzer]: Install with `rustup component add rust-analyzer`
 - [rustfmt]: Install with `rustup component add rustfmt`
 
@@ -26,6 +27,7 @@ Inspired by [ThePrimagen's dotfiles].
 [delta]: https://github.com/dandavison/delta
 [eza]: https://github.com/SEEK-Jobs/metropolis/pull/3248
 [bat]: https://github.com/SEEK-Jobs/metropolis/pull/3248
+[zoxide]: https://github.com/ajeetdsouza/zoxide
 [rust-analyzer]: https://github.com/rust-lang/rust-analyzer
 [rustfmt]: https://github.com/rust-lang/rustfmt
 
