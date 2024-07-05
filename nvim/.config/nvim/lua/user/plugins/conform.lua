@@ -21,6 +21,7 @@ return {
       lua = { 'stylua' },
       css = { prettierd },
       graphql = { prettierd },
+      html = { prettierd },
       javascript = { prettierd },
       javasriptreact = { prettierd },
       json = { prettierd },
