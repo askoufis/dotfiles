@@ -1,4 +1,4 @@
-# From https://github.com/bluz71/vim-moonfly-colors/blob/1f5eafead7e2da58951942d3b2996bd10c43980c/extras/moonfly.fish
+# From https://github.com/bluz71/vim-moonfly-colors/blob/31f65a1bbddd7de9a639d8d0e32b8066c0de1da1/extras/moonfly.fish
 
 # Syntax highlighting colors.
 set -g fish_color_autosuggestion 626262
