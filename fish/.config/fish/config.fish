@@ -37,4 +37,7 @@ if status --is-interactive
 
     # --- Zoxide
     zoxide init fish | source
+
+    # --- Mise
+    ~/.local/bin/mise activate fish | source
 end
