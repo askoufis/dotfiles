@@ -27,7 +27,7 @@ return {
       json5 = prettierd,
       less = prettierd,
       markdown = prettierd,
-      mdx = prettierd,
+      ['markdown.mdx'] = prettierd,
       typescript = prettierd,
       typescriptreact = prettierd,
       yaml = prettierd,

@@ -1,6 +1,6 @@
 vim.filetype.add {
   extension = {
-    mdx = 'mdx',
+    mdx = 'markdown.mdx',
   },
   filename = {
     ['user.gitconfig'] = 'gitconfig',

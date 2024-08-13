@@ -28,7 +28,18 @@ return {
       'hrsh7th/cmp-nvim-lsp',
     },
     opts = {
-      ensure_installed = { 'lua_ls', 'eslint', 'html', 'jsonls', 'tsserver', 'yamlls', 'cssls', 'astro', 'zls' },
+      ensure_installed = {
+        'lua_ls',
+        'eslint',
+        'html',
+        'jsonls',
+        'tsserver',
+        'yamlls',
+        'cssls',
+        'astro',
+        'zls',
+        'mdx_analyzer',
+      },
     },
     config = function(_, opts)
       local masonLspconfig = require('mason-lspconfig')
@@ -54,6 +65,7 @@ return {
       require('user.plugins.lsp.servers.rust_analyzer')
       require('user.plugins.lsp.servers.markdoc')
       require('user.plugins.lsp.servers.zls')
+      require('user.plugins.lsp.servers.mdx_analyzer')
     end,
   },
   {
