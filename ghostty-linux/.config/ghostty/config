@@ -1,0 +1,4 @@
+config-file = ./shared.conf
+
+window-decoration = false
+font-size = 11

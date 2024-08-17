@@ -1,0 +1,4 @@
+config-file = ./shared.conf
+
+macos-option-as-alt = true
+font-size = 14
