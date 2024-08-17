@@ -32,6 +32,9 @@ set -x -g LAUNCH_EDITOR launch_editor_script
 
 # Pure prompt config
 # https://pure-fish.github.io/pure/
+# Set safer git symbols because Jetbrains Mono doesn't support the default arrows
+set --universal pure_symbol_git_unpulled_commits '↓'
+set --universal pure_symbol_git_unpushed_commits '↑'
 
 # Disable some settings for environments I rarely use
 set --universal pure_enable_virtualenv false
