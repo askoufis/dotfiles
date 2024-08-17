@@ -42,7 +42,7 @@ M.setup = function()
     border = 'rounded',
   })
 
-  vim.lsp.handlers['textDocument/references'] = vim.lsp.with(require('telescope.builtin').lsp_references, {})
+  vim.lsp.handlers['textDocument/references'] = vim.lsp.with(require('fzf-lua').lsp_references, {})
 end
 
 local lsp_document_highlight_group = vim.api.nvim_create_augroup('lsp_document_highlight', {})
