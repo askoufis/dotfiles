@@ -1,0 +1,21 @@
+title = Ghostty
+resize-overlay = never
+window-decoration = false
+# TODO: Check whether this actually makes a difference on macOS
+window-colorspace = display-p3
+window-padding-balance = true
+window-padding-color = background
+
+# Enable block cursor when outside of tmux
+shell-integration-features = no-cursor
+cursor-style = block
+
+copy-on-select = false
+macos-option-as-alt = true
+keybind = ctrl+enter=unbind
+
+font-family = "JetBrains Mono"
+font-size = 11
+
+# I don't use this keybind, and tend to trigger it accidentally
+config-file = ./colours/moonfly.conf
