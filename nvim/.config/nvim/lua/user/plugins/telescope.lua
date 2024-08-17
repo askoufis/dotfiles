@@ -17,22 +17,22 @@ return {
         end,
       },
     },
-    keys = function()
-      local telescope = require('telescope.builtin')
-      local project_files = function()
-        local opts = { hidden = true, show_untracked = true }
-        local ok = pcall(require('telescope.builtin').git_files, opts)
-        if not ok then
-          require('telescope.builtin').find_files(opts)
-        end
-      end
-
-      return {
-        { '<C-p>', project_files, desc = 'Project files picker' },
-        { '<leader>g', telescope.live_grep, desc = 'Live grep picker' },
-        { '<leader>sr', telescope.resume, desc = 'Resume previous search' },
-      }
-    end,
+    -- keys = function()
+    --   local telescope = require('telescope.builtin')
+    --   local project_files = function()
+    --     local opts = { hidden = true, show_untracked = true }
+    --     local ok = pcall(require('telescope.builtin').git_files, opts)
+    --     if not ok then
+    --       require('telescope.builtin').find_files(opts)
+    --     end
+    --   end
+    --
+    --   return {
+    --     { '<C-p>', project_files, desc = 'Project files picker' },
+    --     { '<leader>g', telescope.live_grep, desc = 'Live grep picker' },
+    --     { '<leader>sr', telescope.resume, desc = 'Resume previous search' },
+    --   }
+    -- end,
     config = function(_, opts)
       local telescope = require('telescope')
       telescope.setup(opts)
@@ -71,8 +71,8 @@ return {
               ['<C-n>'] = actions.cycle_history_next,
               ['<C-p>'] = actions.cycle_history_prev,
 
-              ['<M-j>'] = actions.move_selection_next,
-              ['<M-k>'] = actions.move_selection_previous,
+              -- ['<M-j>'] = actions.move_selection_next,
+              -- ['<M-k>'] = actions.move_selection_previous,
 
               ['<C-c>'] = actions.close,
 
