@@ -22,6 +22,8 @@ return {
         ['ctrl-j'] = 'ignore',
         ['alt-j'] = 'down',
         ['alt-k'] = 'up',
+        -- Put all results into a quickfix list
+        ['ctrl-q'] = 'select-all+accept',
       },
     },
     grep = {
