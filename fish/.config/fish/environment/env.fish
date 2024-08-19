@@ -30,13 +30,9 @@ set -x -g MANROFFOPT "-c"
 # https://theosteiner.de/open-neovim-from-your-browser-integrating-nvim-with-sveltes-inspector
 set -x -g LAUNCH_EDITOR launch_editor_script
 
-# Pure prompt config
-# https://pure-fish.github.io/pure/
-# Set safer git symbols because Jetbrains Mono doesn't support the default arrows
-set --universal pure_symbol_git_unpulled_commits '↓'
-set --universal pure_symbol_git_unpushed_commits '↑'
-
-# Disable some settings for environments I rarely use
-set --universal pure_enable_virtualenv false
-set --universal pure_enable_container_detection false
-set --universal pure_enable_aws_profile false
+# Hydro prompt config
+# https://github.com/jorgebucaran/hydro
+set --global hydro_color_pwd blue
+set --global hydro_color_prompt purple
+set --global hydro_color_duration yellow
+set --global hydro_fetch true
