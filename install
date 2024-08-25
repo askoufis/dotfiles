@@ -6,10 +6,19 @@ echo "Installing dotfiles"\n
 pushd ~/code/askoufis/dotfiles
 
 for folder in (string split " " $STOW_FOLDERS)
-    echo "Installing $folder"
+    echo -n "Installing "
+    set_color -o white
+    echo $folder
+    set_color normal
     stow -R -t ~/ $folder
 end
 
+echo \n"Building bat cache"\n
+
+bat cache --build
+
 popd
 
+set_color -o white
 echo \n"Done!"
+set_color normal
