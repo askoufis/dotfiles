@@ -8,7 +8,7 @@ return {
     },
     previewers = {
       bat = {
-        args = '--color=always --style=numbers,changes,grid --theme=fly16',
+        args = '--color=always --style=numbers,changes,grid',
       },
     },
     winopts = {
