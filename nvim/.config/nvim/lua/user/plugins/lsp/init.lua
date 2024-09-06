@@ -58,7 +58,7 @@ return {
       require('user.plugins.lsp.servers.html')
       require('user.plugins.lsp.servers.jsonls')
       require('user.plugins.lsp.servers.lua_ls')
-      require('user.plugins.lsp.servers.tsserver')
+      require('user.plugins.lsp.servers.ts_ls')
       require('user.plugins.lsp.servers.yamlls')
       require('user.plugins.lsp.servers.cssls')
       require('user.plugins.lsp.servers.astro')
