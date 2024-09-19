@@ -19,3 +19,5 @@ font-feature = -liga
 font-feature = -dlig
 
 config-file = ./colours/moonfly.conf
+config-file = ?config-linux.conf
+config-file = ?config-mac.conf
