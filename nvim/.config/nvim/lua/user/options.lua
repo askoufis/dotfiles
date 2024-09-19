@@ -87,7 +87,7 @@ vim.g.skip_ts_context_commentstring_module = true
 -- Spell
 vim.opt.spelllang = 'en_au'
 
--- Disable swapfiles and instead trigger autoread every time a buffer is entered/ focused
+-- Disable swapfiles and instead trigger autoread every time a buffer is entered/focused
 vim.opt.swapfile = false
 vim.opt.autoread = true
 vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter' }, {
