@@ -7,7 +7,10 @@ pushd ~/code/askoufis/dotfiles
 
 # Workaround for weird list behaviour inside scripts
 for folder in (string split " " $STOW_FOLDERS)
-    echo "Removing $folder"
+    echo -n "Removing "
+    set_color -o white
+    echo $folder
+    set_color normal
     stow -D -t ~/ $folder
 end
 
