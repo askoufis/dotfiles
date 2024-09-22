@@ -33,7 +33,7 @@ return {
         'eslint',
         'html',
         'jsonls',
-        'tsserver',
+        'ts_ls',
         'yamlls',
         'cssls',
         'astro',
