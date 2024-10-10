@@ -10,7 +10,7 @@
 set_keymap('n', '<Space>', '')
 -- map leader to space
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 -- Movement --
 -- moving up and down doesn't skip wrapped lines
