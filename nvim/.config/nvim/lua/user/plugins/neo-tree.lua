@@ -52,6 +52,35 @@ return {
         enabled = true,
       },
       use_libuv_file_watcher = true,
+      window = {
+        mappings = {
+          ['R'] = 'grug_far_replace',
+        },
+      },
+    },
+    commands = {
+      -- Copied from https://github.com/MagicDuck/grug-far.nvim/blob/f47594f05d10b0bedfc0ed78e488e7fd714d57be/README.md#add-nvim-tree-integration-to-open-search-limited-to-focused-directory-or-file
+      grug_far_replace = function(state)
+        local node = state.tree:get_node()
+        local prefills = {
+          -- get the current path and get the parent directory if a file is selected
+          paths = node.type == 'directory' and node:get_id() or vim.fn.fnamemodify(node:get_id(), ':h'),
+        }
+
+        local grug_far = require('grug-far')
+        -- instance check
+        if not grug_far.has_instance('explorer') then
+          grug_far.open {
+            instanceName = 'explorer',
+            prefills = prefills,
+            staticTitle = 'Find and Replace from Explorer',
+          }
+        else
+          grug_far.open_instance('explorer')
+          -- updating the prefills without clearing the search and other fields
+          grug_far.update_instance_prefills('explorer', prefills, false)
+        end
+      end,
     },
     mappings = {
       ['s'] = 'open_split',
