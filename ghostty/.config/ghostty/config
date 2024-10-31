@@ -12,6 +12,10 @@ copy-on-select = false
 keybind = ctrl+enter=unbind
 keybind = super+enter=unbind
 
+# Defaults to the background colour, but this makes it hard to see the borders between splits when
+# one is focused and another isn't
+unfocused-split-fill = #303030
+
 font-family = "JetBrains Mono"
 # Disable ligatures
 font-feature = -calt
