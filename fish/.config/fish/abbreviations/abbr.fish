@@ -17,6 +17,7 @@ abbr -a -g gc git checkout
 abbr -a -g gpr gh pr view --web
 abbr -a -g gup "git fetch && git pull origin (git branch --show-current)"
 abbr -a -g nb --position anywhere --set-cursor "git checkout -B % origin/master"
+abbr -a -g grh --position anywhere --set-cursor "git reset origin/% --hard"
 
 # --- Misc ---
 # Emulate other shells' !! feature
