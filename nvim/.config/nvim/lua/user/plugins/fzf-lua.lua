@@ -27,7 +27,7 @@ return {
       },
     },
     grep = {
-      rg_opts = [[ --ignore-case --glob '!package-lock.json' --glob '!yarn.lock' --glob '!pnpm-lock.yaml' ]],
+      rg_opts = [[ --column --line-number --ignore-case --glob '!package-lock.json' --glob '!yarn.lock' --glob '!pnpm-lock.yaml' ]],
     },
   },
   keys = function()
