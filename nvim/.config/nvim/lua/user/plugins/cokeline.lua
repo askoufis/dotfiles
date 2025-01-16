@@ -30,7 +30,7 @@ return {
   opts = function()
     local is_picking_focus = require('cokeline/mappings').is_picking_focus
     local is_picking_close = require('cokeline/mappings').is_picking_close
-    local get_hex = require('cokeline/utils').get_hex
+    local get_hex = require('cokeline.hlgroups').get_hl_attr
     local moonfly_palette = require('moonfly').palette
 
     local comments_fg = get_hex('Comment', 'fg')
