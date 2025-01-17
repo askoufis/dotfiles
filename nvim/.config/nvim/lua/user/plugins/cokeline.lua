@@ -34,8 +34,8 @@ return {
     local moonfly_palette = require('moonfly').palette
 
     local comments_fg = get_hex('Comment', 'fg')
-    local errors_fg = get_hex('DiagnosticError', 'fg')
-    local warnings_fg = get_hex('DiagnosticWarn', 'fg')
+    local errors_fg = get_hex('MoonflyRed', 'fg')
+    local warnings_fg = get_hex('MoonflyYellow', 'fg')
 
     local red = moonfly_palette.red
     local yellow = moonfly_palette.yellow
