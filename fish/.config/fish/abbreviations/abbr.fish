@@ -4,19 +4,18 @@ abbr -a -g gcn git commit -n
 abbr -a -g gpf git push --force-with-lease
 abbr -a -g gam git commit -n --amend
 abbr -a -g gf git fetch --all --prune
-abbr -a -g gcm git checkout master
-abbr -a -g gfpom 'git fetch --prune && git pull origin master'
+abbr -a -g gcm --function gcm
+abbr -a -g gfpom --function gfpom
 # Rebase against the remote branch that your local branch is tracking
 # https://stackoverflow.com/a/9753364
 abbr -a -g greb "git rebase -i (git for-each-ref --format='%(upstream:short)' (git symbolic-ref -q HEAD))"
 abbr -a -g grebc git rebase --continue
 abbr -a -g gp git push
 abbr -a -g gstat git diff --stat
-abbr -a -g pom git pull origin master
 abbr -a -g gc git checkout
 abbr -a -g gpr gh pr view --web
 abbr -a -g gup "git fetch && git pull origin (git branch --show-current)"
-abbr -a -g nb --position anywhere --set-cursor "git checkout -B % origin/master"
+abbr -a -g nb --set-cursor --function nb
 abbr -a -g grh --position anywhere --set-cursor "git reset origin/% --hard"
 
 # --- Misc ---
