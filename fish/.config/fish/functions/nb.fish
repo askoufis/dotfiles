@@ -1,3 +1,3 @@
 function nb
-    echo (string join '' 'git checkout -B % origin/' (git_default_branch))
+    echo (string join ' ' 'git checkout -B %' (git_remote_branch))
 end

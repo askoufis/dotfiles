@@ -8,7 +8,7 @@ abbr -a -g gcm --function gcm
 abbr -a -g gfpom --function gfpom
 # Rebase against the remote branch that your local branch is tracking
 # https://stackoverflow.com/a/9753364
-abbr -a -g greb "git rebase -i (git for-each-ref --format='%(upstream:short)' (git symbolic-ref -q HEAD))"
+abbr -a -g greb --function greb
 abbr -a -g grebc git rebase --continue
 abbr -a -g gp git push
 abbr -a -g gstat git diff --stat
