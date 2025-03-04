@@ -1,6 +1,9 @@
 [include]
   path = ./user.gitconfig # Machine-specific config that doesn't need to be checked in
 
+[column]
+  ui = auto
+
 [core]
   pager = delta
 
@@ -22,6 +25,8 @@
 
 [fetch]
   prune = true
+  pruneTags = true
+  all = true
 
 [init]
   defaultBranch = master
@@ -49,3 +54,6 @@
 
 [branch]
   sort = -committerdate
+
+[tag]
+  sort = version:refname
