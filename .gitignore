@@ -1,5 +1,6 @@
 # Private stuff that I don't want on github
-private.fish
+# This shouldn't end up in this git repo, but just in case it does, it's ignored
+private/
 
 # Machine-specific config that doesn't really need to be in git
 user.gitconfig
