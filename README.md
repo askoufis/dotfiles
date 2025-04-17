@@ -11,7 +11,6 @@ Inspired by [ThePrimagen's dotfiles].
 - [GNU stow] (Only if you want to use the [install] script)
 - [NotoSansMono Nerd Font][nerd fonts] on linux (Regular, Bold, Italic and Bold Italic)
 - [JetBrainsMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
-- [glow]
 - [delta]
 - [eza]
 - [bat]
@@ -23,7 +22,6 @@ Inspired by [ThePrimagen's dotfiles].
 [gnu stow]: https://www.gnu.org/software/stow/
 [install]: ./install
 [nerd fonts]: https://www.nerdfonts.com/font-downloads
-[glow]: https://github.com/charmbracelet/glow
 [delta]: https://github.com/dandavison/delta
 [eza]: https://github.com/SEEK-Jobs/metropolis/pull/3248
 [bat]: https://github.com/SEEK-Jobs/metropolis/pull/3248
