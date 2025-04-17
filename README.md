@@ -9,7 +9,6 @@ Inspired by [ThePrimagen's dotfiles].
 
 - [Fish shell] (At least v3.6.0)
 - [GNU stow] (Only if you want to use the [install] script)
-- [NotoSansMono Nerd Font][nerd fonts] on linux (Regular, Bold, Italic and Bold Italic)
 - [JetBrainsMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
 - [delta]
 - [eza]
