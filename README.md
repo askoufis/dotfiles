@@ -7,7 +7,7 @@ Inspired by [ThePrimagen's dotfiles].
 
 ## Requirements
 
-- [Fish shell] (At least v3.6.0)
+- [Fish shell] (At least v4.0.0)
 - [GNU stow] (Only if you want to use the [install] script)
 - [JetBrainsMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
 - [delta]
