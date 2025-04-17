@@ -36,7 +36,5 @@
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
   "schemastore.nvim": { "branch": "main", "commit": "992285058ce208825eb1b9ac82fa6be7d76ffcc1" },
   "tmux.nvim": { "branch": "main", "commit": "2c1c3be0ef287073cef963f2aefa31a15c8b9cd8" },
-  "tshjkl.nvim": { "branch": "main", "commit": "3fe81ab2c15f014a78b752062238d6c110a08fc8" },
-  "vim-moonfly-colors": { "branch": "master", "commit": "bfa6b2486a72784b7546d0d3e9322aef70e07b03" },
-  "vim-sxhkdrc": { "branch": "master", "commit": "7b8abc305ba346c3af7d57da0ebec2b2f2d3f5b0" }
+  "vim-moonfly-colors": { "branch": "master", "commit": "bfa6b2486a72784b7546d0d3e9322aef70e07b03" }
 }

@@ -82,12 +82,6 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
   },
   {
-    -- Visual mode selection powered by treesitter
-    'gsuuon/tshjkl.nvim',
-    config = true,
-    event = 'BufEnter',
-  },
-  {
     'windwp/nvim-ts-autotag',
     event = 'InsertEnter',
   },
