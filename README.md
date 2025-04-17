@@ -40,7 +40,7 @@ git clone https://github.com/askoufis/dotfiles.git
 2. Set the `$STOW_FOLDERS` environment variable to a space-separated list of folders you want to install:
 
 ```fish
-set -x -g STOW_FOLDERS alacritty alacritty-linux git nvim fish fish-linux tmux
+set -x -g STOW_FOLDERS ghostty ghostty-linux git nvim fish fish-linux tmux
 ```
 
 A valid folder names is any top-level folder in this repo.
@@ -83,10 +83,10 @@ Top-level folder names don't really matter, but in most cases they are the same 
 Each top-level folder contains a `.config` folder as that's my `$XDG_CONFIG_HOME` folder name, and hence where all my config is actually stored.
 
 Inside each `.config` folder is the app's config folder; this folder is where the actual config file(s) are.
-For example, the `alacritty` top-level folder contains the following structure: `alacritty/.config/alacritty/alacritty.yml`.
+For example, the `ghostty` top-level folder contains the following structure: `ghostty/.config/ghostty/ghostty.yml`.
 
 The exception to this is for OS-specific config.
 In those cases, a suffix of `-{OS}` is appended to the folder.
-For example `alacritty-linux` contains the linux-specific configuration for `alacritty`, whereas `alacritty-mac` contains the macOS-specific configuration for `alacritty`.
+For example `ghostty-linux` contains the linux-specific configuration for `ghostty`, whereas `ghostty-mac` contains the macOS-specific configuration for `ghostty`.
 OS-specific configuration is usually included into the main configuration file via some method exposed by the app you're configuring.
-For example, `alacritty` supports including other `.toml` files within your man config file.
+For example, `ghostty` supports including other `.toml` files within your man config file.
