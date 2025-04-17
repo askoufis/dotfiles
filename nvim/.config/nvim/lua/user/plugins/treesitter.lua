@@ -7,7 +7,7 @@ return {
     config = function(_, opts)
       require('nvim-treesitter.configs').setup(opts)
 
-      -- Register markdown.mdx filetypes as markdown as there is currently no treesitter grammer for
+      -- Register markdown.mdx filetypes as markdown as there is currently no treesitter grammar for
       -- mdx
       vim.treesitter.language.register('markdown', 'markdown.mdx')
     end,
