@@ -14,6 +14,7 @@ abbr -a -g gp git push
 abbr -a -g gstat git diff --stat
 abbr -a -g gc git checkout
 abbr -a -g gpr gh pr view --web
+abbr -a -g gor gh repo view --web
 abbr -a -g gup "git fetch && git pull origin (git branch --show-current)"
 abbr -a -g nb --set-cursor --function nb
 abbr -a -g grh --position anywhere --set-cursor "git reset origin/% --hard"
