@@ -25,7 +25,6 @@ return {
       'williamboman/mason.nvim',
       'b0o/schemastore.nvim',
       'neovim/nvim-lspconfig',
-      'hrsh7th/cmp-nvim-lsp',
     },
     opts = {
       ensure_installed = {
