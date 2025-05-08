@@ -1,6 +1,6 @@
 return {
   {
-    'williamboman/mason.nvim', -- Package manager
+    'mason-org/mason.nvim', -- Package manager
     version = '*',
     cmd = 'Mason',
     config = true,
@@ -19,10 +19,10 @@ return {
   },
   { 'neovim/nvim-lspconfig' },
   {
-    'williamboman/mason-lspconfig.nvim',
+    'mason-org/mason-lspconfig.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      'williamboman/mason.nvim',
+      'mason-org/mason.nvim',
       'b0o/schemastore.nvim',
       'neovim/nvim-lspconfig',
     },

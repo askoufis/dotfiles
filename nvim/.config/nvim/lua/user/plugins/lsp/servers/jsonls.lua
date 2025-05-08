@@ -1,4 +1,3 @@
-local lspconfig = require('lspconfig')
 local common_on_attach = require('user.plugins.lsp.handlers').on_attach
 
 local schemas = require('schemastore').json.schemas {
@@ -20,7 +19,7 @@ local nx_schema = {
 
 table.insert(schemas, nx_schema)
 
-lspconfig.jsonls.setup {
+vim.lsp.config('jsonls', {
   on_attach = common_on_attach { disable_formatting = true },
   settings = {
     json = {
@@ -46,4 +45,4 @@ lspconfig.jsonls.setup {
       },
     },
   },
-}
+})

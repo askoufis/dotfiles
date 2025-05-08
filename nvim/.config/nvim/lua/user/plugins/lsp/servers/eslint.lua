@@ -1,4 +1,3 @@
-local lspconfig = require('lspconfig')
 local common_on_attach = require('user.plugins.lsp.handlers').on_attach
 
 local on_attach = function(client, bufnr)
@@ -12,7 +11,7 @@ local on_attach = function(client, bufnr)
   })
 end
 
-lspconfig.eslint.setup {
+vim.lsp.config('eslint', {
   on_attach = on_attach,
   settings = {
     eslint = {
@@ -21,4 +20,4 @@ lspconfig.eslint.setup {
       },
     },
   },
-}
+})

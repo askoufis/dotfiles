@@ -1,7 +1,6 @@
-local lspconfig = require('lspconfig')
 local common_on_attach = require('user.plugins.lsp.handlers').on_attach
 
-lspconfig.lua_ls.setup {
+vim.lsp.config('lua_ls', {
   on_attach = common_on_attach { disable_formatting = true },
   settings = {
     Lua = {
@@ -30,4 +29,4 @@ lspconfig.lua_ls.setup {
       },
     },
   },
-}
+})
