@@ -29,6 +29,8 @@ vim.opt.relativenumber = true
 vim.opt.ruler = true
 -- Highlight the current line
 vim.opt.cursorline = true
+-- Floating window style
+vim.opt.winborder = 'rounded'
 
 -- Text
 vim.opt.expandtab = true
