@@ -1,4 +1,4 @@
-local prettierd = { 'prettierd', 'prettier', stop_after_first = true }
+local js = { 'eslint_d', 'prettierd' }
 
 return {
   'stevearc/conform.nvim',
@@ -17,22 +17,22 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { 'stylua' },
-      css = prettierd,
-      graphql = prettierd,
-      html = prettierd,
-      javascript = prettierd,
-      javasriptreact = prettierd,
-      json = prettierd,
-      jsonc = prettierd,
-      json5 = prettierd,
-      less = prettierd,
-      markdown = prettierd,
-      ['markdown.mdx'] = prettierd,
-      typescript = prettierd,
-      typescriptreact = prettierd,
-      yaml = prettierd,
+      css = js,
+      graphql = js,
+      html = js,
+      javascript = js,
+      javasriptreact = js,
+      json = js,
+      jsonc = js,
+      json5 = js,
+      less = js,
+      markdown = js,
+      ['markdown.mdx'] = js,
+      typescript = js,
+      typescriptreact = js,
+      yaml = js,
     },
-    format_on_save = { timeout_ms = 500, lsp_format = 'fallback' },
+    format_on_save = { timeout_ms = 1000, lsp_format = 'fallback' },
     notify_on_error = false,
   },
 }
