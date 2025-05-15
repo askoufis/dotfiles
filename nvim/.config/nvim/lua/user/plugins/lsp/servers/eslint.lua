@@ -1,9 +1,13 @@
+-- The default on_attach sets up the `LspEslintFixAll` command
+-- This variable has to be declared outside `on_attach` otherwise
+-- it ends up referring to this custom `on_attach` function, causing
+-- a stack overflow.
+local eslint_on_attach = vim.lsp.config.eslint.on_attach
+
 local on_attach = function(client, bufnr)
   local common_on_attach = require('user.plugins.lsp.handlers').on_attach
   common_on_attach { disable_formatting = false }(client, bufnr)
 
-  -- The default on_attach sets up the `LspEslintFixAll` command
-  local eslint_on_attach = vim.lsp.config.eslint.on_attach
   if eslint_on_attach ~= nil then
     eslint_on_attach(client, bufnr)
   end
