@@ -1,4 +1,4 @@
-local js = { 'eslint_d', 'prettierd' }
+local js = { 'prettierd' }
 
 return {
   'stevearc/conform.nvim',
@@ -32,7 +32,7 @@ return {
       typescriptreact = js,
       yaml = js,
     },
-    format_on_save = { timeout_ms = 1000, lsp_format = 'fallback' },
-    notify_on_error = false,
+    format_on_save = { timeout_ms = 500, lsp_format = 'fallback' },
+    notify_on_error = true,
   },
 }

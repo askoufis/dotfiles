@@ -1,8 +1,23 @@
-local common_on_attach = require('user.plugins.lsp.handlers').on_attach
+local on_attach = function(client, bufnr)
+  local common_on_attach = require('user.plugins.lsp.handlers').on_attach
+  common_on_attach { disable_formatting = false }(client, bufnr)
+
+  -- The default on_attach sets up the `LspEslintFixAll` command
+  local eslint_on_attach = vim.lsp.config.eslint.on_attach
+  if eslint_on_attach ~= nil then
+    eslint_on_attach(client, bufnr)
+  end
+
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = { '*.tsx', '*.ts', '*.jsx', '*.js', '*.cjs', '*.mjs', '*.cts', '*.mts' },
+    desc = 'Fix all eslint problems on save',
+    group = vim.api.nvim_create_augroup('eslint_fixall', {}),
+    command = 'LspEslintFixAll',
+  })
+end
 
 vim.lsp.config('eslint', {
-  -- Conform handles eslint fixes with eslint_d
-  on_attach = common_on_attach { disable_formatting = true },
+  on_attach = on_attach,
   settings = {
     eslint = {
       settings = {
