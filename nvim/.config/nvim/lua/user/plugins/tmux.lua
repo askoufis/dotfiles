@@ -12,7 +12,13 @@ return {
       -- don't break zoom when changing panes
       persist_zoom = true,
     },
+    copy_sync = {
+      enable = false,
+    },
     resize = {
+      enable_default_keybindings = false,
+    },
+    swap = {
       enable_default_keybindings = false,
     },
   },
