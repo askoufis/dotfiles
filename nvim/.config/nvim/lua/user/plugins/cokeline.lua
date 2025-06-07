@@ -2,7 +2,6 @@ return {
   'noib3/nvim-cokeline',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons',
   },
   event = 'VeryLazy',
   keys = function()
@@ -139,26 +138,21 @@ return {
     }
 
     return {
-
       show_if_buffers_are_at_least = 1,
-
       buffers = {
         -- filter_valid = function(buffer) return buffer.type ~= 'terminal' end,
         -- filter_visible = function(buffer) return buffer.type ~= 'terminal' end,
         new_buffers_position = 'next',
       },
-
       rendering = {
         max_buffer_width = 999,
       },
-
       default_hl = {
         fg = function(buffer)
           return buffer.is_focused and get_hex('Normal', 'fg') or get_hex('Comment', 'fg')
         end,
         bg = get_hex('ColorColumn', 'bg'),
       },
-
       components = {
         components.separator,
         components.space,
