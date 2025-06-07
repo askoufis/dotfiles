@@ -17,7 +17,7 @@ return {
       border = 'rounded',
     },
   },
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  dependencies = { 'echasnovski/mini.icons' },
   config = true,
   keys = {
     {

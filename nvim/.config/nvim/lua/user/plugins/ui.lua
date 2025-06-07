@@ -1,6 +1,15 @@
 return {
   -- icons
-  { 'nvim-tree/nvim-web-devicons', lazy = true },
+  {
+    'echasnovski/mini.icons',
+    version = false,
+
+    config = function(_, opts)
+      require('mini.icons').setup(opts)
+      MiniIcons.mock_nvim_web_devicons()
+    end,
+    lazy = true,
+  },
 
   -- component library
   { 'MunifTanjim/nui.nvim', lazy = true },
