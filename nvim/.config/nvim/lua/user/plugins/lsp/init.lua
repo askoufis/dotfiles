@@ -66,24 +66,4 @@ return {
       require('user.plugins.lsp.servers.mdx_analyzer')
     end,
   },
-  {
-    'antosha417/nvim-lsp-file-operations',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-neo-tree/neo-tree.nvim',
-    },
-    config = function()
-      require('lsp-file-operations').setup()
-    end,
-    -- This is a copy of the Neo-tree lazy keymap. We copy it so both plugins load when the keymap
-    -- is pressed.
-    keys = {
-      {
-        '\\',
-        ':Neotree toggle<CR>',
-        desc = 'Toggle NeoTree',
-        silent = true,
-      },
-    },
-  },
 }
