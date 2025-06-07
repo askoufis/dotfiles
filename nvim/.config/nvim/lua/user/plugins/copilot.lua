@@ -5,4 +5,5 @@ return {
     set_keymap('i', '<C-l>', 'copilot#Accept("<CR>")', { silent = true, expr = true, replace_keycodes = false })
     vim.g.copilot_no_tab_map = true
   end,
+  event = 'VeryLazy',
 }
