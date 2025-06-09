@@ -28,9 +28,6 @@ if status --is-interactive
     # --- Colorscheme
     source $HOME/.config/fish/colors/moonfly.fish
 
-    # --- Zoxide
-    zoxide init fish | source
-
     # --- Mise
     ~/.local/bin/mise activate fish | source
 end
