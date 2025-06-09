@@ -29,6 +29,7 @@ abbr -a -g --set-cursor pv 'npm view % dist-tags.latest'
 
 # --- Config files ---
 abbr -a -g sf source $HOME/.config/fish/config.fish
+abbr -a -g dots cd ~/code/askoufis/dotfiles
 
 # --- Remaps ---
 abbr -a -g se sudoedit
