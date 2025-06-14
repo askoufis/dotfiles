@@ -1,6 +1,6 @@
 return {
   'ibhagwan/fzf-lua',
-  lazy = false,
+  event = 'VeryLazy',
   opts = {
     defaults = {
       git_icons = false,
@@ -30,11 +30,11 @@ return {
       rg_opts = [[ --column --line-number --ignore-case --glob '!package-lock.json' --glob '!yarn.lock' --glob '!pnpm-lock.yaml' ]],
     },
   },
-  keys = function()
+  config = function(_, opts)
     local fzf_lua = require('fzf-lua')
-    return {
-      { '<C-p>', fzf_lua.files, desc = 'Project files' },
-      { '<leader>g', fzf_lua.live_grep_glob, desc = 'Grep with optional glob filter after --' },
-    }
+    fzf_lua.setup(opts)
+
+    vim.keymap.set('n', '<C-p>', fzf_lua.files, { desc = 'Project files' })
+    vim.keymap.set('n', '<leader>g', fzf_lua.live_grep_glob, { desc = 'Grep with optional glob filter after --' })
   end,
 }
