@@ -1,4 +1,5 @@
 return {
+  { 'neovim/nvim-lspconfig', lazy = true },
   {
     'mason-org/mason.nvim', -- Package manager
     version = '*',
@@ -16,7 +17,6 @@ return {
       },
     },
   },
-  { 'neovim/nvim-lspconfig' },
   {
     'mason-org/mason-lspconfig.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
