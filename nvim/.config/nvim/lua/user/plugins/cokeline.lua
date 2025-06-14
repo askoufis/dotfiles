@@ -25,7 +25,6 @@ return {
 
     return keys
   end,
-  config = true,
   opts = function()
     local is_picking_focus = require('cokeline/mappings').is_picking_focus
     local is_picking_close = require('cokeline/mappings').is_picking_close

@@ -2,7 +2,6 @@ return {
   'lewis6991/gitsigns.nvim',
   version = '*',
   event = { 'BufReadPre', 'BufNewFile' },
-  config = true,
   opts = function()
     return {
       attach_to_untracked = true,

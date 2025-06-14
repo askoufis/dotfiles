@@ -3,7 +3,6 @@ return {
     'mason-org/mason.nvim', -- Package manager
     version = '*',
     cmd = 'Mason',
-    config = true,
     opts = {
       ui = {
         border = 'rounded',

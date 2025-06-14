@@ -2,7 +2,6 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'echasnovski/mini.icons' },
   event = 'VeryLazy',
-  config = true,
   opts = {
     options = {
       icons_enabled = true,

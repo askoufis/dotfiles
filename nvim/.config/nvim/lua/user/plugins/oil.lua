@@ -34,7 +34,6 @@ return {
     },
   },
   dependencies = { 'echasnovski/mini.icons' },
-  config = true,
   keys = {
     {
       '\\',

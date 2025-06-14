@@ -1,6 +1,5 @@
 return {
   'aserowy/tmux.nvim',
-  config = true,
   event = 'VeryLazy',
   opts = {
     navigation = {

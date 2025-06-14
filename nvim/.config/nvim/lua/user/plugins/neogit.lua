@@ -9,5 +9,4 @@ return {
   keys = {
     { '<leader>G', ':Neogit<CR>', desc = 'Toggle Neogit', silent = true },
   },
-  config = true,
 }
