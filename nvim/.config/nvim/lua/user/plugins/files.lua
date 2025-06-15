@@ -11,14 +11,14 @@ return {
       end
     end
 
-    vim.keymap.set({ 'n', 'x' }, '\\', minifiles_toggle, {
-      desc = 'Toggle MiniFiles floating buffer',
+    vim.keymap.set({ 'n', 'x' }, '\\', function()
+      minifiles_toggle(vim.api.nvim_buf_get_name(0))
+    end, { desc = 'Toggle MiniFiles in current buffer directory', silent = true })
+
+    vim.keymap.set({ 'n', 'x' }, '|', minifiles_toggle, {
+      desc = 'Toggle MiniFiles in current working directory',
       silent = true,
     })
-
-    vim.keymap.set({ 'n', 'x' }, '|', function()
-      minifiles_toggle(vim.api.nvim_buf_get_name(0))
-    end, { desc = 'Open MiniFiles in current buffer directory', silent = true })
   end,
   dependencies = { 'echasnovski/mini.icons' },
 }
