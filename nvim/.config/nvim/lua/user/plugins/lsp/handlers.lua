@@ -59,7 +59,6 @@ local lsp_keymaps = function(map)
   map('n', '<C-s>', vim.lsp.buf.signature_help)
   map('n', '<F2>', vim.lsp.buf.rename) -- Too used to vscode
   map('n', 'gr', vim.lsp.buf.references)
-  map('n', '<leader>ca', vim.lsp.buf.code_action)
   map('n', 'gl', vim.diagnostic.open_float)
   map('n', '<leader>q', vim.diagnostic.setloclist)
   map('n', '<leader>lr', ':LspRestart<CR>')
