@@ -4,12 +4,12 @@ name: work
 root: ~/
 
 windows:
-  - fep:
-      root: ~/code/fep
+  - code:
+      root: ~/code
       panes:
         - null
-  - fep2:
-      root: ~/code/fep
+  - code2:
+      root: ~/code
       panes:
         - null
   - scratch: null
