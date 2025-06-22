@@ -1,7 +1,8 @@
-function co
+function co -d "Change to a project directory with fzf"
     set target (
-        find ~/code -mindepth 1 -maxdepth 1 -type d \
-        | sed 's|.*/||' \
+        fd . ~/code --type d --exact-depth 1 --color never \
+        | string trim -r -c '/' \
+        | string replace -r '.*/' '' \
         | fzf --reverse --height 40% --tmux 30%,20%
     )
 
