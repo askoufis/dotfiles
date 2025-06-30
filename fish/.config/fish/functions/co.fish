@@ -1,8 +1,8 @@
 function co -d "Change to a project directory with fzf"
     set target (
-        fd . ~/code --type d --exact-depth 1 --color never \
-        | string trim -r -c '/' \
-        | string replace -r '.*/' '' \
+        fd . ~/code ~/code/askoufis --type d --exact-depth 1 --color never \
+        | string replace "$HOME/code" '' \
+        | string trim --chars '/' \
         | fzf --reverse --height 40% --tmux 30%,20%
     )
 
