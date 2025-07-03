@@ -17,7 +17,7 @@ abbr -a -g gpr gh pr view --web
 abbr -a -g gor gh repo view --web
 abbr -a -g gup "git fetch && git pull origin (git branch --show-current)"
 abbr -a -g nb --set-cursor --function nb
-abbr -a -g grh --position anywhere --set-cursor "git reset origin/% --hard"
+abbr -a -g grh --position anywhere --set-cursor "git reset origin/(git branch --show-current) --hard"
 
 # --- Misc ---
 # Emulate other shells' !! feature
