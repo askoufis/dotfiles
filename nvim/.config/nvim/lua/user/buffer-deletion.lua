@@ -30,16 +30,28 @@ local delete_other_buffers = function()
 
   for _, buffer in ipairs(buffers) do
     local is_loaded = vim.api.nvim_buf_is_loaded(buffer)
+    if not is_loaded then
+      goto continue
+    end
+
     local is_current_buffer = buffer == current_buffer
+    if is_current_buffer then
+      goto continue
+    end
+
+    local is_modified = vim.api.nvim_get_option_value('modified', { buf = buffer })
+    if is_modified then
+      goto continue
+    end
 
     local buffer_name = vim.api.nvim_buf_get_name(buffer)
     -- NeoGit creates its own invisible buffer that complains if it isn't force-deleted
     -- Intead we'll just skip it to save the hassle
     local is_neogit_console_buffer = ends_with(buffer_name, 'NeogitConsole')
 
-    if is_loaded and not is_current_buffer and not is_neogit_console_buffer then
-      vim.api.nvim_buf_delete(buffer, {})
-    end
+    vim.api.nvim_buf_delete(buffer, {})
+
+    ::continue::
   end
 
   -- Refresh the tabline so deleted buffers disappear
