@@ -53,14 +53,22 @@ local lsp_highlight_document = function(client, bufnr)
 end
 
 local lsp_keymaps = function(map)
-  map('n', 'gD', vim.lsp.buf.declaration)
-  map('n', 'gd', vim.lsp.buf.definition)
-  map('n', 'gi', vim.lsp.buf.implementation)
-  map('n', '<C-s>', vim.lsp.buf.signature_help)
-  map('n', '<F2>', vim.lsp.buf.rename) -- Too used to vscode
-  map('n', 'gr', vim.lsp.buf.references)
+  map('n', 'gi', function()
+    P("Use default 'gri' instead")
+  end, { desc = 'LSP implementations', silent = true })
+  map('n', 'gd', function()
+    P("Use 'grd' instead")
+  end, { desc = 'LSP definitions', silent = true })
+  map('n', 'grd', function()
+    vim.lsp.buf.definition()
+  end, { desc = 'LSP definitions', silent = true })
+  map('n', '<F2>', function()
+    P("Use default 'grn' instead")
+  end, { desc = 'LSP rename', silent = true }) -- Too used to vscode
+  map('n', 'gr', function()
+    P("Use default 'grr' instead")
+  end, { desc = 'LSP references', silent = true })
   map('n', 'gl', vim.diagnostic.open_float)
-  map('n', '<leader>q', vim.diagnostic.setloclist)
   map('n', '<leader>lr', ':LspRestart<CR>')
 end
 

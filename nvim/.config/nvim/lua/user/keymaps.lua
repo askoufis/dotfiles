@@ -40,8 +40,12 @@ set_keymap('v', '>', '>gv')
 
 -- Quickfix
 set_keymap('n', '<A-q>', ':cw<CR>')
-set_keymap('n', '<leader>j', ':cnext<CR>')
-set_keymap('n', '<leader>k', ':cprev<CR>')
+set_keymap('n', '<leader>j', function()
+  P("Use default ']q' instead")
+end)
+set_keymap('n', '<leader>k', function()
+  P("Use default '[q' instead")
+end)
 
 -- Editing --
 -- insert a new line below the current line without entering insert mode

@@ -48,6 +48,8 @@ return {
       fzf_lua.live_grep_glob,
       { desc = 'Grep with optional glob filter after --', silent = true }
     )
-    vim.keymap.set('n', '<leader>ca', fzf_lua.lsp_code_actions, { desc = 'Code actions', silent = true })
+    vim.keymap.set('n', '<leader>ca', function()
+      P("Use default 'gra' instead")
+    end, { desc = 'Code actions', silent = true })
   end,
 }
