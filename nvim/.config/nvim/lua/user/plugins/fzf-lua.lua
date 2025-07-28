@@ -40,18 +40,13 @@ return {
     fzf_lua.setup(opts)
     fzf_lua.register_ui_select()
 
-    vim.keymap.set('n', '<C-p>', fzf_lua.files, { desc = 'Project files', silent = true })
+    set_keymap('n', '<C-p>', fzf_lua.files, { desc = 'Project files' })
 
-    vim.keymap.set(
-      'n',
-      '<leader>g',
-      fzf_lua.live_grep_glob,
-      { desc = 'Grep with optional glob filter after --', silent = true }
-    )
-    vim.keymap.set('n', '<leader>ca', function()
+    set_keymap('n', '<leader>g', fzf_lua.live_grep_glob, { desc = 'Grep with optional glob filter after --' })
+    set_keymap('n', '<leader>ca', function()
       P("Use default 'gra' instead")
-    end, { desc = 'Code actions', silent = true })
+    end, { desc = 'Code actions' })
 
-    vim.keymap.set('n', '<leader>he', ':FzfLua helptags<CR>', { desc = 'Help tags', silent = true })
+    set_keymap('n', '<leader>he', ':FzfLua helptags<CR>', { desc = 'Help tags' })
   end,
 }

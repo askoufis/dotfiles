@@ -17,6 +17,6 @@ end
 
 --- Note: `noremap` is not required, and `silent` are true by default, unless overridden
 _G.set_keymap = function(mode, l, r, opts)
-  opts = opts or { silent = true }
+  opts = vim.tbl_deep_extend('force', { silent = true }, opts or {} )
   vim.keymap.set(mode, l, r, opts)
 end
