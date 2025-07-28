@@ -51,5 +51,7 @@ return {
     vim.keymap.set('n', '<leader>ca', function()
       P("Use default 'gra' instead")
     end, { desc = 'Code actions', silent = true })
+
+    vim.keymap.set('n', '<leader>he', ':FzfLua helptags<CR>', { desc = 'Help tags', silent = true })
   end,
 }
