@@ -12,7 +12,7 @@ set_keymap('n', '<Space>', '')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
--- Movement --
+-- Movement
 -- moving up and down doesn't skip wrapped lines
 set_keymap('n', 'j', 'gj')
 set_keymap('n', 'k', 'gk')
@@ -47,7 +47,7 @@ set_keymap('n', '<leader>k', function()
   P("Use default '[q' instead")
 end)
 
--- Editing --
+-- Editing
 -- insert a new line below the current line without entering insert mode
 set_keymap('n', '<CR>', 'o<Esc>', {})
 -- remap f1 to escape so it doesn't open help
@@ -56,25 +56,21 @@ set_keymap('i', '<F1>', '<Esc>')
 set_keymap('n', '<leader>*', ':%s/<c-r><c-w>//g<left><left>')
 
 -- move text up and down
--- Normal
-set_keymap('n', '<A-j>', ':m +1<CR>')
-set_keymap('n', '<A-k>', ':m -2<CR>')
--- Visual
-set_keymap('v', '<A-j>', ':m +1<CR>')
-set_keymap('v', '<A-k>', ':m -2<CR>')
--- Visual block
+set_keymap({ 'n', 'v' }, '<A-j>', ':m +1<CR>')
+set_keymap({ 'n', 'v' }, '<A-k>', ':m -2<CR>')
+-- Visual block keymaps need to be different in order to keep the cursor on the same line after moving
 set_keymap('x', '<A-j>', ":m '>+1<CR>gv")
 set_keymap('x', '<A-k>', ":m '<-2<CR>gv")
 
--- Pasting
+-- Clipboard
 -- Don't yank to buffer when pasting
 set_keymap('v', 'p', '"_dP')
 -- Yank to clipboard
-set_keymap('n', '<leader>y', '"+y')
-set_keymap('v', '<leader>y', '"+y')
+set_keymap({ 'v', 'x' }, '<leader>y', '"+y')
+set_keymap({ 'v', 'x' }, '<leader>d', '"+d')
 
 -- Searching
--- Move to search and centre the current line vertically
+-- Move to search and center the current line vertically
 -- Can append `zv` to these to open folds
 set_keymap('n', 'n', 'nzz')
 set_keymap('n', 'N', 'Nzz')
