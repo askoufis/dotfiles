@@ -42,7 +42,7 @@ return {
 
     set_keymap('n', '<C-p>', fzf_lua.files, { desc = 'Project files' })
 
-    set_keymap('n', '<leader>g', fzf_lua.live_grep_glob, { desc = 'Grep with optional glob filter after --' })
+    set_keymap('n', '<leader>g', fzf_lua.live_grep, { desc = 'Grep with optional glob filter after --' })
     set_keymap('n', '<leader>ca', function()
       P("Use default 'gra' instead")
     end, { desc = 'Code actions' })
