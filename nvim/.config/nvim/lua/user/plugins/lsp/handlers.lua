@@ -31,27 +31,6 @@ M.setup = function()
   -- vim.lsp.handlers['textDocument/references'] = vim.lsp.with(require('fzf-lua').lsp_references, {})
 end
 
-local lsp_document_highlight_group = vim.api.nvim_create_augroup('lsp_document_highlight', {})
-local lsp_highlight_document = function(client, bufnr)
-  -- Set autocommands conditionally depending on server_capabilities
-  if client.server_capabilities.documentHighlight then
-    vim.api.nvim_create_autocmd('CursorHold', {
-      buffer = bufnr,
-      group = lsp_document_highlight_group,
-      callback = function()
-        vim.lsp.buf.document_highlight()
-      end,
-    })
-    vim.api.nvim_create_autocmd('CursorMoved', {
-      buffer = bufnr,
-      group = lsp_document_highlight_group,
-      callback = function()
-        vim.lsp.buf.clear_references()
-      end,
-    })
-  end
-end
-
 local lsp_keymaps = function(map)
   map('n', 'gi', function()
     P("Use default 'gri' instead")
@@ -81,7 +60,6 @@ M.on_attach = function(options)
     end
 
     lsp_keymaps(map)
-    lsp_highlight_document(client, bufnr)
 
     if options.disable_formatting then
       client.server_capabilities.documentFormattingProvider = false
