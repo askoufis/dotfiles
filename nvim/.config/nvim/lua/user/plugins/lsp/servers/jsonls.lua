@@ -1,5 +1,3 @@
-local common_on_attach = require('user.plugins.lsp.handlers').on_attach
-
 local schemas = require('schemastore').json.schemas {
   select = {
     '.eslintrc',
@@ -20,7 +18,6 @@ local nx_schema = {
 table.insert(schemas, nx_schema)
 
 vim.lsp.config('jsonls', {
-  on_attach = common_on_attach { disable_formatting = true },
   settings = {
     json = {
       validate = { enable = true },
@@ -37,6 +34,9 @@ vim.lsp.config('jsonls', {
     },
   },
   capabilities = {
+    -- Let prettier handle formatting
+    documentFormattingProvider = false,
+    documentRangeFormattingProvider = false,
     textDocument = {
       completion = {
         completionItem = {

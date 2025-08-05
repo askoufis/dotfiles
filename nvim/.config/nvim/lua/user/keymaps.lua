@@ -102,3 +102,22 @@ set_keymap('n', '<leader>sp', toggle_spell)
 
 -- Utilities
 set_keymap('n', '<leader>cl', ':g/console\\.log/d<CR>')
+
+-- LSP
+set_keymap('n', 'gi', function()
+  P("Use default 'gri' instead")
+end, { desc = 'LSP implementations' })
+set_keymap('n', 'gd', function()
+  P("Use 'grd' instead")
+end, { desc = 'LSP definitions' })
+set_keymap('n', 'grd', function()
+  vim.lsp.buf.definition()
+end, { desc = 'LSP definitions' })
+set_keymap('n', '<F2>', function()
+  P("Use default 'grn' instead")
+end, { desc = 'LSP rename' }) -- Too used to vscode
+set_keymap('n', 'gr', function()
+  P("Use default 'grr' instead")
+end, { desc = 'LSP references' })
+set_keymap('n', 'gl', vim.diagnostic.open_float)
+set_keymap('n', '<leader>lr', ':LspRestart<CR>')

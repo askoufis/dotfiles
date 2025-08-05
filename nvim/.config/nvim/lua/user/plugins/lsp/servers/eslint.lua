@@ -5,9 +5,6 @@
 local eslint_on_attach = vim.lsp.config.eslint.on_attach
 
 local on_attach = function(client, bufnr)
-  local common_on_attach = require('user.plugins.lsp.handlers').on_attach
-  common_on_attach { disable_formatting = false }(client, bufnr)
-
   if eslint_on_attach ~= nil then
     eslint_on_attach(client, bufnr)
   end

@@ -1,7 +1,9 @@
-local common_on_attach = require('user.plugins.lsp.handlers').on_attach
-
 vim.lsp.config('lua_ls', {
-  on_attach = common_on_attach { disable_formatting = true },
+  capabilities = {
+    -- Let stylua handle formatting
+    documentFormattingProvider = false,
+    documentRangeFormattingProvider = false,
+  },
   settings = {
     Lua = {
       runtime = {

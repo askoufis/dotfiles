@@ -1,16 +1,10 @@
 return {
   { 'neovim/nvim-lspconfig', lazy = true },
   {
-    'mason-org/mason.nvim', -- Package manager
+    'mason-org/mason.nvim',
     version = '*',
     cmd = 'Mason',
     opts = {
-      ui = {
-        border = 'rounded',
-        icons = {
-          package_installed = '✓',
-        },
-      },
       ensure_installed = {
         'stylua',
         'prettierd',
@@ -27,42 +21,35 @@ return {
     },
     opts = {
       ensure_installed = {
-        'lua_ls',
+        'astro',
+        'cssls',
         'eslint',
         'html',
         'jsonls',
+        'lua_ls',
+        'mdx_analyzer',
+        'rust_analyzer',
         'ts_ls',
         'yamlls',
-        'cssls',
-        'astro',
         'zls',
-        'mdx_analyzer',
       },
     },
     config = function(_, opts)
       local masonLspconfig = require('mason-lspconfig')
       masonLspconfig.setup(opts)
 
-      local lspconfig = require('lspconfig')
-
-      lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
-        capabilities = require('user.plugins.lsp.handlers').capabilites,
-      })
-
-      require('user.plugins.lsp.handlers').setup()
-
       -- LSP Server setup
+      vim.lsp.config('astro', {})
+      require('user.plugins.lsp.servers.cssls')
       require('user.plugins.lsp.servers.eslint')
       require('user.plugins.lsp.servers.html')
       require('user.plugins.lsp.servers.jsonls')
       require('user.plugins.lsp.servers.lua_ls')
+      vim.lsp.config('mdx_analyzer', {})
+      vim.lsp.config('rust_analyzer', {})
       require('user.plugins.lsp.servers.ts_ls')
       require('user.plugins.lsp.servers.yamlls')
-      require('user.plugins.lsp.servers.cssls')
-      require('user.plugins.lsp.servers.astro')
-      require('user.plugins.lsp.servers.rust_analyzer')
-      require('user.plugins.lsp.servers.zls')
-      require('user.plugins.lsp.servers.mdx_analyzer')
+      vim.lsp.config('zls', {})
     end,
   },
 }

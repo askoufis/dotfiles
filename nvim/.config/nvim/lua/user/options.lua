@@ -95,3 +95,23 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter' }, {
     vim.cmd([[checktime]])
   end,
 })
+
+vim.diagnostic.config {
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.HINT] = '',
+      [vim.diagnostic.severity.INFO] = '',
+    },
+  },
+  update_in_insert = true,
+  severity_sort = true,
+  float = {
+    style = 'minimal',
+    border = 'rounded',
+    source = true,
+    header = '',
+    prefix = '',
+  },
+}
