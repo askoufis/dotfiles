@@ -49,9 +49,6 @@ return {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
-      autotag = {
-        enable = true,
-      },
       indent = { enable = true, disable = { 'yaml' } },
       -- Playground config
       query_linter = {
@@ -85,6 +82,8 @@ return {
   },
   {
     'windwp/nvim-ts-autotag',
-    event = 'InsertEnter',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = {},
+    event = { 'BufReadPost', 'BufNewFile' },
   },
 }
