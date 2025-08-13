@@ -33,6 +33,7 @@ return {
     region_check_events = 'InsertEnter',
     delete_check_events = 'TextChanged,InsertLeave',
     store_selection_keys = '<C-s>',
+    enable_autosnippets = true,
   },
   submodules = false,
 }
