@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 -- Get a list of  the property names given an `interface_declaration`
 -- treesitter *tsx* node.
 -- Ie, if the treesitter node represents:
