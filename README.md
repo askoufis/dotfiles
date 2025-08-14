@@ -10,7 +10,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [Fish shell] (At least v4.0.0)
 - [neovim]
 - [GNU stow] (Only if you want to use the [install] script)
-- [JetBrainsMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
+- [JetBrainsMono] (Regular, Bold, Italic and Bold Italic)
 - [delta]
 - [eza]
 - [bat]
@@ -21,7 +21,7 @@ Inspired by [ThePrimagen's dotfiles].
 [neovim]: https://neovim.io/
 [gnu stow]: https://www.gnu.org/software/stow/
 [install]: ./install
-[nerd fonts]: https://www.nerdfonts.com/font-downloads
+[jetbrainsmono]: https://www.jetbrains.com/lp/mono/
 [delta]: https://github.com/dandavison/delta
 [eza]: https://github.com/SEEK-Jobs/metropolis/pull/3248
 [bat]: https://github.com/SEEK-Jobs/metropolis/pull/3248
