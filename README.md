@@ -8,6 +8,7 @@ Inspired by [ThePrimagen's dotfiles].
 ## Requirements
 
 - [Fish shell] (At least v4.0.0)
+- [neovim]
 - [GNU stow] (Only if you want to use the [install] script)
 - [JetBrainsMono Nerd Font][nerd fonts] on mac (Regular, Bold, Italic and Bold Italic)
 - [delta]
@@ -17,6 +18,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [rustfmt]: Install with `rustup component add rustfmt`
 
 [fish shell]: https://fishshell.com/
+[neovim]: https://neovim.io/
 [gnu stow]: https://www.gnu.org/software/stow/
 [install]: ./install
 [nerd fonts]: https://www.nerdfonts.com/font-downloads
