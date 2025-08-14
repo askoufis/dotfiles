@@ -23,8 +23,8 @@ Inspired by [ThePrimagen's dotfiles].
 [install]: ./install
 [jetbrainsmono]: https://www.jetbrains.com/lp/mono/
 [delta]: https://github.com/dandavison/delta
-[eza]: https://github.com/SEEK-Jobs/metropolis/pull/3248
-[bat]: https://github.com/SEEK-Jobs/metropolis/pull/3248
+[eza]: https://github.com/eza-community/eza
+[bat]: https://github.com/sharkdp/bat
 [rust-analyzer]: https://github.com/rust-lang/rust-analyzer
 [rustfmt]: https://github.com/rust-lang/rustfmt
 
