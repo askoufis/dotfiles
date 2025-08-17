@@ -66,7 +66,7 @@ After installing dotfiles to a machine for the first time, there's a few things 
 git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 ```
 
-6. Restart tmux, then press <kbd>prefix</kbd> + <kbd>I</kbd> to install all tmux plugins
+6. Restart TMUX, then press <kbd>prefix</kbd> + <kbd>I</kbd> to install all TMUX plugins
 
 [fisher]: https://github.com/jorgebucaran/fisher
 [lazy.nvim]: https://github.com/folke/lazy.nvim
@@ -86,6 +86,6 @@ For example, the `ghostty` top-level folder contains the following structure: `g
 
 The exception to this is for OS-specific config.
 In those cases, a suffix of `-{OS}` is appended to the folder.
-For example `ghostty-linux` contains the linux-specific configuration for `ghostty`, whereas `ghostty-mac` contains the macOS-specific configuration for `ghostty`.
+For example `ghostty-linux` contains the Linux-specific configuration for `ghostty`, whereas `ghostty-mac` contains the MacOS-specific configuration for `ghostty`.
 OS-specific configuration is usually included into the main configuration file via some method exposed by the app you're configuring.
 For example, `ghostty` supports including other `.toml` files within your man config file.
