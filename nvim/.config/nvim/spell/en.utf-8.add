@@ -29,3 +29,8 @@ addon
 CSS
 autocomplete
 popup
+MacOS
+dotfiles/!
+dotfiles
+plugins
+TMUX
