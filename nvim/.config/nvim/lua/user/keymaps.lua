@@ -99,6 +99,7 @@ local toggle_spell = function()
   end
 end
 set_keymap('n', '<leader>sp', toggle_spell)
+set_keymap('n', '<leader>zc', '1z=', { desc = 'Accept the first spelling suggestion' })
 
 -- Utilities
 set_keymap('n', '<leader>cl', ':g/console\\.log/d<CR>')
