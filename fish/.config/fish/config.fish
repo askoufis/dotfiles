@@ -34,5 +34,5 @@ if status --is-interactive
     # Functions are automatically loaded from the `functions` directory by fish
 
     # --- Mise
-    ~/.local/bin/mise activate fish | source
+    mise activate fish | source
 end
