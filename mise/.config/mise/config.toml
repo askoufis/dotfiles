@@ -1,0 +1,7 @@
+[tools]
+node = "lts"
+"npm:@antfu/ni" = "latest"
+
+[settings]
+experimental = true
+idiomatic_version_file_enable_tools = ["node"]
