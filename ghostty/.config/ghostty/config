@@ -16,11 +16,24 @@ keybind = super+enter=unbind
 # one is focused and another isn't
 unfocused-split-fill = #303030
 
-font-family = "JetBrains Mono"
+# font-family = "JetBrains Mono"
+font-family = "Maple Mono"
 # Disable ligatures
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+
+# Disable some maple mono font features
+# See https://font.subf.dev/en/playground/?normal
+font-feature = +cv01
+font-feature = +cv02
+font-feature = +cv31
+font-feature = +cv32
+font-feature = +cv33
+font-feature = +cv34
+font-feature = +cv35
+font-feature = +cv36
+font-feature = +cv61
 
 config-file = ./colours/moonfly.conf
 config-file = ?config-linux.conf
