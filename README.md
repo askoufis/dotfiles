@@ -42,7 +42,7 @@ git clone https://github.com/askoufis/dotfiles.git
 set -x -g STOW_FOLDERS ghostty ghostty-linux git nvim fish fish-linux tmux
 ```
 
-A valid folder names is any top-level folder in this repo.
+A valid folder name is any top-level folder in this repo.
 
 3. Run `./install`
 
