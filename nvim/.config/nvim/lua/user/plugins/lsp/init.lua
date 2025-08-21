@@ -4,12 +4,7 @@ return {
     'mason-org/mason.nvim',
     version = '*',
     cmd = 'Mason',
-    opts = {
-      ensure_installed = {
-        'stylua',
-        'prettierd',
-      },
-    },
+    opts = {},
   },
   {
     'mason-org/mason-lspconfig.nvim',
