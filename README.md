@@ -60,13 +60,15 @@ After installing dotfiles to a machine for the first time, there's a few things 
 
 4. Close `nvim`, then re-open it and open some files to confirm that all plugins are installed correctly
 
-5. Clone [`tpm`], but not to the usual place:
+5. Run `:Mason` and install `stylua` and `prettierd`
+
+6. Clone [`tpm`], but not to the usual place:
 
 ```fish
 git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 ```
 
-6. Restart TMUX, then press <kbd>prefix</kbd> + <kbd>I</kbd> to install all TMUX plugins
+7. Restart TMUX, then press <kbd>prefix</kbd> + <kbd>I</kbd> to install all TMUX plugins
 
 [fisher]: https://github.com/jorgebucaran/fisher
 [lazy.nvim]: https://github.com/folke/lazy.nvim
