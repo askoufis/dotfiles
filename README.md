@@ -48,6 +48,8 @@ A valid folder name is any top-level folder in this repo.
 
 4. (Optional but recommended) Run `sf` to source the `config.fish`. This will add useful abbreviations and set up your environment correctly.
 
+5. You _may_ need to run `cd ~/.config/mise && mise trust` in order to trust the newly installed `mise` config.
+
 ## Bootstrapping
 
 After installing dotfiles to a machine for the first time, there's a few things you need to do in order to bootstrap the plugins for various programs.
