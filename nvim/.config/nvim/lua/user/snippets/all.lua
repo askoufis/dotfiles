@@ -8,6 +8,8 @@ return {
     trig = '.lsquo',
     desc = 'Convert the previous apostraphe into a opening single quote, or insert if missing',
     match_pattern = "'$",
+    hidden = true,
+    snippetType = 'autosnippet',
   }, {
     t('‘'),
   }),
@@ -16,6 +18,8 @@ return {
     trig = '.apos',
     desc = 'Convert the previous apostraphe into an closing single quote, or insert if missing',
     match_pattern = "'$",
+    hidden = true,
+    snippetType = 'autosnippet',
   }, {
     t('’'),
   }),
@@ -23,6 +27,8 @@ return {
     trig = '.rsquo',
     desc = 'Convert the previous apostraphe into closing single quote, or insert if missing',
     match_pattern = "'$",
+    hidden = true,
+    snippetType = 'autosnippet',
   }, {
     t('’'),
   }),
@@ -31,6 +37,8 @@ return {
     trig = '.ldquo',
     desc = 'Convert the previous apostraphe into an opening double quote, or insert if missing',
     match_pattern = '"$',
+    hidden = true,
+    snippetType = 'autosnippet',
   }, {
     t('“'),
   }),
@@ -39,6 +47,8 @@ return {
     trig = '.rdquo',
     desc = 'Convert the previous apostraphe into a closing double quote, or insert if missing',
     match_pattern = '"$',
+    hidden = true,
+    snippetType = 'autosnippet',
   }, {
     t('”'),
   }),
