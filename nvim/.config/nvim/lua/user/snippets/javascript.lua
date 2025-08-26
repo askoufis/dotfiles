@@ -17,8 +17,6 @@ return {
     {
       trig = 'ins',
       desc = 'Log an object with infinite depth and colours',
-      snippetType = 'autosnippet',
-      hidden = true,
     },
     fmt('console.dir({{ {} }}, {{ colors: true, depth: null, maxArrayLength: null }})', {
       i(1),
