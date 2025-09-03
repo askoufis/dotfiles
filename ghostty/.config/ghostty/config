@@ -16,14 +16,9 @@ keybind = super+enter=unbind
 # one is focused and another isn't
 unfocused-split-fill = #303030
 
-# font-family = "JetBrains Mono"
-font-family = "Maple Mono"
-# Disable ligatures
-font-feature = -calt
-font-feature = -liga
-font-feature = -dlig
+font-family = "Maple Mono NL"
 
-# Disable some maple mono font features
+# Enable some maple mono font features
 # See https://font.subf.dev/en/playground/?normal
 font-feature = +cv01
 font-feature = +cv02
