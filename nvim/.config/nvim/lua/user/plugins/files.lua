@@ -1,5 +1,5 @@
 return {
-  'echasnovski/mini.files',
+  'nvim-mini/mini.files',
   version = false,
   event = 'VeryLazy',
   config = function(_, opts)
@@ -19,5 +19,5 @@ return {
       desc = 'Toggle MiniFiles in current working directory',
     })
   end,
-  dependencies = { 'echasnovski/mini.icons' },
+  dependencies = { 'nvim-mini/mini.icons' },
 }
