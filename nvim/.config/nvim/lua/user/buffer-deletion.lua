@@ -1,5 +1,20 @@
-local ends_with = function(str, ending)
-  return ending == '' or str:sub(-#ending) == ending
+local should_delete_buffer = function(buffer)
+  local is_loaded = vim.api.nvim_buf_is_loaded(buffer)
+  if not is_loaded then
+    return false
+  end
+
+  local is_modified = vim.api.nvim_get_option_value('modified', { buf = buffer })
+  if is_modified then
+    return false
+  end
+
+  local buftype = vim.api.nvim_get_option_value('buftype', { buf = buffer })
+  if buftype == 'terminal' then
+    return false
+  end
+
+  return true
 end
 
 -- Not using `:%bd<CR>` so we can preserve the NeoGit console buffer
@@ -7,16 +22,13 @@ local delete_all_buffers = function()
   local buffers = vim.api.nvim_list_bufs()
 
   for _, buffer in ipairs(buffers) do
-    local is_loaded = vim.api.nvim_buf_is_loaded(buffer)
-
-    local buffer_name = vim.api.nvim_buf_get_name(buffer)
-    -- NeoGit creates its own invisible buffer that complains if it isn't force-deleted
-    -- Intead we'll just skip it to save the hassle
-    local is_neogit_console_buffer = ends_with(buffer_name, 'NeogitConsole')
-
-    if is_loaded and not is_neogit_console_buffer then
-      vim.api.nvim_buf_delete(buffer, {})
+    if not should_delete_buffer(buffer) then
+      goto continue
     end
+
+    vim.api.nvim_buf_delete(buffer, {})
+
+    ::continue::
   end
 
   -- Refresh the tabline so deleted buffers disappear
@@ -29,8 +41,7 @@ local delete_other_buffers = function()
   local current_buffer = vim.api.nvim_get_current_buf()
 
   for _, buffer in ipairs(buffers) do
-    local is_loaded = vim.api.nvim_buf_is_loaded(buffer)
-    if not is_loaded then
+    if not should_delete_buffer(buffer) then
       goto continue
     end
 
@@ -38,16 +49,6 @@ local delete_other_buffers = function()
     if is_current_buffer then
       goto continue
     end
-
-    local is_modified = vim.api.nvim_get_option_value('modified', { buf = buffer })
-    if is_modified then
-      goto continue
-    end
-
-    local buffer_name = vim.api.nvim_buf_get_name(buffer)
-    -- NeoGit creates its own invisible buffer that complains if it isn't force-deleted
-    -- Intead we'll just skip it to save the hassle
-    local is_neogit_console_buffer = ends_with(buffer_name, 'NeogitConsole')
 
     vim.api.nvim_buf_delete(buffer, {})
 
