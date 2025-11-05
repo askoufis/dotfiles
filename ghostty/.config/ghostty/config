@@ -30,6 +30,7 @@ font-feature = +cv35
 font-feature = +cv36
 font-feature = +cv61
 
-config-file = ./colours/moonfly.conf
+theme = "moonfly"
+
 config-file = ?config-linux.conf
 config-file = ?config-mac.conf
