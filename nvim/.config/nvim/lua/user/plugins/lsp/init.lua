@@ -23,6 +23,7 @@ return {
         'jsonls',
         'lua_ls',
         'mdx_analyzer',
+        'oxlint',
         'rust_analyzer',
         'ts_ls',
         'yamlls',
@@ -34,17 +35,18 @@ return {
       masonLspconfig.setup(opts)
 
       -- LSP Server setup
-      vim.lsp.config('astro', {})
+      vim.lsp.enable('astro')
       require('user.plugins.lsp.servers.cssls')
       require('user.plugins.lsp.servers.eslint')
       require('user.plugins.lsp.servers.html')
       require('user.plugins.lsp.servers.jsonls')
       require('user.plugins.lsp.servers.lua_ls')
-      vim.lsp.config('mdx_analyzer', {})
-      vim.lsp.config('rust_analyzer', {})
+      vim.lsp.enable('mdx_analyzer')
+      vim.lsp.enable('oxlint')
+      vim.lsp.enable('rust_analyzer')
       require('user.plugins.lsp.servers.ts_ls')
       require('user.plugins.lsp.servers.yamlls')
-      vim.lsp.config('zls', {})
+      vim.lsp.enable('zls')
     end,
   },
 }
