@@ -35,3 +35,6 @@ dotfiles
 plugins
 TMUX
 README
+userland
+memoizing
+performant
