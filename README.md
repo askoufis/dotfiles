@@ -10,7 +10,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [Fish shell] (At least v4.0.0)
 - [neovim]
 - [GNU stow] (Only if you want to use the [install] script)
-- [JetBrainsMono] (Regular, Bold, Italic and Bold Italic)
+- [Maple Mono]
 - [delta]
 - [eza]
 - [bat]
@@ -21,7 +21,7 @@ Inspired by [ThePrimagen's dotfiles].
 [neovim]: https://neovim.io/
 [gnu stow]: https://www.gnu.org/software/stow/
 [install]: ./install
-[jetbrainsmono]: https://www.jetbrains.com/lp/mono/
+[maple mono]: https://github.com/subframe7536/maple-font
 [delta]: https://github.com/dandavison/delta
 [eza]: https://github.com/eza-community/eza
 [bat]: https://github.com/sharkdp/bat
