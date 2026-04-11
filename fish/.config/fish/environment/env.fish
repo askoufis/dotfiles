@@ -31,10 +31,3 @@ set -x -g BAT_THEME "fly16"
 # Custom editor launch script so inspector plugins work with neovim
 # https://theosteiner.de/open-neovim-from-your-browser-integrating-nvim-with-sveltes-inspector
 set -x -g LAUNCH_EDITOR launch_editor_script
-
-# Hydro prompt config
-# https://github.com/jorgebucaran/hydro
-set --global hydro_color_pwd blue
-set --global hydro_color_prompt purple
-set --global hydro_color_duration yellow
-set --global hydro_fetch true
