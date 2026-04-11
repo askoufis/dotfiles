@@ -16,6 +16,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [bat]
 - [rust-analyzer]: Install with `rustup component add rust-analyzer`
 - [rustfmt]: Install with `rustup component add rustfmt`
+- [tree-sitter-cli]: For installing tree-sitter parsers
 
 [fish shell]: https://fishshell.com/
 [neovim]: https://neovim.io/
@@ -27,6 +28,7 @@ Inspired by [ThePrimagen's dotfiles].
 [bat]: https://github.com/sharkdp/bat
 [rust-analyzer]: https://github.com/rust-lang/rust-analyzer
 [rustfmt]: https://github.com/rust-lang/rustfmt
+[tree-sitter-cli]: https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md
 
 ## Installation
 

@@ -1,84 +1,78 @@
+local parsers = {
+  'astro',
+  'bash',
+  'comment',
+  'css',
+  'diff',
+  'dockerfile',
+  'fish',
+  'git_config',
+  'git_rebase',
+  'html',
+  'javascript',
+  'jsdoc',
+  'json',
+  'json5',
+  'lua',
+  'luadoc',
+  'markdown',
+  'markdown_inline',
+  'query',
+  'regex',
+  'rust',
+  'toml',
+  'tsx',
+  'typescript',
+  'vim',
+  'vimdoc',
+  'yaml',
+  'zig',
+}
+
+-- TODO: Maybe copy auto-install function from https://github.com/FStanDev/myNvimConfig/blob/e7094bd5aefe405796375d3c1598d74d097e1a50/lua/configs/treesitter.lua
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    version = false,
+    lazy = false,
+    branch = 'main',
     build = ':TSUpdate',
-    event = { 'BufReadPost', 'BufNewFile' },
-    config = function(_, opts)
-      require('nvim-treesitter.configs').setup(opts)
+    config = function()
+      require('nvim-treesitter').install(parsers)
 
-      -- Register markdown.mdx filetypes as markdown as there is currently no treesitter grammar for
-      -- mdx
-      vim.treesitter.language.register('markdown', 'markdown.mdx')
-    end,
-    opts = {
-      ensure_installed = {
-        'astro',
-        'bash',
-        'comment',
-        'css',
-        'diff',
-        'dockerfile',
-        'fish',
-        'git_config',
-        'git_rebase',
-        'html',
-        'http',
-        'javascript',
-        'jsdoc',
-        'json',
-        'json5',
-        'jsonc',
-        'lua',
-        'luadoc',
-        'markdown',
-        'markdown_inline',
-        'query',
-        'regex',
-        'rust',
-        'toml',
-        'tsx',
-        'typescript',
-        'vim',
-        'vimdoc',
-        'yaml',
-        'zig',
-      },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = { enable = true, disable = { 'yaml' } },
-      -- Playground config
-      query_linter = {
-        enable = true,
-        use_virtual_text = true,
-        lint_events = { 'BufWrite', 'CursorHold' },
-      },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-          keymaps = {
-            ['ap'] = '@parameter.outer',
-            ['ip'] = '@parameter.inner',
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ii'] = '@conditional.inner',
-            ['ai'] = '@conditional.outer',
-            ['il'] = '@loop.inner',
-            ['al'] = '@loop.outer',
-            ['at'] = '@comment.outer',
-          },
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = {
+          'astro',
+          'bash',
+          'css',
+          'diff',
+          'dockerfile',
+          'fish',
+          'gitconfig',
+          'gitrebase',
+          'html',
+          'json',
+          'json5',
+          'jsonc',
+          'lua',
+          'rust',
+          'html',
+          'javascript',
+          'typescript',
+          'javascriptreact',
+          'typescriptreact',
+          'zig',
+          'markdown',
+          'rust',
+          'toml',
+          'vim',
+          'zig',
         },
-      },
-    },
-  },
-  {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    event = { 'BufReadPost', 'BufNewFile' },
+        callback = function()
+          vim.treesitter.start()
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
+    end,
   },
   {
     'windwp/nvim-ts-autotag',
