@@ -8,6 +8,7 @@ Inspired by [ThePrimagen's dotfiles].
 ## Requirements
 
 - [Fish shell] (At least v4.0.0)
+- [prmt]: Install with `cargo install prmt`
 - [neovim]
 - [GNU stow] (Only if you want to use the [install] script)
 - [Maple Mono]
@@ -19,6 +20,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [tree-sitter-cli]: For installing tree-sitter parsers
 
 [fish shell]: https://fishshell.com/
+[prmt]: https://github.com/3axap4eHko/prmt
 [neovim]: https://neovim.io/
 [gnu stow]: https://www.gnu.org/software/stow/
 [install]: ./install
