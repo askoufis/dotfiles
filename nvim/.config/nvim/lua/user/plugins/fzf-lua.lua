@@ -14,6 +14,7 @@ return {
     winopts = {
       preview = {
         default = 'bat',
+        layout = 'vertical',
       },
     },
     keymap = {
