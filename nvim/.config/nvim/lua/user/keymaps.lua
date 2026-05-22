@@ -78,6 +78,9 @@ set_keymap('n', 'N', 'Nzz')
 -- write to a file when you accidentally opened it without root privileges
 set_keymap('c', 'w!!', 'w !sudo tee % > /dev/null')
 
+-- I often accidentally type `:w;` instead of `:w`
+set_keymap('c', 'w;', 'w')
+
 -- Run the current file
 set_keymap('n', '<leader><leader>x', ':w<CR>:source %<CR>')
 
