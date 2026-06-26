@@ -3,7 +3,6 @@
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "blink.indent": { "branch": "main", "commit": "3fc92e6b0e702a630cec7408f8f7947afa951d96" },
   "conform.nvim": { "branch": "master", "commit": "619363c30309d29ffa631e67c8183f2a72caa373" },
-  "copilot.vim": { "branch": "release", "commit": "a12fd5672110c8aa7e3c8419e28c96943ca179be" },
   "fidget.nvim": { "branch": "main", "commit": "e1a07a5e46fb65a45a0c76870140bd2d16a73ebf" },
   "fzf-lua": { "branch": "main", "commit": "b9919229c84bd64d8539367e67e32811cf39a836" },
   "gitsigns.nvim": { "branch": "main", "commit": "a462f416e2ce4744531c6256252dee99a7d34a83" },
