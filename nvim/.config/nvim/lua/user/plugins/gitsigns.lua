@@ -10,11 +10,11 @@ return {
     -- https://www.compart.com/en/unicode/U+258E
     signs = {
       add = { text = '▎' },
-      change = { text = '▎' }
+      change = { text = '▎' },
     },
     signs_staged = {
       add = { text = '▎' },
-      change = { text = '▎' }
+      change = { text = '▎' },
     },
     on_attach = function(bufnr)
       local gitsigns = require('gitsigns')
@@ -43,7 +43,7 @@ return {
       end)
 
       -- Actions
-      -- Invoke again to unstage hunk
+      -- stage_hunk also unstages when invoked on a staged hunk
       map('n', '<leader>hs', gitsigns.stage_hunk)
       map('n', '<leader>hr', gitsigns.reset_hunk)
 
@@ -56,6 +56,7 @@ return {
       end)
 
       map('n', '<leader>hS', gitsigns.stage_buffer)
+      map('n', '<leader>hU', gitsigns.reset_buffer_index)
       map('n', '<leader>hR', gitsigns.reset_buffer)
 
       map('n', '<leader>hp', gitsigns.preview_hunk)
@@ -68,5 +69,5 @@ return {
       -- `vih`
       map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
     end,
-  }
+  },
 }
