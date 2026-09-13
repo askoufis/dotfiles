@@ -11,4 +11,7 @@ abbr -a -g clear-package-cache "sudo paccache -rk3; paru -Sc --aur --noconfirm"
 abbr -a -g update-package-mirrors reflector --save /etc/pacman.d/mirrorlist -c AU -c NZ --latest 10 --sort rate --protocol https
 
 # --- Misc ---
-abbr -a -g sway "WLR_NO_HARDWARE_CURSORS=1 sway --unsupported-gpu"
+# Sway doesn't officially support either the proprietary or the open-source NVIDIA drivers.
+# Switching to nouveau drivers is the only way to to remove the `--unsupported-gpu` flag, but
+# the tradeoffs are definitely not worth it.
+abbr -a -g sway "sway --unsupported-gpu"
