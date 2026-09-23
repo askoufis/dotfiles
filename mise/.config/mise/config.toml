@@ -1,4 +1,5 @@
 [tools]
+hunk = "latest"
 node = "lts"
 "npm:@antfu/ni" = "latest"
 
