@@ -1,3 +1,3 @@
 function git_remote_branch
-    git rev-parse --abbrev-ref --symbolic-full-name @{u}
+    git symbolic-ref --short refs/remotes/origin/HEAD
 end
