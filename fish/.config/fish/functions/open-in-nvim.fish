@@ -77,6 +77,11 @@ function open-in-nvim --description 'Open file[:line[:col]] in nvim (tmux pane, 
         end
     end
 
+    # Make relative paths absolute (against the caller's cwd, not nvim's). Not
+    # normalized: collapsing `..` lexically is wrong after a symlinked dir (e.g. pnpm's
+    # node_modules), and nvim/the kernel resolve it correctly.
+    string match -q '/*' -- $file; or set file $PWD/$file
+
     set -l nvim_bin (command -s nvim)
     test -n "$nvim_bin"; or return 1
 
