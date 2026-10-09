@@ -13,6 +13,12 @@ for folder in (string split " " $STOW_FOLDERS)
     stow -R -t ~/ $folder
 end
 
+echo \n"Installing open-in-nvim-launcher"\n
+
+mkdir -p ~/.local/bin
+cp open-in-nvim-launcher ~/.local/bin/open-in-nvim-launcher
+chmod +x ~/.local/bin/open-in-nvim-launcher
+
 echo \n"Building bat cache"\n
 
 bat cache --build
