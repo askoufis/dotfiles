@@ -11,7 +11,7 @@ Inspired by [ThePrimagen's dotfiles].
 - [prmt]: Install with `cargo install prmt`
 - [neovim]
 - [GNU stow] (Only if you want to use the [install] script)
-- [Maple Mono]
+- [Maple Mono] (Variable font - manually installed on arch linux)
 - [delta]
 - [eza]
 - [bat]
