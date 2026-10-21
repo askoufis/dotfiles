@@ -1,4 +1,4 @@
-local js = { 'prettierd' }
+local js = { 'oxfmt', 'prettierd', stop_after_first = true }
 
 return {
   'stevearc/conform.nvim',
@@ -21,7 +21,7 @@ return {
       graphql = js,
       html = js,
       javascript = js,
-      javasriptreact = js,
+      javascriptreact = js,
       json = js,
       jsonc = js,
       json5 = js,
