@@ -25,6 +25,6 @@
   "package-info.nvim": { "branch": "master", "commit": "e2469495215f576771b4567786b3c5709e98d87a" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "schemastore.nvim": { "branch": "main", "commit": "5f2a3b5dc13f3622000cb488c9af505b933152e3" },
-  "tmux.nvim": { "branch": "main", "commit": "32ceaf2793582955ef9576809730878c4d2d9426" },
+  "tmux.nvim": { "branch": "main", "commit": "5971292e1322c1ae1c305bd6df58e6d1bf7527bb" },
   "vim-moonfly-colors": { "branch": "master", "commit": "261664f92ed51cf0c077555b2d4b2530307eac17" }
 }
